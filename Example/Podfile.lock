@@ -1,0 +1,16 @@
+PODS:
+  - WannaSDK (5.2.0)
+
+DEPENDENCIES:
+  - WannaSDK (~> 5.2)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - WannaSDK
+
+SPEC CHECKSUMS:
+  WannaSDK: 251350cd53a19eadb512fd46a8643397d1c52a09
+
+PODFILE CHECKSUM: caf5c4434ebcf93b567d369f89f8fcd2d1f469fd
+
+COCOAPODS: 1.11.3
