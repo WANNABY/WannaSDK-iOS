@@ -66,6 +66,12 @@ Install the pod:
 $ pod install
 ```
 
+Open **Example.xcworkspace** file in Xcode.
+
+**NOTE:** when you open Example.**xcodeproj** instead of Example.**xcworkspace** it will result in compiller error **No such module ‘WsneakersUISDK’**
+
+
+
 ### Frameworks
 
 1. Add **WsneakersCoreSDK.xcframework** and **WsneakersUISDK.xcframework** to your project in Xcode.
