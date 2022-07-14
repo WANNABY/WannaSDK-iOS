@@ -1,10 +1,6 @@
-//
-//  MainScreen.swift
-//  WannaSDK_ExampleUITests
-//
-//  Created by Nikita Kuznetsov on 14/07/2022.
-//  Copyright © 2022 CocoaPods. All rights reserved.
-//
+// WANNA SDK
+// Copyright © 2022 WANNABY Inc. All rights reserved.
+
 
 final class MainScreen: BaseScreen {
     
