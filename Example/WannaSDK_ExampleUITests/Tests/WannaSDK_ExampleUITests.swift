@@ -49,7 +49,7 @@ class WannaSDK_ExampleUITests: XCTestCase {
         }
 
         for model in errorModels {
-            Logger().add(model)
+            Logger().add("Broken model: \(model)")
         }
     }
 }
