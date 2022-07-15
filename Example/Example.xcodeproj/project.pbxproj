@@ -26,6 +26,8 @@
 		B0B14D0528801D8E003C4842 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0428801D8E003C4842 /* MainScreen.swift */; };
 		B0B14D0728801DA7003C4842 /* ModelsListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0628801DA7003C4842 /* ModelsListScreen.swift */; };
 		B0B14D0928801DBC003C4842 /* RenderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0828801DBC003C4842 /* RenderScreen.swift */; };
+		B0B14D0F28814924003C4842 /* BaseScreen+apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0E28814924003C4842 /* BaseScreen+apply.swift */; };
+		B0B14D1228815A4C003C4842 /* Applyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D1128815A4C003C4842 /* Applyable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		B0B14D0428801D8E003C4842 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		B0B14D0628801DA7003C4842 /* ModelsListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsListScreen.swift; sourceTree = "<group>"; };
 		B0B14D0828801DBC003C4842 /* RenderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderScreen.swift; sourceTree = "<group>"; };
+		B0B14D0E28814924003C4842 /* BaseScreen+apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseScreen+apply.swift"; sourceTree = "<group>"; };
+		B0B14D1128815A4C003C4842 /* Applyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Applyable.swift; sourceTree = "<group>"; };
 		B55A95453636F6A00788CA83 /* Pods_WannaSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WannaSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72CCDD56AEBB8F61EAB3AFE /* Pods-WannaSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CFDD3BD3066319DEE3BE3257 /* Pods-WannaSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 		B0B14CEE28801C66003C4842 /* WannaSDK_ExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
+				B0B14D1028815A3E003C4842 /* Protocols */,
 				B0B14D0128801D68003C4842 /* Screens */,
 				B0B14CFE28801D3B003C4842 /* Extensions */,
 				B0B14CF928801CCF003C4842 /* Utils */,
@@ -194,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				B0B14CFF28801D51003C4842 /* XCUIElement+wait.swift */,
+				B0B14D0E28814924003C4842 /* BaseScreen+apply.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +213,14 @@
 				B0B14D0828801DBC003C4842 /* RenderScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		B0B14D1028815A3E003C4842 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B0B14D1128815A4C003C4842 /* Applyable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +397,9 @@
 				B0B14D0028801D51003C4842 /* XCUIElement+wait.swift in Sources */,
 				B0B14CF028801C66003C4842 /* WannaSDK_ExampleUITests.swift in Sources */,
 				B0B14CFB28801CDC003C4842 /* Logger.swift in Sources */,
+				B0B14D1228815A4C003C4842 /* Applyable.swift in Sources */,
 				B0B14CFD28801CFA003C4842 /* Safari.swift in Sources */,
+				B0B14D0F28814924003C4842 /* BaseScreen+apply.swift in Sources */,
 				B0B14D0928801DBC003C4842 /* RenderScreen.swift in Sources */,
 				B0B14D0328801D73003C4842 /* BaseScreen.swift in Sources */,
 				B0B14D0728801DA7003C4842 /* ModelsListScreen.swift in Sources */,

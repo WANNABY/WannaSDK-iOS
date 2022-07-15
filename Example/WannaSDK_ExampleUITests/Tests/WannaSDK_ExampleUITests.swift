@@ -23,24 +23,28 @@ class WannaSDK_ExampleUITests: XCTestCase {
         
         let shoesCells = ModelsListScreen().getShoeCells()
         var errorModels: [String] = []
-        
-        ModelsListScreen().tapBy(cell: shoesCells[0])
-        ModelsListScreen().tapButtonBy(text: ModelsListScreen.Strings.manual.rawValue, timeout: 300)
+        ModelsListScreen().apply() {
+            $0.tapBy(cell: shoesCells[0])
+            $0.grantCameraPermission()
+            $0.tapButtonBy(text: ModelsListScreen.Strings.manual.rawValue, timeout: 300)
+        }
         
         for i in 0...shoesCells.count {
-            RenderScreen().waitingForModelDownload()
-            var modelId: String
-            if RenderScreen().checkErrorAlert {
-                RenderScreen().closeErrorAlert()
-                modelId = RenderScreen().getModelId()
-                errorModels.append(modelId)
-            } else {
-                modelId = RenderScreen().getModelId()
-                Logger().makeScreenshot(info: "model #\(i): \(modelId)")
-            }
-            
-            if i < shoesCells.count {
-                RenderScreen().tapButtonBy(text: RenderScreen.Strings.nextModel.rawValue)
+            RenderScreen().apply {
+                $0.waitingForModelDownload()
+                var modelId: String
+                if $0.checkErrorAlert {
+                    $0.closeErrorAlert()
+                    modelId = $0.getModelId()
+                    errorModels.append(modelId)
+                } else {
+                    modelId = $0.getModelId()
+                    Logger().makeScreenshot(info: "model #\(i): \(modelId)")
+                }
+                
+                if i < shoesCells.count {
+                    $0.tapButtonBy(text: RenderScreen.Strings.nextModel.rawValue)
+                }
             }
         }
 

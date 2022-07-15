@@ -5,7 +5,8 @@
 import XCTest
 
 
-class BaseScreen {
+class BaseScreen: Applyable {
+    typealias T = BaseScreen
     
     let app = XCUIApplication()
     let logger = Logger()
@@ -33,11 +34,12 @@ class BaseScreen {
                    success: app.staticTexts[text].firstMatch.wait(timeout).exists)
     }
     
-    func handleCameraPermission() {
+    func grantCameraPermission() {
         let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
-        let alert = springboard.alerts.containing(.staticText, identifier: "Would Like to Access").firstMatch.wait(20)
-        logger.add("Close camera alert") {
-            alert.buttons.firstMatch.tap()
+        if springboard.alerts.firstMatch.waitForExistence(timeout: 15) {
+            logger.add("Grant camera permission") {
+                springboard.alerts.firstMatch.buttons["OK"].firstMatch.tap()
+            }
         }
     }
 }
