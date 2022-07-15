@@ -111,7 +111,7 @@ class RenderModelSelectionViewController: UIViewController {
                     return
                 }
 
-                sSelf.renderModels = renderModels!.filter { $0.renderModelType == sSelf.renderableType }
+                sSelf.renderModels = renderModels!.filter { $0.renderModelType == sSelf.renderableType }.sorted { $0.renderModelID < $1.renderModelID }
                 sSelf.tableView.reloadData()
             }
         }
