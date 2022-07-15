@@ -8,3 +8,9 @@ protocol Applyable {
     associatedtype T: BaseScreen
     func apply(_ closure: (T) -> Void)
 }
+
+extension Applyable where Self: BaseScreen {
+    func apply(_ closure: (Self) -> Void) {
+        closure(self)
+    }
+}
