@@ -125,15 +125,28 @@
                                         <rect key="frame" x="261" y="52" width="106" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Previous Model"/>
+                                        <connections>
+                                            <action selector="onPreviousRenderModel:" destination="dvb-42-KFt" eventType="touchUpInside" id="Ywd-Bp-hRf"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4f-8g-JlP">
+                                        <rect key="frame" x="8" y="647" width="54" height="16"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="model_id"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wyi-5J-zRS" secondAttribute="trailing" constant="8" id="1MI-ub-bJ6"/>
                                     <constraint firstItem="zgH-5n-YoZ" firstAttribute="top" secondItem="Vxl-Eb-VNa" secondAttribute="bottom" id="JIr-Vb-clL"/>
+                                    <constraint firstAttribute="bottom" secondItem="g4f-8g-JlP" secondAttribute="bottom" constant="4" id="QPr-A7-KGi"/>
+                                    <constraint firstItem="g4f-8g-JlP" firstAttribute="leading" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="8" id="RgT-up-7Sq"/>
                                     <constraint firstItem="wyi-5J-zRS" firstAttribute="top" secondItem="zgH-5n-YoZ" secondAttribute="bottom" id="heJ-AY-3Eo"/>
                                     <constraint firstAttribute="trailing" secondItem="zgH-5n-YoZ" secondAttribute="trailing" constant="8" id="i4N-jm-7oZ"/>
                                     <constraint firstItem="Vxl-Eb-VNa" firstAttribute="top" secondItem="Bz2-ND-1Ho" secondAttribute="topMargin" id="oHy-aX-HaF"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g4f-8g-JlP" secondAttribute="trailing" constant="8" id="s4c-ER-yWV"/>
                                     <constraint firstAttribute="trailing" secondItem="Vxl-Eb-VNa" secondAttribute="trailing" constant="8" id="xgJ-pV-13F"/>
                                 </constraints>
                             </view>
@@ -169,6 +182,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activity" destination="jfM-To-83m" id="UMZ-W4-SiJ"/>
+                        <outlet property="modelId" destination="g4f-8g-JlP" id="STy-53-rCn"/>
                         <outlet property="progress" destination="0Bk-JG-3nY" id="si2-Tc-iUh"/>
                         <outlet property="sneakersView" destination="Bz2-ND-1Ho" id="lkf-gM-Dro"/>
                         <outlet property="videoRecordButton" destination="zgH-5n-YoZ" id="zFf-gq-tph"/>
@@ -208,7 +222,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-29-W2o">
-                                <rect key="frame" x="8" y="647" width="359" height="16"/>
+                                <rect key="frame" x="8" y="647" width="54" height="16"/>
                                 <accessibility key="accessibilityConfiguration" identifier="model_id"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
@@ -229,7 +243,7 @@
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="PeY-29-W2o" secondAttribute="bottom" constant="4" id="AJm-2h-rDH"/>
                             <constraint firstItem="yvJ-oQ-Lwr" firstAttribute="centerX" secondItem="iEC-3f-Fsv" secondAttribute="centerX" id="Egi-95-wu7"/>
                             <constraint firstItem="PeY-29-W2o" firstAttribute="leading" secondItem="Ssu-fD-zJ3" secondAttribute="leading" constant="8" id="Gix-O1-Sjh"/>
-                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" secondItem="PeY-29-W2o" secondAttribute="trailing" constant="8" id="NGD-4P-Dog"/>
+                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PeY-29-W2o" secondAttribute="trailing" constant="8" id="NGD-4P-Dog"/>
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" secondItem="rNc-ot-427" secondAttribute="trailing" constant="8" id="Pxn-W3-JX2"/>
                             <constraint firstItem="tGC-Up-C2J" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Ssu-fD-zJ3" secondAttribute="leading" constant="350" id="Ydf-1P-jAe"/>
                             <constraint firstItem="tGC-Up-C2J" firstAttribute="top" secondItem="WV2-7A-0Vx" secondAttribute="bottom" id="ct1-Pg-tPO"/>
