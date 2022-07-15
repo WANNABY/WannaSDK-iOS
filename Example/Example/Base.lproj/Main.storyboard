@@ -130,7 +130,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4f-8g-JlP">
-                                        <rect key="frame" x="8" y="647" width="54" height="16"/>
+                                        <rect key="frame" x="8" y="651" width="54" height="16"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="model_id"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
@@ -141,7 +142,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wyi-5J-zRS" secondAttribute="trailing" constant="8" id="1MI-ub-bJ6"/>
                                     <constraint firstItem="zgH-5n-YoZ" firstAttribute="top" secondItem="Vxl-Eb-VNa" secondAttribute="bottom" id="JIr-Vb-clL"/>
-                                    <constraint firstAttribute="bottom" secondItem="g4f-8g-JlP" secondAttribute="bottom" constant="4" id="QPr-A7-KGi"/>
+                                    <constraint firstAttribute="bottom" secondItem="g4f-8g-JlP" secondAttribute="bottom" id="QPr-A7-KGi"/>
                                     <constraint firstItem="g4f-8g-JlP" firstAttribute="leading" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="8" id="RgT-up-7Sq"/>
                                     <constraint firstItem="wyi-5J-zRS" firstAttribute="top" secondItem="zgH-5n-YoZ" secondAttribute="bottom" id="heJ-AY-3Eo"/>
                                     <constraint firstAttribute="trailing" secondItem="zgH-5n-YoZ" secondAttribute="trailing" constant="8" id="i4N-jm-7oZ"/>
@@ -222,7 +223,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-29-W2o">
-                                <rect key="frame" x="8" y="647" width="54" height="16"/>
+                                <rect key="frame" x="8" y="651" width="54" height="16"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="model_id"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
@@ -240,7 +242,7 @@
                         <viewLayoutGuide key="safeArea" id="Ssu-fD-zJ3"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="PeY-29-W2o" secondAttribute="bottom" constant="4" id="AJm-2h-rDH"/>
+                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="PeY-29-W2o" secondAttribute="bottom" id="AJm-2h-rDH"/>
                             <constraint firstItem="yvJ-oQ-Lwr" firstAttribute="centerX" secondItem="iEC-3f-Fsv" secondAttribute="centerX" id="Egi-95-wu7"/>
                             <constraint firstItem="PeY-29-W2o" firstAttribute="leading" secondItem="Ssu-fD-zJ3" secondAttribute="leading" constant="8" id="Gix-O1-Sjh"/>
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PeY-29-W2o" secondAttribute="trailing" constant="8" id="NGD-4P-Dog"/>
