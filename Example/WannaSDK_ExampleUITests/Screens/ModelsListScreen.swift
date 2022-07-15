@@ -11,9 +11,9 @@ final class ModelsListScreen: BaseScreen {
         case manual = "Manual"
     }
     
-    private lazy var shoesCells = app.tables.firstMatch.wait().cells.allElementsBoundByIndex
+    private lazy var firstShoeCell = app.tables.firstMatch.wait().cells.firstMatch
     
-    func getShoeCells() -> [XCUIElement] {
-        return shoesCells
+    func getShoeCell() -> XCUIElement {
+        return firstShoeCell
     }
 }

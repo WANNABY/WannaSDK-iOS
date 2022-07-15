@@ -21,16 +21,16 @@ class WannaSDK_ExampleUITests: XCTestCase {
         
         MainScreen().tapButtonBy(text: MainScreen.Strings.shoes.rawValue)
         
-        let shoesCells = ModelsListScreen().getShoeCells()
         var errorModels: [String] = []
         ModelsListScreen().apply() {
-            $0.tapBy(cell: shoesCells[0])
+            $0.tapBy(cell: ModelsListScreen().getShoeCell())
             $0.grantCameraPermission()
             $0.tapButtonBy(text: ModelsListScreen.Strings.manual.rawValue, timeout: 300)
         }
         
-        for i in 0...shoesCells.count {
-            RenderScreen().apply {
+        RenderScreen().apply {
+            let shoeCount = $0.getModelsCount()
+            for i in 1...shoeCount {
                 $0.waitingForModelDownload()
                 var modelId: String
                 if $0.checkErrorAlert {
@@ -42,7 +42,7 @@ class WannaSDK_ExampleUITests: XCTestCase {
                     Logger().makeScreenshot(info: "model #\(i): \(modelId)")
                 }
                 
-                if i < shoesCells.count {
+                if i < shoeCount {
                     $0.tapButtonBy(text: RenderScreen.Strings.nextModel.rawValue)
                 }
             }

@@ -31,4 +31,11 @@ final class RenderScreen: BaseScreen {
     func getModelId() -> String {
         return app.staticTexts[Strings.modelId.rawValue].firstMatch.label
     }
+    
+    func getModelsCount() -> Int {
+        let navigationBar = app.navigationBars.firstMatch
+        let navigationBarTitle = navigationBar.staticTexts.firstMatch.label
+        let components = navigationBarTitle.components(separatedBy: "/")
+        return Int(components[1])!
+    }
 }

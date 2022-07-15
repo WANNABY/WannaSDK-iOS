@@ -89,7 +89,6 @@ class WsneakersGeneralViewController: UIViewController {
         wsneakersSession.change(renderModel) { [weak self] error in
             DispatchQueue.main.async {
                 guard let sSelf = self else { return }
-                sSelf.title = ""
                 sSelf.activity.stopAnimating()
                 if let _ = error {
                     sSelf.showError(with: "Loading failed", retry: sSelf.setRenderModel(renderModel, index: index))
@@ -126,7 +125,6 @@ class WsneakersGeneralViewController: UIViewController {
                 sSelf.progress.isHidden = true
                 sSelf.modelId.text = sSelf.renderModels[index].renderModelID
                 if let _ = error {
-                    sSelf.title = ""
                     sSelf.activity.stopAnimating()
                     sSelf.modelId.textColor = UIColor.red
                     sSelf.showError(with: "Downloading failed", retry: sSelf.loadModel(with: index))
@@ -135,6 +133,7 @@ class WsneakersGeneralViewController: UIViewController {
                 // Sets the new 3D model to show in the virtual try-on
                 sSelf.setRenderModel(renderModel!, index: index)
                 sSelf.modelId.textColor = UIColor.green
+                sSelf.title = "\(index + 1)/\(sSelf.renderModels.count)"
             }
         }
     }
