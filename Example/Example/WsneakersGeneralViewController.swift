@@ -17,7 +17,8 @@ class WsneakersGeneralViewController: UIViewController {
     @IBOutlet weak var videoRecordButton: UIButton!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var progress: UIProgressView!
-
+    @IBOutlet weak var modelId: UILabel!
+    
     private final var wsneakersSession: WsneakersUISDKSession!
     private final var storage: WsneakersUISDKRenderModelStorage!
     private final var renderModels: [WsneakersUISDKModelInfo]!
@@ -88,7 +89,6 @@ class WsneakersGeneralViewController: UIViewController {
         wsneakersSession.change(renderModel) { [weak self] error in
             DispatchQueue.main.async {
                 guard let sSelf = self else { return }
-                sSelf.title = ""
                 sSelf.activity.stopAnimating()
                 if let _ = error {
                     sSelf.showError(with: "Loading failed", retry: sSelf.setRenderModel(renderModel, index: index))
@@ -123,18 +123,29 @@ class WsneakersGeneralViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let sSelf = self else { return }
                 sSelf.progress.isHidden = true
+                sSelf.modelId.text = sSelf.renderModels[index].renderModelID
                 if let _ = error {
-                    sSelf.title = ""
                     sSelf.activity.stopAnimating()
+                    sSelf.modelId.textColor = UIColor.red
                     sSelf.showError(with: "Downloading failed", retry: sSelf.loadModel(with: index))
                     return
                 }
                 // Sets the new 3D model to show in the virtual try-on
                 sSelf.setRenderModel(renderModel!, index: index)
+                sSelf.modelId.textColor = UIColor.green
+                sSelf.title = "\(index + 1)/\(sSelf.renderModels.count)"
             }
         }
     }
 
+    @IBAction func onPreviousRenderModel(_ sender: Any) {
+        var previousIndex = currentIndex - 1;
+        if previousIndex == -1 {
+            previousIndex = renderModels.count - 1
+        }
+        loadModel(with: previousIndex)
+    }
+    
     @IBAction func onNextRenderModel(_ sender: Any) {
         var nextIndex = currentIndex + 1;
         if (nextIndex == renderModels.count) {
