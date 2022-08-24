@@ -15,7 +15,7 @@ final class RenderScreen: BaseScreen {
     
     lazy var checkErrorAlert = app.alerts.firstMatch.wait(5).exists
     
-    func waitingForModelDownload(timeout: TimeInterval = 60) {
+    func waitForModelDownload(timeout: TimeInterval = 60) {
         logger.add("Waiting for model download") {
             app.progressIndicators.firstMatch.waitUntil(predicate: .notExists, timeout: timeout)
             app.activityIndicators.firstMatch.waitUntil(predicate: .notExists, timeout: timeout)
