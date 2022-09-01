@@ -33,7 +33,7 @@ class WannaSDK_ExampleUITests: XCTestCase {
             for i in 1...shoeCount {
                 $0.waitingForModelDownload()
                 var modelId: String
-                if $0.checkErrorAlert {
+                if $0.checkErrorAlert() {
                     $0.closeErrorAlert()
                     modelId = $0.getModelId()
                     errorModels.append(modelId)
