@@ -6,7 +6,7 @@ import XCTest
 import Foundation
 
 
-class WannaSDK_ExampleUITests: XCTestCase {
+class SdkClickers: XCTestCase {
 
     override func setUpWithError() throws {
         continueAfterFailure = false
