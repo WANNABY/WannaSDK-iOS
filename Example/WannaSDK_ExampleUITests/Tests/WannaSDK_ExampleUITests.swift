@@ -35,10 +35,10 @@ class WannaSDK_ExampleUITests: XCTestCase {
                 var modelId: String
                 if $0.checkErrorAlert() {
                     $0.closeErrorAlert()
-                    modelId = $0.getModelId()
+                    modelId = $0.modelId
                     errorModels.append(modelId)
                 } else {
-                    modelId = $0.getModelId()
+                    modelId = $0.modelId
                     Logger().makeScreenshot(info: "model #\(i): \(modelId)")
                 }
                 

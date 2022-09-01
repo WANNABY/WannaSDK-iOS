@@ -13,11 +13,15 @@ final class RenderScreen: BaseScreen {
         case modelId = "model_id"
     }
     
-    func checkErrorAlert() -> Bool {
-        app.alerts.firstMatch.wait(5).exists
+    var modelId: String {
+        app.staticTexts[Strings.modelId.rawValue].firstMatch.label
     }
     
-    func waitingForModelDownload(timeout: TimeInterval = 60) {
+    func checkErrorAlert() -> Bool {
+        app.alerts.firstMatch.wait(Constants.shortWaitInterval).exists
+    }
+    
+    func waitingForModelDownload(timeout: TimeInterval = Constants.longWaitInterval) {
         logger.add("Waiting for model download") {
             app.progressIndicators.firstMatch.waitUntil(predicate: .notExists, timeout: timeout)
             app.activityIndicators.firstMatch.waitUntil(predicate: .notExists, timeout: timeout)
@@ -28,10 +32,6 @@ final class RenderScreen: BaseScreen {
         logger.add("Close error alert") {
             app.alerts.firstMatch.buttons.firstMatch.tap()
         }
-    }
-    
-    func getModelId() -> String {
-        return app.staticTexts[Strings.modelId.rawValue].firstMatch.label
     }
     
     func getModelsCount() -> Int {
