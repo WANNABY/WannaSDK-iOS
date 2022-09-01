@@ -23,7 +23,7 @@ class NavigationViewController: UINavigationController {
 
     // Displaying the version of WANNA SDK used, mostly for testing purposes
     private func addInfoLabel() {
-        let info = "SDK Version: " + WsneakersUISDKInfo().coreSDKVersion()
+        let info = "SDK Version: " + WsneakersUISDKInfo().coreSDKVersion
 
         let label = UILabel()
         label.font = .systemFont(ofSize: 13)

@@ -197,6 +197,10 @@ class RenderModelSelectionViewController: UIViewController {
         show(controller, sender: self)
     }
 
+    @IBAction func clearCache(_ sender: Any) {
+        storage?.clearCache()
+    }
+    
     private func openTryon(session: WsneakersUISDKSession, index: Int) {
         if let viewType = viewType {
             openTryon(with: viewType, session: session, index: index)

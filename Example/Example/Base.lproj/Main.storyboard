@@ -73,12 +73,22 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.078252558853899146" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMi-DP-nT4">
+                                <rect key="frame" x="274" y="7" width="101" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Clear cache"/>
+                                <connections>
+                                    <action selector="clearCache:" destination="94S-cp-0Bp" eventType="touchUpInside" id="JAx-tY-hPC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i3u-mj-Khx"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M6c-BU-ydF" firstAttribute="leading" secondItem="i3u-mj-Khx" secondAttribute="leading" id="0Rs-0W-qCC"/>
                             <constraint firstItem="p0w-WJ-EOM" firstAttribute="centerX" secondItem="c6e-DB-a39" secondAttribute="centerX" id="0mW-7g-jtH"/>
+                            <constraint firstAttribute="trailing" secondItem="GMi-DP-nT4" secondAttribute="trailing" id="1S1-GF-KjJ"/>
+                            <constraint firstItem="GMi-DP-nT4" firstAttribute="top" secondItem="c6e-DB-a39" secondAttribute="top" constant="7" id="OTd-YY-stL"/>
                             <constraint firstItem="i3u-mj-Khx" firstAttribute="bottom" secondItem="M6c-BU-ydF" secondAttribute="bottom" id="P8v-f3-1tD"/>
                             <constraint firstItem="i3u-mj-Khx" firstAttribute="trailing" secondItem="M6c-BU-ydF" secondAttribute="trailing" id="Wl0-aP-yfj"/>
                             <constraint firstAttribute="top" secondItem="M6c-BU-ydF" secondAttribute="top" id="cCE-Da-JBg"/>

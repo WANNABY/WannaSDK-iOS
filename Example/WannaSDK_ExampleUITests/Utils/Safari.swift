@@ -22,6 +22,23 @@ final class Safari {
     }
     
     func openDeeplink(_ deeplink: String) {
+        openLink(deeplink)
+        safari.buttons[SafariIdentifiers.open.rawValue].wait().tap()
+    }
+    
+    func getAllModelImages() -> [XCUIElement] {
+        return safari.images.allElementsBoundByIndex
+    }
+    
+    func waitForModelDownload() {
+        safari.staticTexts["Loading model"].waitUntil(predicate: .notExists, timeout: 30)
+    }
+    
+    func waitForRoomLoading() {
+        safari.staticTexts["Initializing App..."].waitUntil(predicate: .notExists, timeout: 30)
+    }
+    
+    func openLink(_ link: String) {
         safari.launch()
         
         let urlTextField = safari.textFields[SafariIdentifiers.url.rawValue]
@@ -38,8 +55,7 @@ final class Safari {
             quickPathContinueTextButton.tap()
         }
         
-        urlTextField.typeText(deeplink)
+        urlTextField.typeText(link)
         safari.buttons[KeyboardKeys.go.rawValue].wait().tap()
-        safari.buttons[SafariIdentifiers.open.rawValue].wait().tap()
     }
 }

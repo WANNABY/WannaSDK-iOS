@@ -13,7 +13,9 @@ final class RenderScreen: BaseScreen {
         case modelId = "model_id"
     }
     
-    lazy var checkErrorAlert = app.alerts.firstMatch.wait(5).exists
+    func checkErrorAlert() -> Bool {
+        app.alerts.firstMatch.wait(5).exists
+    }
     
     func waitingForModelDownload(timeout: TimeInterval = 60) {
         logger.add("Waiting for model download") {
