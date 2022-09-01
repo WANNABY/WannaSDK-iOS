@@ -5,10 +5,6 @@
 import XCTest
 
 
-struct Constants {
-    static let waitInterval: TimeInterval = 30
-}
-
 extension XCUIElement {
 
     enum WaitPredicate: String {
@@ -16,16 +12,16 @@ extension XCUIElement {
         case notExists = "exists == false"
     }
     
-    func wait(_ timeout: TimeInterval = Constants.waitInterval) -> XCUIElement {
+    func wait(_ timeout: TimeInterval = Constants.longWaitInterval) -> XCUIElement {
         _ = waitForExistence(timeout: timeout)
         return self
     }
     
-    func waitIfNotExists(_ timeout: TimeInterval = Constants.waitInterval) -> Bool {
+    func waitIfNotExists(_ timeout: TimeInterval = Constants.longWaitInterval) -> Bool {
         return !waitForExistence(timeout: timeout)
     }
     
-    func waitUntil(predicate: WaitPredicate, timeout: TimeInterval = Constants.waitInterval) {
+    func waitUntil(predicate: WaitPredicate, timeout: TimeInterval = Constants.longWaitInterval) {
         let expectation = XCTestCase().expectation(
             for: NSPredicate(format: predicate.rawValue),
             evaluatedWith: self,
