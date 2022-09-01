@@ -29,7 +29,7 @@ class WannaSDK_ExampleUITests: XCTestCase {
         }
         
         RenderScreen().apply {
-            let shoeCount = $0.getModelsCount()
+            let shoeCount = $0.modelsCount
             for i in 1...shoeCount {
                 $0.waitingForModelDownload()
                 var modelId: String

@@ -34,7 +34,7 @@ final class RenderScreen: BaseScreen {
         }
     }
     
-    func getModelsCount() -> Int {
+    var modelsCount: Int {
         let navigationBar = app.navigationBars.firstMatch
         let predicate = NSPredicate(format: "label CONTAINS[c] '/'")
         let navigationBarTitle = navigationBar.staticTexts.containing(predicate).firstMatch.wait().label
