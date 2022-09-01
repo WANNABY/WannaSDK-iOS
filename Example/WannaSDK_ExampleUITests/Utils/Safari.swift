@@ -12,6 +12,7 @@ final class Safari {
     enum SafariIdentifiers: String {
         case bundleId = "com.apple.mobilesafari"
         case url = "URL"
+        case address = "Address"
         case open = "Open"
         case continueText = "Continue"
         case quickPathText = "Speed up your typing by sliding your finger across the letters to compose a word."
@@ -41,9 +42,9 @@ final class Safari {
     func openLink(_ link: String) {
         safari.launch()
         
-        let urlTextField = safari.textFields[SafariIdentifiers.url.rawValue]
+        let urlTextField = safari.textFields[SafariIdentifiers.address.rawValue]
         let urlField = safari.buttons[SafariIdentifiers.url.rawValue]
-        urlField.tap()
+        urlTextField.tap()
         let quickPathText = safari
             .scrollViews
             .otherElements
