@@ -62,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M6c-BU-ydF">
-                                <rect key="frame" x="0.0" y="91" width="428" height="801"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="94S-cp-0Bp" id="R8b-fq-M2E"/>
@@ -73,26 +73,16 @@
                                 <rect key="frame" x="195.66666666666666" y="444.66666666666669" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.078252558853899146" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMi-DP-nT4">
-                                <rect key="frame" x="313.66666666666669" y="52.666666666666657" width="114.33333333333331" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Clear cache"/>
-                                <connections>
-                                    <action selector="clearCache:" destination="94S-cp-0Bp" eventType="touchUpInside" id="JAx-tY-hPC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i3u-mj-Khx"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M6c-BU-ydF" firstAttribute="leading" secondItem="i3u-mj-Khx" secondAttribute="leading" id="0Rs-0W-qCC"/>
                             <constraint firstItem="p0w-WJ-EOM" firstAttribute="centerX" secondItem="c6e-DB-a39" secondAttribute="centerX" id="0mW-7g-jtH"/>
-                            <constraint firstAttribute="trailing" secondItem="GMi-DP-nT4" secondAttribute="trailing" id="1S1-GF-KjJ"/>
-                            <constraint firstItem="M6c-BU-ydF" firstAttribute="top" secondItem="GMi-DP-nT4" secondAttribute="bottom" constant="4" id="81B-Mz-svf"/>
                             <constraint firstItem="i3u-mj-Khx" firstAttribute="bottom" secondItem="M6c-BU-ydF" secondAttribute="bottom" id="P8v-f3-1tD"/>
                             <constraint firstItem="i3u-mj-Khx" firstAttribute="trailing" secondItem="M6c-BU-ydF" secondAttribute="trailing" id="Wl0-aP-yfj"/>
                             <constraint firstItem="p0w-WJ-EOM" firstAttribute="centerY" secondItem="c6e-DB-a39" secondAttribute="centerY" id="dOK-Pi-66g"/>
-                            <constraint firstItem="M6c-BU-ydF" firstAttribute="top" secondItem="i3u-mj-Khx" secondAttribute="top" id="fhy-fN-n9w"/>
+                            <constraint firstItem="M6c-BU-ydF" firstAttribute="top" secondItem="c6e-DB-a39" secondAttribute="top" id="fw1-Wg-N9Q"/>
                         </constraints>
                     </view>
                     <connections>

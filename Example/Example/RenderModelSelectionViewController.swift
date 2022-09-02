@@ -196,9 +196,12 @@ class RenderModelSelectionViewController: UIViewController {
         controller.set(session: session, storage: storage!, renderModels: renderModels, selected: index)
         show(controller, sender: self)
     }
-
-    @IBAction func clearCache(_ sender: Any) {
-        storage?.clearCache()
+ 
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            print("device did clear cache after shaking")
+            storage?.clearCache()
+        }
     }
     
     private func openTryon(session: WsneakersUISDKSession, index: Int) {
