@@ -28,7 +28,7 @@ final class Logger {
         let info = "Screenshot \(info)"
         XCTContext.runActivity(named: info) {
             let screenshot = XCUIScreen.main.screenshot()
-            let attachment = XCTAttachment(screenshot: screenshot, quality: .medium)
+            let attachment = XCTAttachment(screenshot: screenshot, quality: .original)
             attachment.name = info
             attachment.lifetime = .keepAlways
             $0.add(attachment)
