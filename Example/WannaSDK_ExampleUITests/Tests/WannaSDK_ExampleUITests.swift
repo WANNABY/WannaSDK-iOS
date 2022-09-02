@@ -23,7 +23,7 @@ class SdkClickers: XCTestCase {
         
         var errorModels: [String] = []
         ModelsListScreen().apply() {
-            $0.tapBy(cell: ModelsListScreen().getShoeCell())
+            $0.tapBy(cell: ModelsListScreen().firstShoeCell)
             $0.grantCameraPermission()
             $0.tapButtonBy(text: ModelsListScreen.Strings.manual.rawValue, timeout: 300)
         }
