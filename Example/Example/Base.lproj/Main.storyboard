@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pdc-O2-RR3">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pdc-O2-RR3">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="GTQ-tF-9Q2" customClass="DeviceCheckingViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DbO-Le-s5L">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="33S-Ah-Te3">
-                                <rect key="frame" x="152" y="293.5" width="71" height="80"/>
+                                <rect key="frame" x="178.66666666666666" y="423" width="71" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qe2-iT-aSo">
                                         <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
@@ -58,11 +58,11 @@
             <objects>
                 <viewController storyboardIdentifier="render_models_list" title="Render Models" id="94S-cp-0Bp" customClass="RenderModelSelectionViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6e-DB-a39">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M6c-BU-ydF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="91" width="428" height="801"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="94S-cp-0Bp" id="R8b-fq-M2E"/>
@@ -70,11 +70,11 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p0w-WJ-EOM">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="195.66666666666666" y="444.66666666666669" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.078252558853899146" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMi-DP-nT4">
-                                <rect key="frame" x="274" y="7" width="101" height="31"/>
+                                <rect key="frame" x="313.66666666666669" y="52.666666666666657" width="114.33333333333331" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Clear cache"/>
                                 <connections>
@@ -88,11 +88,11 @@
                             <constraint firstItem="M6c-BU-ydF" firstAttribute="leading" secondItem="i3u-mj-Khx" secondAttribute="leading" id="0Rs-0W-qCC"/>
                             <constraint firstItem="p0w-WJ-EOM" firstAttribute="centerX" secondItem="c6e-DB-a39" secondAttribute="centerX" id="0mW-7g-jtH"/>
                             <constraint firstAttribute="trailing" secondItem="GMi-DP-nT4" secondAttribute="trailing" id="1S1-GF-KjJ"/>
-                            <constraint firstItem="GMi-DP-nT4" firstAttribute="top" secondItem="c6e-DB-a39" secondAttribute="top" constant="7" id="OTd-YY-stL"/>
+                            <constraint firstItem="M6c-BU-ydF" firstAttribute="top" secondItem="GMi-DP-nT4" secondAttribute="bottom" constant="4" id="81B-Mz-svf"/>
                             <constraint firstItem="i3u-mj-Khx" firstAttribute="bottom" secondItem="M6c-BU-ydF" secondAttribute="bottom" id="P8v-f3-1tD"/>
                             <constraint firstItem="i3u-mj-Khx" firstAttribute="trailing" secondItem="M6c-BU-ydF" secondAttribute="trailing" id="Wl0-aP-yfj"/>
-                            <constraint firstAttribute="top" secondItem="M6c-BU-ydF" secondAttribute="top" id="cCE-Da-JBg"/>
                             <constraint firstItem="p0w-WJ-EOM" firstAttribute="centerY" secondItem="c6e-DB-a39" secondAttribute="centerY" id="dOK-Pi-66g"/>
+                            <constraint firstItem="M6c-BU-ydF" firstAttribute="top" secondItem="i3u-mj-Khx" secondAttribute="top" id="fhy-fN-n9w"/>
                         </constraints>
                     </view>
                     <connections>
@@ -104,35 +104,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZz-Uo-hzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834" y="-564"/>
+            <point key="canvasLocation" x="1833.6448598130839" y="-564.36285097192228"/>
         </scene>
         <!--WsneakersSDK View Controller-->
         <scene sceneID="iQS-Eg-IbY">
             <objects>
                 <viewController storyboardIdentifier="RemoteTryOn" id="dvb-42-KFt" customClass="WsneakersSDKViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uzo-GV-woH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-ND-1Ho" customClass="WsneakersUISDKView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgH-5n-YoZ">
-                                        <rect key="frame" x="259" y="82" width="108" height="30"/>
+                                        <rect key="frame" x="312" y="129" width="108" height="30"/>
                                         <state key="normal" title="Start Recording"/>
                                         <connections>
                                             <action selector="videoRecordButtonTouchedUpInside:" destination="dvb-42-KFt" eventType="touchUpInside" id="Va2-4N-4hd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyi-5J-zRS">
-                                        <rect key="frame" x="252" y="112" width="115" height="30"/>
+                                        <rect key="frame" x="305" y="159" width="115" height="30"/>
                                         <state key="normal" title="Save Screenshot"/>
                                         <connections>
                                             <action selector="onTakePhoto:" destination="dvb-42-KFt" eventType="touchUpInside" id="HGT-o1-4Zz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxl-Eb-VNa">
-                                        <rect key="frame" x="261" y="52" width="106" height="30"/>
+                                        <rect key="frame" x="314" y="99" width="106" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Previous Model"/>
                                         <connections>
@@ -140,7 +140,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4f-8g-JlP">
-                                        <rect key="frame" x="8" y="651" width="54" height="16"/>
+                                        <rect key="frame" x="8" y="876.33333333333337" width="54" height="15.666666666666629"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="model_id"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -162,11 +162,11 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-To-83m">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="195.66666666666666" y="444.66666666666669" width="37" height="37"/>
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Bk-JG-3nY">
-                                <rect key="frame" x="56.5" y="362" width="262.5" height="4"/>
+                                <rect key="frame" x="64.333333333333343" y="491.66666666666669" width="299.33333333333326" height="4"/>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rri-EJ-Mli"/>
@@ -208,32 +208,32 @@
             <objects>
                 <viewController storyboardIdentifier="RemoteManualTryOn" id="Cfc-rn-3Im" customClass="WsneakersGeneralViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iEC-3f-Fsv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-oQ-Lwr">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="195.66666666666666" y="444.66666666666669" width="37" height="37"/>
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GAq-sH-UMQ">
-                                <rect key="frame" x="56.5" y="362" width="262.5" height="4"/>
+                                <rect key="frame" x="64.333333333333343" y="491.66666666666669" width="299.33333333333326" height="4"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGC-Up-C2J">
-                                <rect key="frame" x="259" y="74" width="108" height="30"/>
+                                <rect key="frame" x="312" y="121" width="108" height="30"/>
                                 <state key="normal" title="Start Recording"/>
                                 <connections>
                                     <action selector="videoRecordButtonTouchedUpInside:" destination="Cfc-rn-3Im" eventType="touchUpInside" id="04O-HL-NTH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNc-ot-427">
-                                <rect key="frame" x="252" y="104" width="115" height="30"/>
+                                <rect key="frame" x="305" y="151" width="115" height="30"/>
                                 <state key="normal" title="Save Screenshot"/>
                                 <connections>
                                     <action selector="onTakePhoto:" destination="Cfc-rn-3Im" eventType="touchUpInside" id="DQK-z6-mFb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-29-W2o">
-                                <rect key="frame" x="8" y="651" width="54" height="16"/>
+                                <rect key="frame" x="8" y="876.33333333333337" width="54" height="15.666666666666629"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="model_id"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -241,7 +241,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WV2-7A-0Vx">
-                                <rect key="frame" x="261" y="44" width="106" height="30"/>
+                                <rect key="frame" x="314" y="91" width="106" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Previous Model"/>
                                 <connections>
@@ -294,7 +294,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pdc-O2-RR3" customClass="NavigationViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cwD-dt-4ee">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
