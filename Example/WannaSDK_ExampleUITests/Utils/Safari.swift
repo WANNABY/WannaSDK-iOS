@@ -43,7 +43,9 @@ final class Safari {
         safari.launch()
         
         let urlTextField = safari.textFields[SafariIdentifiers.address.rawValue]
-        let urlField = safari.buttons[SafariIdentifiers.url.rawValue]
+        // in case of ios 15 or less try to use this line instead to write down url
+        // if it doesn't help you, check elements tree using print object
+        // let urlField = safari.buttons[SafariIdentifiers.url.rawValue]
         urlTextField.tap()
         let quickPathText = safari
             .scrollViews
