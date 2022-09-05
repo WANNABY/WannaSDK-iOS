@@ -111,7 +111,7 @@ class RenderModelSelectionViewController: UIViewController {
                     return
                 }
 
-                sSelf.renderModels = renderModels!.filter { $0.renderModelType == sSelf.renderableType }
+                sSelf.renderModels = renderModels!.filter { $0.renderModelType == sSelf.renderableType }.sorted { $0.renderModelID < $1.renderModelID }
                 sSelf.tableView.reloadData()
             }
         }
@@ -196,7 +196,14 @@ class RenderModelSelectionViewController: UIViewController {
         controller.set(session: session, storage: storage!, renderModels: renderModels, selected: index)
         show(controller, sender: self)
     }
-
+ 
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            print("device did clear cache after shaking")
+            storage?.clearCache()
+        }
+    }
+    
     private func openTryon(session: WsneakersUISDKSession, index: Int) {
         if let viewType = viewType {
             openTryon(with: viewType, session: session, index: index)

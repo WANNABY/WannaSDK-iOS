@@ -18,7 +18,27 @@
 		948848712743ADF600D8B40C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848622743ADF600D8B40C /* AppDelegate.swift */; };
 		948848722743ADF600D8B40C /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
 		948848742743ADF600D8B40C /* WsneakersGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848652743ADF600D8B40C /* WsneakersGeneralViewController.swift */; };
+		B065FFCC28C103F0006FC87E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065FFCB28C103F0006FC87E /* Constants.swift */; };
+		B0B14CF028801C66003C4842 /* WannaSDK_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CEF28801C66003C4842 /* WannaSDK_ExampleUITests.swift */; };
+		B0B14CFB28801CDC003C4842 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CFA28801CDC003C4842 /* Logger.swift */; };
+		B0B14CFD28801CFA003C4842 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CFC28801CFA003C4842 /* Safari.swift */; };
+		B0B14D0028801D51003C4842 /* XCUIElement+wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CFF28801D51003C4842 /* XCUIElement+wait.swift */; };
+		B0B14D0328801D73003C4842 /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0228801D73003C4842 /* BaseScreen.swift */; };
+		B0B14D0528801D8E003C4842 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0428801D8E003C4842 /* MainScreen.swift */; };
+		B0B14D0728801DA7003C4842 /* ModelsListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0628801DA7003C4842 /* ModelsListScreen.swift */; };
+		B0B14D0928801DBC003C4842 /* RenderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0828801DBC003C4842 /* RenderScreen.swift */; };
+		B0B14D1228815A4C003C4842 /* Applyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D1128815A4C003C4842 /* Applyable.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0B14CF328801C66003C4842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = WannaSDK_Example;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E4B17F0827B3C90F00EFE5EE /* Copy WannaSDK dSYM */ = {
@@ -56,6 +76,17 @@
 		948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCheckingViewController.swift; sourceTree = "<group>"; };
 		948848642743ADF600D8B40C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		948848652743ADF600D8B40C /* WsneakersGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsneakersGeneralViewController.swift; sourceTree = "<group>"; };
+		B065FFCB28C103F0006FC87E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B0B14CED28801C66003C4842 /* WannaSDK_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WannaSDK_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B14CEF28801C66003C4842 /* WannaSDK_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WannaSDK_ExampleUITests.swift; sourceTree = "<group>"; };
+		B0B14CFA28801CDC003C4842 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B0B14CFC28801CFA003C4842 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
+		B0B14CFF28801D51003C4842 /* XCUIElement+wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+wait.swift"; sourceTree = "<group>"; };
+		B0B14D0228801D73003C4842 /* BaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreen.swift; sourceTree = "<group>"; };
+		B0B14D0428801D8E003C4842 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		B0B14D0628801DA7003C4842 /* ModelsListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsListScreen.swift; sourceTree = "<group>"; };
+		B0B14D0828801DBC003C4842 /* RenderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderScreen.swift; sourceTree = "<group>"; };
+		B0B14D1128815A4C003C4842 /* Applyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Applyable.swift; sourceTree = "<group>"; };
 		B55A95453636F6A00788CA83 /* Pods_WannaSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WannaSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72CCDD56AEBB8F61EAB3AFE /* Pods-WannaSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CFDD3BD3066319DEE3BE3257 /* Pods-WannaSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +98,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				12E091A7A046D91636513361 /* Pods_WannaSDK_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0B14CEA28801C66003C4842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				948848532743ADF600D8B40C /* Example */,
+				B0B14CEE28801C66003C4842 /* WannaSDK_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				90374BBB0CD3835287E79D6A /* Pods */,
 				2DEECF9FC3D5CDD0803EDB17 /* Frameworks */,
@@ -95,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* WannaSDK_Example.app */,
+				B0B14CED28801C66003C4842 /* WannaSDK_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +166,63 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		B0B14CEE28801C66003C4842 /* WannaSDK_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B0B14D1028815A3E003C4842 /* Protocols */,
+				B0B14D0128801D68003C4842 /* Screens */,
+				B0B14CFE28801D3B003C4842 /* Extensions */,
+				B0B14CF928801CCF003C4842 /* Utils */,
+				B0B14CF828801CBE003C4842 /* Tests */,
+			);
+			path = WannaSDK_ExampleUITests;
+			sourceTree = "<group>";
+		};
+		B0B14CF828801CBE003C4842 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B0B14CEF28801C66003C4842 /* WannaSDK_ExampleUITests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B0B14CF928801CCF003C4842 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B0B14CFA28801CDC003C4842 /* Logger.swift */,
+				B0B14CFC28801CFA003C4842 /* Safari.swift */,
+				B065FFCB28C103F0006FC87E /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B0B14CFE28801D3B003C4842 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0B14CFF28801D51003C4842 /* XCUIElement+wait.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B0B14D0128801D68003C4842 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B0B14D0228801D73003C4842 /* BaseScreen.swift */,
+				B0B14D0428801D8E003C4842 /* MainScreen.swift */,
+				B0B14D0628801DA7003C4842 /* ModelsListScreen.swift */,
+				B0B14D0828801DBC003C4842 /* RenderScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B0B14D1028815A3E003C4842 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B0B14D1128815A4C003C4842 /* Applyable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,20 +247,45 @@
 			productReference = 607FACD01AFB9204008FA782 /* WannaSDK_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B0B14CEC28801C66003C4842 /* WannaSDK_ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0B14CF728801C66003C4842 /* Build configuration list for PBXNativeTarget "WannaSDK_ExampleUITests" */;
+			buildPhases = (
+				B0B14CE928801C66003C4842 /* Sources */,
+				B0B14CEA28801C66003C4842 /* Frameworks */,
+				B0B14CEB28801C66003C4842 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0B14CF428801C66003C4842 /* PBXTargetDependency */,
+			);
+			name = WannaSDK_ExampleUITests;
+			productName = WannaSDK_ExampleUITests;
+			productReference = B0B14CED28801C66003C4842 /* WannaSDK_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = U8JMF34X5Y;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+					};
+					B0B14CEC28801C66003C4842 = {
+						CreatedOnToolsVersion = 13.4.1;
+						DevelopmentTeam = U8JMF34X5Y;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
@@ -182,6 +304,7 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* WannaSDK_Example */,
+				B0B14CEC28801C66003C4842 /* WannaSDK_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,6 +317,13 @@
 				9488486E2743ADF600D8B40C /* Main.storyboard in Resources */,
 				9488486D2743ADF600D8B40C /* LaunchScreen.storyboard in Resources */,
 				9488486C2743ADF600D8B40C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0B14CEB28801C66003C4842 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +389,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0B14CE928801C66003C4842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0B14D0528801D8E003C4842 /* MainScreen.swift in Sources */,
+				B0B14D0028801D51003C4842 /* XCUIElement+wait.swift in Sources */,
+				B0B14CF028801C66003C4842 /* WannaSDK_ExampleUITests.swift in Sources */,
+				B0B14CFB28801CDC003C4842 /* Logger.swift in Sources */,
+				B0B14D1228815A4C003C4842 /* Applyable.swift in Sources */,
+				B065FFCC28C103F0006FC87E /* Constants.swift in Sources */,
+				B0B14CFD28801CFA003C4842 /* Safari.swift in Sources */,
+				B0B14D0928801DBC003C4842 /* RenderScreen.swift in Sources */,
+				B0B14D0328801D73003C4842 /* BaseScreen.swift in Sources */,
+				B0B14D0728801DA7003C4842 /* ModelsListScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0B14CF428801C66003C4842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* WannaSDK_Example */;
+			targetProxy = B0B14CF328801C66003C4842 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9488485C2743ADF600D8B40C /* LaunchScreen.storyboard */ = {
@@ -388,7 +543,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 41;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U8JMF34X5Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -410,7 +565,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 41;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U8JMF34X5Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -421,6 +576,67 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		B0B14CF528801C66003C4842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = U8JMF34X5Y;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "wanna.WannaSDK-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WannaSDK_Example;
+			};
+			name = Debug;
+		};
+		B0B14CF628801C66003C4842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U8JMF34X5Y;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "wanna.WannaSDK-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WannaSDK_Example;
 			};
 			name = Release;
 		};
@@ -441,6 +657,15 @@
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
 				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0B14CF728801C66003C4842 /* Build configuration list for PBXNativeTarget "WannaSDK_ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0B14CF528801C66003C4842 /* Debug */,
+				B0B14CF628801C66003C4842 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
