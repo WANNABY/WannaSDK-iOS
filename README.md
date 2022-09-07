@@ -10,7 +10,7 @@ Check out also the code sample that implements this use case. See the **ios/Swif
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-	- [CocoaPod](#cocoapod)
+	- [Cocoapods](#cocoapods)
 	- [Frameworks](#frameworks)
 - [Step-by-step](#step-by-step)
 	- [Write your part of the code](#write-your-part-of-the-code)
@@ -26,7 +26,7 @@ Check out also the code sample that implements this use case. See the **ios/Swif
 To work with WANNA SDK, you will need:
 
 * **WANNA distribution**. <br>
-Use either the frameworks or the CocoaPod<!-- TODO: insert link!-->.
+Use either the frameworks or the cocoapods.
 * the **license key** that authorizes WANNA SDK use. <br>
 Contact our sales representative at [account@wanna.fashion](mailto:account@wanna.fashion) to get one.
 * **3D models** of your products. <br>
@@ -34,7 +34,7 @@ A model ID should be an alphanumeric string, with hyphens and underscores but no
 
 ## Installation
 
-Add WANNA SDK to your project either as a CocoaPod or by embedding the frameworks in your Xcode project.
+Add WANNA SDK to your project either as a cocoapods or by embedding the frameworks in your Xcode project.
 
 ### Cocoapods
 
@@ -45,7 +45,7 @@ $ cd <your-project-directory>
 $ pod init
 ```
 
-Add the WannaSDK pod to your Podfile:
+Add `pod WannaSDK` to your Podfile:
 
 ```
 source 'https://github.com/CocoaPods/Specs.git'
@@ -143,17 +143,19 @@ static let clientConfig = "WSNEAKERS_CLIENT_CONFIG_CHANGE_HERE"
 * **ios** folder with code samples in Swift and Objective-C for the basic virtual try-on scenario.
 * **WannaSDK** folder with the library files required if you are using WANNA SDK. Redistribute these with your application.
 * **readme** folder with this file and other product documentation.
+ 
+## System Requirements
 
-## System requirements
-
-* iOS version: 12.0 or later
-* Supported devices: iPhone SE/6s and later
-* Memory requirements:
-	* Footprint (zipped), contributes to the downloadable size of your app:
-		* iOS 12.2 and later: 3.4 MB for library files
-		* iOS 12.0 - 12.1.4: 5.9 MB for library files
-	* Footprint (unzipped), contributes to the space your app takes up when installed:
-		* iOS 12.2 and later: 8.6 MB for library files
-		* iOS 12.0 - 12.1.4: 16.3 MB for library files
-		* 25 MB cache for neural networks and auxiliary files
-	* RAM: up to 600 MB, depending on the size and quality of the 3D model
+* iOS version: 13.0 and later
+* Supported devices: iPhone SE/6s and newer
+* Memory requirements: 
+    * Footprint: 
+        * zipped size: 3.7 MB
+        * unzipped size: 8.9 MB
+        * cache for neural networks and auxiliary files: 25 MB
+        * the size of cache for 3D models can be set up via API
+    * RAM: up to 600 MB, depending on the size and quality of a 3D model
+______________________________
+Zipped size means the size which will be added to your IPA file, i.e. to the downloadable size of your application, when you integrate the WANNA SDK.
+Unzipped size means the size of the library as part of the installed application.
+   
