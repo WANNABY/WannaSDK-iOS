@@ -56,7 +56,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'MyApp' do
-  pod 'WannaSDK', '~> 5.2'
+  pod 'WannaSDK', '5.4.0'
 end
 ```
 
