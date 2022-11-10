@@ -359,8 +359,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WsneakersUISDK.framework/WsneakersUISDK",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WsneakersCoreSDK.framework/WsneakersCoreSDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WsneakersUISDK/WsneakersUISDK.framework/WsneakersUISDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WsneakersCoreSDK/WsneakersCoreSDK.framework/WsneakersCoreSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

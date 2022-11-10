@@ -71,8 +71,131 @@ class RenderModelSelectionViewController: UIViewController {
             loadRenderModels()
         }
     }
+ 
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            print("device did clear cache after shaking")
+            storage?.clearCache()
+        }
+    }
+}
 
-    private func loadRenderModels() {
+// Putting the model IDs into a table where the user can choose which one to try on
+extension RenderModelSelectionViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return renderModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath);
+        cell.textLabel?.text = renderModels[indexPath.row].renderModelID
+        return cell
+    }
+}
+
+extension RenderModelSelectionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        activity.startAnimating()
+        loadNewSession(completion: { [weak self] session in
+            guard let session = session else {
+                DispatchQueue.main.async {
+                    self?.activity.stopAnimating()
+                }
+                return
+            }
+            session.startDrawing {
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.activity.stopAnimating()
+                    self.openTryon(session: session, index: indexPath.row)
+
+                }
+            }
+        })
+        
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+//New session creation
+private extension RenderModelSelectionViewController {
+    func loadNewSession(completion: @escaping (WsneakersUISDKSession?) -> ()) {
+        waitForPreviousSessionDestroy { [weak self] in
+            self?.createSession(completion: completion)
+        }
+    }
+    
+    func waitForPreviousSessionDestroy(completion: @escaping () -> Void) {
+        DispatchQueue.global(qos: .utility).async { [weak self] in
+            var isLocked: Bool
+
+            repeat {
+                isLocked = !WsneakersUISDKSession.waitForSessionDestroy(withTimeout: 0.100)
+            } while isLocked && self != nil
+
+            completion()
+        }
+    }
+    
+    func createSession(completion: @escaping (WsneakersUISDKSession?) -> ()) {
+        if let session = wsneakersSession {
+            completion(session)
+            return
+        }
+        DispatchQueue.global(qos: .default).async { [weak self] in
+            guard let sSelf = self else { return }
+            do {
+                let session = sSelf.renderableType == "watch"
+                ? try sSelf.createWatchSession()
+                : try sSelf.createSneakersSession() // this is where we create the new session
+                
+                // Checking for camera permissions here
+                // We need authorization for the video stream from camera to do virtual try-on
+                let status = AVCaptureDevice.authorizationStatus(for: .video)
+                switch status {
+                case .notDetermined:
+                    AVCaptureDevice.requestAccess(for: .video) { hasAccess in
+                        session.start()
+                        sSelf.wsneakersSession = session
+                        if !hasAccess {
+                            sSelf.showCameraPermissions()
+                        }
+                        completion(hasAccess ? session : nil)
+                    }
+                case .authorized:
+                    session.start()
+                    sSelf.wsneakersSession = session
+                    completion(session)
+                default:
+                    sSelf.showCameraPermissions()
+                    completion(nil)
+                }
+            } catch {
+                sSelf.showError(message: "Unable to create a session", retry: {
+                    self?.createSession(completion: completion)
+                }, cancel: {
+                    completion(nil)
+                })
+            }
+        }
+    }
+    
+    func createWatchSession() throws -> WsneakersUISDKSession {
+        try WsneakersUISDKSession.createWatch(withConfig: WannaSDKDefaults.clientConfig, borderCrop: 0.1, progress: { progress in
+            return true
+        })
+    }
+
+    func createSneakersSession() throws -> WsneakersUISDKSession {
+        try WsneakersUISDKSession.createSession(withConfig: WannaSDKDefaults.clientConfig, borderCrop: 0.0, progress: { progress in
+            return true
+        })
+    }
+}
+
+private extension RenderModelSelectionViewController {
+    func loadRenderModels() {
         activity.startAnimating()
         // Checking for the correct license info
         // Don't forget to enter your configuration string in WannaSDKDefaults.swift
@@ -118,7 +241,7 @@ class RenderModelSelectionViewController: UIViewController {
     }
 
     // We need camera permissions for the virtual try-on to work
-    private func showCameraPermissions() {
+    func showCameraPermissions() {
         DispatchQueue.main.async { [weak self] in
             let popup = UIAlertController(title: "Error",
                                           message: "Please, grant access to camera",
@@ -127,7 +250,7 @@ class RenderModelSelectionViewController: UIViewController {
         }
     }
 
-    private func showError(message: String, retry: @escaping () -> (), cancel: @escaping () -> ()) {
+    func showError(message: String, retry: @escaping () -> (), cancel: @escaping () -> ()) {
         DispatchQueue.main.async { [weak self] in
             guard let sSelf = self else { return }
             let popup = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -141,53 +264,7 @@ class RenderModelSelectionViewController: UIViewController {
         }
     }
 
-    private func loadSession(completion: @escaping (WsneakersUISDKSession?) -> ()) {
-        if let session = wsneakersSession {
-            completion(session)
-            return
-        }
-        DispatchQueue.global(qos: .default).async { [weak self] in
-            guard let sSelf = self else { return }
-            do {
-                let session = sSelf.renderableType == "watch" ? try WsneakersUISDKSession.createWatch(withConfig: WannaSDKDefaults.clientConfig, borderCrop: 0.1, progress: { progress in
-                    return true
-                }) : try WsneakersUISDKSession.createSession(withConfig: WannaSDKDefaults.clientConfig, borderCrop: 0.0, progress: { progress in
-                    return true
-                }); // this is where we create the new session
-                
-                // Checking for camera permissions here
-                // We need authorization for the video stream from camera to do virtual try-on
-                let status = AVCaptureDevice.authorizationStatus(for: .video)
-                switch status {
-                case .notDetermined:
-                    AVCaptureDevice.requestAccess(for: .video) { hasAccess in
-                        session.start()
-                        sSelf.wsneakersSession = session
-                        if !hasAccess {
-                            sSelf.showCameraPermissions()
-                            completion(nil)
-                        }
-                        completion(hasAccess ? session : nil)
-                    }
-                case .authorized:
-                    session.start()
-                    sSelf.wsneakersSession = session
-                    completion(session)
-                default:
-                    sSelf.showCameraPermissions()
-                    completion(nil)
-                }
-            } catch {
-                sSelf.showError(message: "Unable to create a session", retry: {
-                    self?.loadSession(completion: completion)
-                }, cancel: {
-                    completion(nil)
-                })
-            }
-        }
-    }
-
-    private func openTryon(with type: ViewType, session: WsneakersUISDKSession, index: Int) {
+    func openTryon(with type: ViewType, session: WsneakersUISDKSession, index: Int) {
         viewType = type
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: type.rawValue) as! WsneakersGeneralViewController
@@ -196,15 +273,8 @@ class RenderModelSelectionViewController: UIViewController {
         controller.set(session: session, storage: storage!, renderModels: renderModels, selected: index)
         show(controller, sender: self)
     }
- 
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            print("device did clear cache after shaking")
-            storage?.clearCache()
-        }
-    }
     
-    private func openTryon(session: WsneakersUISDKSession, index: Int) {
+    func openTryon(session: WsneakersUISDKSession, index: Int) {
         if let viewType = viewType {
             openTryon(with: viewType, session: session, index: index)
             return
@@ -220,41 +290,5 @@ class RenderModelSelectionViewController: UIViewController {
             self.openTryon(with: ViewType.xib, session: session, index: index)
         })
         present(alert, animated: true)
-    }
-}
-
-// Putting the model IDs into a table where the user can choose which one to try on
-extension RenderModelSelectionViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return renderModels.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath);
-        cell.textLabel?.text = renderModels[indexPath.row].renderModelID
-        return cell
-    }
-}
-
-extension RenderModelSelectionViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        activity.startAnimating()
-        loadSession(completion: { [weak self] session in
-            guard let session = session else {
-                DispatchQueue.main.async {
-                    self?.activity.stopAnimating()
-                }
-                return
-            }
-            session.startDrawing {
-                DispatchQueue.main.async {
-                    guard let self = self else { return }
-                    self.activity.stopAnimating()
-                    self.openTryon(session: session, index: indexPath.row)
-
-                }
-            }
-        })
-        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

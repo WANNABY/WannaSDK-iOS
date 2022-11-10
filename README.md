@@ -95,6 +95,10 @@ In ViewController, add a new **UIView** component using Interface Builder and se
 Write the code for working with the SDK in **WsneakersViewController.swift**:
 
 1. Initialize the try-on session.<br>
+**Important!** As a part of 6.0.0 fixes it was forbidden to create parallel sessions. Starting from 6.0.0 you will receive an error if the new session is created before previous one was deallocated. 
+    To simplify integration `+(BOOL)waitForSessionDestroyWithTimeout` method was introduced to our
+    SDK. It runs synchronously from the calling queue and waits until previous session is
+    deallocated. After this method returns `true` you can safely create a new session.<br>
 For sneakers, call the `createSession` method:<br>
 `let session = try WsneakersUISDKSession.createSession(withConfig: clientConfig, withBorderCrop: 0.0, progress: { progress in
                 return true
@@ -106,7 +110,6 @@ For watches, call the `createWatchSession` method:<br>
 Note that this method requires the license key (`clientConfig`) that authorizes your use of WANNA SDK.<br>
 If needed, crop the try-on view with a different value of `borderCrop`, so that the relevant area is zoomed in. You may want to show a progress indicator in the progress block, because the initialization, with loading all the resources, will take some time.<br>
 The good time to initialize is when the user goes to a screen that offers virtual try-on and you expect them to use it. Note that initialization will take up some processing resources and download traffic on the user's device. To prevent overuse of these resources, avoid initializing too early.<br>
-**Important!** You may not create a session instance in different threads simultaneously.
 2. Implement a `WsneakersUISDKSessionDelegate` protocol and assign it to the `delegate` property of the session object. The `hasVisibleFeet` parameter will tell you if we've found the object on which to try on your product - feet or wrist - in the camera view. This can be useful if you'd like to show a tip to the user when the camera isn't pointed in the right direction.
 3. Connect the view you created to the session via an outlet:<br>
 `@IBOutlet var tryonView : WsneakersUISDKView!
