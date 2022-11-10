@@ -74,16 +74,6 @@ class RenderModelSelectionViewController: UIViewController {
 
     private func loadRenderModels() {
         activity.startAnimating()
-        // Checking for the correct license info
-        // Don't forget to enter your configuration string in WannaSDKDefaults.swift
-        if (WannaSDKDefaults.clientConfig == "WSNEAKERS_CLIENT_CONFIG_CHANGE_HERE") {
-            showError(message:"Please change the config string",retry: { [weak self] in
-                self?.loadRenderModels()
-            }, cancel: {
-
-            })
-            return
-        }
         // This is where we create the model storage
         // that will load and set the models to virtual try-on
         do {
@@ -91,7 +81,15 @@ class RenderModelSelectionViewController: UIViewController {
                                                                          cacheSize: WannaSDKDefaults.cacheSize)
         } catch {
             activity.stopAnimating()
-            showError(message: error.localizedDescription) { [weak self] in
+            var description = error.localizedDescription
+
+            // Checking for the correct license info
+            // Don't forget to enter your configuration string in WannaSDKDefaults.swift
+            if WannaSDKDefaults.clientConfig == "CHANGE_CLIENT_CONFIG_HERE" {
+                description = "Please change the config string in WannaSDKDefaults.swift"
+            }
+
+            showError(message: description) { [weak self] in
                 self?.loadRenderModels()
             } cancel: {}
         }
