@@ -85,7 +85,7 @@ class RenderModelSelectionViewController: UIViewController {
 
             // Checking for the correct license info
             // Don't forget to enter your configuration string in WannaSDKDefaults.swift
-            if WannaSDKDefaults.clientConfig == "CHANGE_CLIENT_CONFIG_HERE" {
+            if WannaSDKDefaults.clientConfig.isEmpty {
                 description = "Please change the config string in WannaSDKDefaults.swift"
             }
 
