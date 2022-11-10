@@ -95,7 +95,7 @@ In ViewController, add a new **UIView** component using Interface Builder and se
 Write the code for working with the SDK in **WsneakersViewController.swift**:
 
 1. Initialize the try-on session.<br>
-**Important!** As a part of 5.4.1 fixes it was forbidden to create parallel sessions. Starting from 5.4.1 you will receive an error if the new session is created before previous one was deallocated. 
+**Important!** As a part of 6.0.0 fixes it was forbidden to create parallel sessions. Starting from 6.0.0 you will receive an error if the new session is created before previous one was deallocated. 
     To simplify integration `+(BOOL)waitForSessionDestroyWithTimeout` method was introduced to our
     SDK. It runs synchronously from the calling queue and waits until previous session is
     deallocated. After this method returns `true` you can safely create a new session.<br>
