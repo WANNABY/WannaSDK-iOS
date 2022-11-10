@@ -23,7 +23,7 @@ Check out also the code sample that implements this use case. See the **ios/Swif
 
 ## Prerequisites
 
-To work with WANNA SDK, you will need: 
+To work with WANNA SDK, you will need:
 
 * **WANNA distribution**. <br>
 Use either the frameworks or the cocoapods.
