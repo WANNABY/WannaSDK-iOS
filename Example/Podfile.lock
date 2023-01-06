@@ -1,16 +1,16 @@
 PODS:
-  - WannaSDK (5.4.1.138)
+  - WannaSDK (6.0.0.163)
 
 DEPENDENCIES:
-  - WannaSDK (~> 5.4.1)
+  - WannaSDK (~> 6.0.0)
 
 SPEC REPOS:
   "git@github.com:WANNABY/ios-specs-internal.git":
     - WannaSDK
 
 SPEC CHECKSUMS:
-  WannaSDK: 078264f1fb9ffce11bdb4d553718442ea2346281
+  WannaSDK: dd1dc04c074a118f34be8a2fde9aacc2db92fcaa
 
-PODFILE CHECKSUM: ad65ecb09cbb75f656abecdeaf4bfe849697cb8f
+PODFILE CHECKSUM: 5ef332b9ba9afcba8ac0424936f09128b0799712
 
 COCOAPODS: 1.10.1

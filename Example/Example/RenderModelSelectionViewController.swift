@@ -70,6 +70,8 @@ class RenderModelSelectionViewController: UIViewController {
         if renderModels.isEmpty {
             loadRenderModels()
         }
+
+        wsneakersSession = nil
     }
  
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
