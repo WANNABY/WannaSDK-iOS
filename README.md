@@ -56,7 +56,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'MyApp' do
-  pod 'WannaSDK', '5.4.0'
+  pod 'WannaSDK', '6.0.0'
 end
 ```
 
@@ -103,8 +103,8 @@ For sneakers, call the `createSession` method:<br>
 `let session = try WsneakersUISDKSession.createSession(withConfig: clientConfig, withBorderCrop: 0.0, progress: { progress in
                 return true
             })`<br>
-For watches, call the `createWatchSession` method:<br>
-`let session = try WsneakersUISDKSession.createWatchSession(withConfig: clientConfig, withBorderCrop: 0.0, progress: { progress in
+For watches, call the `createWatch` method:<br>
+`let session = try WsneakersUISDKSession.createWatch(withConfig: clientConfig, withBorderCrop: 0.0, progress: { progress in
                 return true
             })`<br>
 Note that this method requires the license key (`clientConfig`) that authorizes your use of WANNA SDK.<br>
@@ -135,9 +135,9 @@ Our distribution includes a simple code sample in Swift: see **ios/Swift** folde
 
 Before building and running the sample:
 
-1. Enter your license key in **WANNASDKDefaults.swift**:
+1. Enter your license key in **WannaSDKDefaults.swift**:
 ```
-static let clientConfig = "WSNEAKERS_CLIENT_CONFIG_CHANGE_HERE"
+static let clientConfig = "" // <-- Change license here
 ```
 2. Assign a development team to the sample Xcode project, to ensure it's signed correctly. Go to the **Signing & Capabilities** tab in Xcode and choose the appropriate value in the **Team** dropdown list.
 
@@ -149,12 +149,12 @@ static let clientConfig = "WSNEAKERS_CLIENT_CONFIG_CHANGE_HERE"
  
 ## System Requirements
 
-* iOS version: 13.0 and later
+* iOS version: 14.0 and later
 * Supported devices: iPhone SE/6s and newer
 * Memory requirements: 
     * Footprint: 
-        * zipped size: 3.7 MB
-        * unzipped size: 8.9 MB
+        * zipped size: 3.8 MB
+        * unzipped size: 9.3 MB
         * cache for neural networks and auxiliary files: 25 MB
         * the size of cache for 3D models can be set up via API
     * RAM: up to 600 MB, depending on the size and quality of a 3D model
