@@ -1,5 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@github.com:WANNABY/ios-specs-internal.git'
 
 platform :ios, '11.0'
 
