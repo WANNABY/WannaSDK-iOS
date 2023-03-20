@@ -120,7 +120,7 @@ wsneakersSession.wsneakersUISDKView = wsneakersView`
 `UIApplication.shared.isIdleTimerDisabled = true`<br>
 Don't forget to reset this setting when the try-on session is completed. See the recommendations at https://developer.apple.com/documentation/uikit/uiapplication/1623070-isidletimerdisabled
 7. Once the session has loaded successfully, create the storage object that will load and manage models. Use the `createStorage` method, passing in the client configuration string. This is also where you can limit cache size for model storage, we suggest about 200 MB.<br>
-`let storage = try! WsneakersUISDKRenderModelStorage.createStorage(withConfig: clientConfig, withCacheSize: 1024*1024*200)`<br>
+`let storage = try WsneakersUISDKRenderModelStorage.createStorage(withConfig: clientConfig, withCacheSize: 1024*1024*200)`<br>
 Once the user has tried on a model, it will be kept in cache until you destroy the session. If the stored models overflow the cache, WANNA SDK will delete the model that was unused the longest. If you need to remove the stored models, call `clearCache`.<br>
 **Important!** You may not create a storage instance in different threads simultaneously.
 8. Call the `getRenderModel` method of the storage object, passing the model ID as input. At this point we will download the model, which may take some time. If the user has tried this model on in this session and it's already in cache, that will save time.<br>
