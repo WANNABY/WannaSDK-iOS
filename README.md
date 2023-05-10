@@ -156,8 +156,7 @@ static let clientConfig = "" // <-- Change license here
         * zipped size: 3.8 MB
         * unzipped size: 9.3 MB
         * cache for neural networks and auxiliary files: 25 MB
-        * the size of cache for 3D models can be set up via API. 
-        **Note:** 3D model size varies depending on its quality. The model is downloaded right after session starts.
+        * the size of cache for 3D models can be set up via API.<br>**Note:** 3D model size varies depending on its quality. The model is downloaded right after session starts.
     * RAM: up to 600 MB, depending on the size and quality of a 3D model
 ______________________________
 Zipped size means the size which will be added to your IPA file, i.e. to the downloadable size of your application, when you integrate the WANNA SDK.
