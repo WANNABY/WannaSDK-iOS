@@ -9,6 +9,7 @@ Check out also the code sample that implements this use case. See the **ios/Swif
 <!-- TOC -->
 
 - [Prerequisites](#prerequisites)
+    - [Terms of use](#terms-of-use)
 - [Installation](#installation)
 	- [Cocoapods](#cocoapods)
 	- [Frameworks](#frameworks)
@@ -31,6 +32,10 @@ Use either the frameworks or the cocoapods.
 Contact our sales representative at [account@wanna.fashion](mailto:account@wanna.fashion) to get one.
 * **3D models** of your products. <br>
 A model ID should be an alphanumeric string, with hyphens and underscores but no other special characters. Otherwise, set the IDs in any way convenient to you: the ID can be an internal product code or a vendor ID, as long as it is unique for each model. The models will be stored in a content delivery network (CDN) to ensure availability across different regions. Note that each color should have its own model—WANNA SDK can't touch up the colors on the fly.
+
+### Terms of use
+
+Working with WANNA SDK is subject to [Terms of use](https://wanna.fashion/terms-trial). Please review them before downloading the SDK and starting to use it.
 
 ## Installation
 
