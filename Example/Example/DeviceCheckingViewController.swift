@@ -36,5 +36,17 @@ class DeviceCheckingViewController: UIViewController {
             present(popup, animated: true)
         }
     }
+
+    @IBAction func onRunClothesSdk(_ sender: Any) {
+        if WsneakersUISDKSession.isDeviceSupported() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "render_models_list") as! RenderModelSelectionViewController
+            controller.setRenderableType(type: "clothes")
+            show(controller, sender: self)
+        } else {
+            let popup = UIAlertController(title: "Error", message: "Device is not supported", preferredStyle: .alert)
+            present(popup, animated: true)
+        }
+    }
 }
 
