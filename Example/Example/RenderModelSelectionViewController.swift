@@ -139,6 +139,19 @@ private extension RenderModelSelectionViewController {
             completion()
         }
     }
+
+    func createSession(type: String) -> WsneakersUISDKSession {
+        switch type {
+        case "watch":
+            return createWatchSession()
+        case "sneakers":
+            return createSneakersSession()
+        case "clothes"
+            return createClothesSession()
+        default:
+
+        }
+    }
     
     func createSession(completion: @escaping (WsneakersUISDKSession?) -> ()) {
         if let session = wsneakersSession {
@@ -148,9 +161,7 @@ private extension RenderModelSelectionViewController {
         DispatchQueue.global(qos: .default).async { [weak self] in
             guard let sSelf = self else { return }
             do {
-                let session = sSelf.renderableType == "watch"
-                ? try sSelf.createWatchSession()
-                : try sSelf.createSneakersSession() // this is where we create the new session
+                let session = sSelf.createSession(type: renderableType) // this is where we create the new session
                 
                 // Checking for camera permissions here
                 // We need authorization for the video stream from camera to do virtual try-on
@@ -191,6 +202,12 @@ private extension RenderModelSelectionViewController {
 
     func createSneakersSession() throws -> WsneakersUISDKSession {
         try WsneakersUISDKSession.createSession(withConfig: WannaSDKDefaults.clientConfig, borderCrop: 0.0, progress: { progress in
+            return true
+        })
+    }
+
+    func createClothesSession() throws -> WsneakersUISDKSession {
+        try WsneakersUISDKSession.createClothes(withConfig: WannaSDKDefaults.clientConfig, borderCrop: 0.0, progress: { progress in
             return true
         })
     }
