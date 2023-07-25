@@ -151,6 +151,8 @@ private extension RenderModelSelectionViewController {
                 let session = sSelf.renderableType == "watch"
                 ? try sSelf.createWatchSession()
                 : try sSelf.createSneakersSession() // this is where we create the new session
+
+                session.preset = .hd4K3840x2160
                 
                 // Checking for camera permissions here
                 // We need authorization for the video stream from camera to do virtual try-on

@@ -90,6 +90,7 @@
 		B55A95453636F6A00788CA83 /* Pods_WannaSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WannaSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72CCDD56AEBB8F61EAB3AFE /* Pods-WannaSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CFDD3BD3066319DEE3BE3257 /* Pods-WannaSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E424FA672A6FC796001535A2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +123,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				E424FA672A6FC796001535A2 /* Podfile */,
 				948848532743ADF600D8B40C /* Example */,
 				B0B14CEE28801C66003C4842 /* WannaSDK_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -359,8 +361,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WsneakersUISDK/WsneakersUISDK.framework/WsneakersUISDK",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WsneakersCoreSDK/WsneakersCoreSDK.framework/WsneakersCoreSDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WsneakersUISDK.framework/WsneakersUISDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WsneakersCoreSDK.framework/WsneakersCoreSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -546,14 +548,19 @@
 				DEVELOPMENT_TEAM = U8JMF34X5Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 5.2.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = fashion.wanna.sdk.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -568,14 +575,19 @@
 				DEVELOPMENT_TEAM = U8JMF34X5Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 5.2.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = fashion.wanna.sdk.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
