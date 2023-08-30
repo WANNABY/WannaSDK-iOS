@@ -105,13 +105,11 @@ extension RenderModelSelectionViewController: UITableViewDelegate {
                 }
                 return
             }
-            session.startDrawing {
-                DispatchQueue.main.async {
-                    guard let self = self else { return }
-                    self.activity.stopAnimating()
-                    self.openTryon(session: session, index: indexPath.row)
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.activity.stopAnimating()
+                self.openTryon(session: session, index: indexPath.row)
 
-                }
             }
         })
         
