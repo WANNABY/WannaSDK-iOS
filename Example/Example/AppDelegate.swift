@@ -8,6 +8,7 @@
 
 import UIKit
 import WsneakersUISDK
+import WannaCoreSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Tell the app to continue displaying content even when the user is doing nothing,
         // to avoid dimming or turning off the screen while virtual try-on is in progress
         application.isIdleTimerDisabled = true
+
+        // For WANNA internal use only.
+        if #available(iOS 13.0, *),
+         let url = URL(string: "wannasample://wannadebug?meta-version=6.1.0") {
+
+            WannaDebug.deepLinkHandler.handleURL(url)
+        }
+
+        var session = UnsafeMutablePointer<WclothesCoreSDKSessionRef?>(nil)
+        WclothesCoreSDKSessionCreate(WannaSDKDefaults.clientConfig, session)
 
         return true
     }
