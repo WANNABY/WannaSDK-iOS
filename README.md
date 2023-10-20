@@ -1,6 +1,6 @@
 # WANNA SDK
 
-WANNA SDK enhances your iOS app with virtual try-on capabilities for shoes and watches. With this feature, your users will be able to see in real time how the selected product looks on them, just by pointing their smartphone camera at their feet or wrist. See the detailed documentation at the [WANNA website](https://docs.wanna.fashion/ios/getstarted).
+WANNA SDK enhances your iOS app with virtual try-on capabilities for shoes, watches and clothes. With this feature, your users will be able to see in real time how the selected product looks on them, just by pointing their smartphone camera at their feet, wrist or body. See the detailed documentation at the [WANNA website](https://docs.wanna.fashion/ios/getstarted).
 
 <!-- TOC -->
 
@@ -52,7 +52,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'MyApp' do
-  pod 'WannaSDK', '6.0.0'
+  pod 'WannaSDK', '7.0.0'
 end
 ```
 
@@ -68,7 +68,7 @@ Open **Example.xcworkspace** file in Xcode.
 
 ### Frameworks
 
-1. Add **WsneakersCoreSDK.xcframework** and **WsneakersUISDK.xcframework** to your project in Xcode.
+1. Add **WannaCoreSDK.xcframework** and **WsneakersUISDK.xcframework** to your project in Xcode.
 2. Embed these frameworks in the main bundle of your project.
 
 ## Sample
@@ -96,7 +96,7 @@ static let clientConfig = "" // <-- Change license here
 * Memory requirements: 
     * Footprint: 
         * zipped size: 3.8 MB
-        * unzipped size: 9.3 MB
+        * unzipped size: 9.4 MB
         * cache for neural networks and auxiliary files: 25 MB
         * the size of cache for 3D models can be set up via API<br />
 		**Note:** 3D model size varies depending on its quality. The model is downloaded right after session starts.
