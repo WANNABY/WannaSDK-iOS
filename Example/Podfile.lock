@@ -1,16 +1,16 @@
 PODS:
-  - WannaSDK (6.0.1)
+  - WannaSDK (6.1.0)
 
 DEPENDENCIES:
-  - WannaSDK (~> 6.0.0)
+  - WannaSDK (= 6.1.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - WannaSDK
 
 SPEC CHECKSUMS:
-  WannaSDK: 146b453258113007904fc9930d81fdee38116068
+  WannaSDK: a8ddb830ac72e2a8604b43cc526f84223de31e68
 
-PODFILE CHECKSUM: e3a4ba31e580bc1f2da21e24306ab6b64152e0bc
+PODFILE CHECKSUM: 9db55214e2d97f741a3baad427fcf7f158ab964a
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.14.3
