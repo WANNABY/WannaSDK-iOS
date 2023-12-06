@@ -143,7 +143,7 @@ private extension RenderModelSelectionViewController {
             completion(session)
             return
         }
-        DispatchQueue.global(qos: .default).async { [weak self] in
+        DispatchQueue.global(qos: .utility).async { [weak self] in
             guard let sSelf = self else { return }
             do {
                 let session = sSelf.renderableType == "watch"
