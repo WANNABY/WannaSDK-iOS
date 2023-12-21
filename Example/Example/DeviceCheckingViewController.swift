@@ -13,23 +13,23 @@ import WsneakersUISDK
 // If yes, move on to the 3D model selection view
 // If no, display an error
 class DeviceCheckingViewController: UIViewController {
-    @IBAction func onRunSdk(_ sender: Any) {
-        if WsneakersUISDKSession.isDeviceSupported() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "render_models_list") as! RenderModelSelectionViewController
-            controller.setRenderableType(type: "sneaker")
-            show(controller, sender: self)
-        } else {
-            let popup = UIAlertController(title: "Error", message: "Device is not supported", preferredStyle: .alert)
-            present(popup, animated: true)
-        }
+    @IBAction func runSneakers() {
+        runSdk(type: .sneaker)
     }
-    
-    @IBAction func onRunWatchSdk(_ sender: Any) {
+
+    @IBAction func runWatch() {
+        runSdk(type: .watch)
+    }
+
+    @IBAction func runClothes() {
+        runSdk(type: .clothes)
+    }
+
+    func runSdk(type: RenderableType) {
         if WsneakersUISDKSession.isDeviceSupported() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "render_models_list") as! RenderModelSelectionViewController
-            controller.setRenderableType(type: "watch")
+            controller.setRenderableType(type: type)
             show(controller, sender: self)
         } else {
             let popup = UIAlertController(title: "Error", message: "Device is not supported", preferredStyle: .alert)
