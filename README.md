@@ -25,13 +25,13 @@ Add `pod WannaSDK` to your Podfile:
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '13.0'
+platform :ios, '15.0'
 
 inhibit_all_warnings!
 use_frameworks!
 
 target 'MyApp' do
-  pod 'WannaSDK', '6.1.0'
+  pod 'WannaSDK'
 end
 ```
 
