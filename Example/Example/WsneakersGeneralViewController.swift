@@ -19,7 +19,7 @@ class WsneakersGeneralViewController: UIViewController {
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var modelId: UILabel!
     
-    private final var wsneakersSession: WsneakersUISDKSession!
+    private final var wsneakersSession: WannaSDKSession!
     private final var storage: WsneakersUISDKRenderModelStorage!
     private final var renderModels: [WsneakersUISDKModelInfo]!
     private var currentIndex = 0
@@ -38,7 +38,7 @@ class WsneakersGeneralViewController: UIViewController {
 
     // Set the view to use the previously created session and storage objects, 
     // and work with the list of 3D models with one already selecteds
-    func set(session: WsneakersUISDKSession, storage: WsneakersUISDKRenderModelStorage, renderModels: [WsneakersUISDKModelInfo], selected: Int) {
+    func set(session: WannaSDKSession, storage: WsneakersUISDKRenderModelStorage, renderModels: [WsneakersUISDKModelInfo], selected: Int) {
         self.wsneakersSession = session
         self.storage = storage
         self.renderModels = renderModels
@@ -179,7 +179,7 @@ class WsneakersGeneralViewController: UIViewController {
                 }
             }
         } else {
-            wsneakersSession?.startRecordingResultVideo(with: UIApplication.shared.statusBarOrientation, completion: { [weak self] (error) in
+            wsneakersSession.startRecordingResultVideo(with: UIApplication.shared.statusBarOrientation, completion: { [weak self] (error) in
                 guard let sself = self else { return }
 
                 DispatchQueue.main.async {

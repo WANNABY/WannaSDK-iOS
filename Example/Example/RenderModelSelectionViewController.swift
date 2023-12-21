@@ -9,6 +9,12 @@
 import UIKit
 import WsneakersUISDK
 
+enum RenderableType: String {
+    case watch
+    case sneaker
+    case clothes
+}
+
 class RenderModelSelectionViewController: UIViewController {
     // In this example, we demonstrate both kinds of UI view creating:
     // in code or via the storyboard
@@ -21,7 +27,7 @@ class RenderModelSelectionViewController: UIViewController {
     private var viewType: ViewType?
 
     private var storage: WsneakersUISDKRenderModelStorage?
-    private var renderableType: String!
+    private var renderableType: RenderableType!
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
@@ -46,7 +52,7 @@ class RenderModelSelectionViewController: UIViewController {
         }
     }
 
-    private var wsneakersSession: WsneakersUISDKSession?
+    private var wsneakersSession: WannaSDKSession?
 
     deinit {
         wsneakersSession?.stop { _ in
@@ -54,7 +60,7 @@ class RenderModelSelectionViewController: UIViewController {
         }
     }
     
-    func setRenderableType(type: String) {
+    func setRenderableType(type: RenderableType) {
         renderableType = type
     }
     
@@ -109,18 +115,16 @@ extension RenderModelSelectionViewController: UITableViewDelegate {
                 guard let self = self else { return }
                 self.activity.stopAnimating()
                 self.openTryon(session: session, index: indexPath.row)
-
             }
         })
-        
-        
+
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
 //New session creation
 private extension RenderModelSelectionViewController {
-    func loadNewSession(completion: @escaping (WsneakersUISDKSession?) -> ()) {
+    func loadNewSession(completion: @escaping (WannaSDKSession?) -> ()) {
         waitForPreviousSessionDestroy { [weak self] in
             self?.createSession(completion: completion)
         }
@@ -137,8 +141,19 @@ private extension RenderModelSelectionViewController {
             completion()
         }
     }
+
+    func createSession(type: RenderableType) throws -> WannaSDKSession {
+        switch type {
+        case .watch:
+            return try createWatchSession()
+        case .sneaker:
+            return try createSneakersSession()
+        case .clothes:
+            return try createClothesSession()
+        }
+    }
     
-    func createSession(completion: @escaping (WsneakersUISDKSession?) -> ()) {
+    func createSession(completion: @escaping (WannaSDKSession?) -> ()) {
         if let session = wsneakersSession {
             completion(session)
             return
@@ -146,10 +161,8 @@ private extension RenderModelSelectionViewController {
         DispatchQueue.global(qos: .utility).async { [weak self] in
             guard let sSelf = self else { return }
             do {
-                let session = sSelf.renderableType == "watch"
-                ? try sSelf.createWatchSession()
-                : try sSelf.createSneakersSession() // this is where we create the new session
-                
+                let session = try sSelf.createSession(type: sSelf.renderableType) // this is where we create the new session
+
                 // Checking for camera permissions here
                 // We need authorization for the video stream from camera to do virtual try-on
                 let status = AVCaptureDevice.authorizationStatus(for: .video)
@@ -181,14 +194,20 @@ private extension RenderModelSelectionViewController {
         }
     }
     
-    func createWatchSession() throws -> WsneakersUISDKSession {
-        try WsneakersUISDKSession.createWatch(withConfig: WannaSDKDefaults.clientConfig, borderCrop: 0.1, progress: { progress in
+    func createWatchSession() throws -> WannaSDKSession {
+        try WsneakersUISDKSession.createWatch(withConfig: WannaSDKDefaults.clientConfig, progress: { progress in
             return true
         })
     }
 
-    func createSneakersSession() throws -> WsneakersUISDKSession {
-        try WsneakersUISDKSession.createSession(withConfig: WannaSDKDefaults.clientConfig, borderCrop: 0.0, progress: { progress in
+    func createSneakersSession() throws -> WannaSDKSession {
+        try WsneakersUISDKSession.createSession(withConfig: WannaSDKDefaults.clientConfig, progress: { progress in
+            return true
+        })
+    }
+
+    func createClothesSession() throws -> WannaSDKSession {
+        try WsneakersUISDKSession.createClothesSession(withConfig: WannaSDKDefaults.clientConfig, progress: { progress in
             return true
         })
     }
@@ -232,7 +251,7 @@ private extension RenderModelSelectionViewController {
                     return
                 }
 
-                sSelf.renderModels = renderModels!.filter { $0.renderModelType == sSelf.renderableType }.sorted { $0.renderModelID < $1.renderModelID }
+                sSelf.renderModels = renderModels!.filter { $0.renderModelType == sSelf.renderableType.rawValue }.sorted { $0.renderModelID < $1.renderModelID }
                 sSelf.tableView.reloadData()
             }
         }
@@ -262,7 +281,7 @@ private extension RenderModelSelectionViewController {
         }
     }
 
-    func openTryon(with type: ViewType, session: WsneakersUISDKSession, index: Int) {
+    func openTryon(with type: ViewType, session: WannaSDKSession, index: Int) {
         viewType = type
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: type.rawValue) as! WsneakersGeneralViewController
@@ -272,7 +291,7 @@ private extension RenderModelSelectionViewController {
         show(controller, sender: self)
     }
     
-    func openTryon(session: WsneakersUISDKSession, index: Int) {
+    func openTryon(session: WannaSDKSession, index: Int) {
         if let viewType = viewType {
             openTryon(with: viewType, session: session, index: index)
             return
