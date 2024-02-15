@@ -237,6 +237,7 @@
 				E881000A277C6A05008B3189 /* Embed Frameworks */,
 				E4B17F0827B3C90F00EFE5EE /* Copy WannaSDK dSYM */,
 				8488F94AE0C88A8BC673203C /* [CP] Embed Pods Frameworks */,
+				02EAB76C3756808E60FCA02A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,6 +330,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02EAB76C3756808E60FCA02A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/WannaSDK/WannaCoreSDK.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/WannaSDK/WsneakersUISDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WannaCoreSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WsneakersUISDK.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WannaSDK_Example/Pods-WannaSDK_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		619D334539CAC283BF8E600D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,12 +562,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 507;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 6.1.0;
+				MARKETING_VERSION = 7.0.1;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = fashion.wanna.sdk.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,12 +584,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 507;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 6.1.0;
+				MARKETING_VERSION = 7.0.1;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = fashion.wanna.sdk.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
