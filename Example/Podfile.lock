@@ -1,5 +1,5 @@
 PODS:
-  - WannaSDK (7.0.1)
+  - WannaSDK (7.0.4)
 
 DEPENDENCIES:
   - WannaSDK
@@ -9,7 +9,7 @@ SPEC REPOS:
     - WannaSDK
 
 SPEC CHECKSUMS:
-  WannaSDK: 73d38d52a0c2d562c0dd6d9684b124cdfe17d323
+  WannaSDK: eed9d29b7a30f43a245a8f469d1666d0bdd73c83
 
 PODFILE CHECKSUM: 93dafe069bde12565c9c74628d78cfded936c27f
 
