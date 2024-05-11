@@ -23,17 +23,33 @@ class NavigationViewController: UINavigationController {
 
     // Displaying the version of WANNA SDK used, mostly for testing purposes
     private func addInfoLabel() {
-        let info = "SDK Version: " + WsneakersUISDKInfo().coreSDKVersion
+        let sdkInfo = WsneakersUISDKInfo()
+
+        let info = "SDK Version: " + sdkInfo.sdkVersion
+        + " | meta: " + sdkInfo.metaVersion
+        + " | detector: " + (sdkInfo.isDetectorEnabled ? "on" : "off")
 
         let label = UILabel()
-        label.font = .systemFont(ofSize: 13)
-        label.text = info
-        label.textColor = .green
-        label.backgroundColor = .darkGray.withAlphaComponent(0.5)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 14)
+        label.text = info
+        label.textColor = .white
+        label.backgroundColor = .clear
 
-        UIApplication.shared.keyWindow?.addSubview(label)
-        label.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16.0).isActive = true
-        label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8.0).isActive = true
+        let background = UIView()
+        background.translatesAutoresizingMaskIntoConstraints = false
+        background.backgroundColor = .darkGray.withAlphaComponent(0.7)
+        background.layer.cornerRadius = 8
+        background.layer.masksToBounds = true
+
+        background.addSubview(label)
+        background.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
+        background.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: -8).isActive = true
+        background.topAnchor.constraint(equalTo: label.topAnchor, constant: -2).isActive = true
+        background.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 2).isActive = true
+
+        UIApplication.shared.keyWindow?.addSubview(background)
+        background.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 4.0).isActive = true
+        background.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8.0).isActive = true
     }
 }

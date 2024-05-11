@@ -9,7 +9,7 @@ final class RenderScreen: BaseScreen {
     
     enum Strings: String {
         case nextModel = "Next Model"
-        case back = "Render Models"
+        case back = "Models"
         case modelId = "model_id"
     }
     

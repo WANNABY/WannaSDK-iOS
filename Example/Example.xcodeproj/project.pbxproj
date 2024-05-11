@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		12E091A7A046D91636513361 /* Pods_WannaSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55A95453636F6A00788CA83 /* Pods_WannaSDK_Example.framework */; };
+		920FDFEC2BEE12F800B5916C /* UIAlertAction+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFE62BEE12F800B5916C /* UIAlertAction+Helper.swift */; };
+		920FDFED2BEE12F800B5916C /* UIAlertController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFE72BEE12F800B5916C /* UIAlertController+Helper.swift */; };
+		920FDFEE2BEE12F800B5916C /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFE82BEE12F800B5916C /* UIApplication+Helper.swift */; };
+		920FDFEF2BEE12F800B5916C /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFE92BEE12F800B5916C /* UIView+Helper.swift */; };
+		920FDFF02BEE12F800B5916C /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFEA2BEE12F800B5916C /* UIViewController+Helper.swift */; };
 		948848662743ADF600D8B40C /* RenderModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */; };
 		9488486B2743ADF600D8B40C /* WsneakersSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */; };
 		9488486C2743ADF600D8B40C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9488485B2743ADF600D8B40C /* Assets.xcassets */; };
@@ -17,7 +22,7 @@
 		948848702743ADF600D8B40C /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848612743ADF600D8B40C /* NavigationViewController.swift */; };
 		948848712743ADF600D8B40C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848622743ADF600D8B40C /* AppDelegate.swift */; };
 		948848722743ADF600D8B40C /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
-		948848742743ADF600D8B40C /* WsneakersGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848652743ADF600D8B40C /* WsneakersGeneralViewController.swift */; };
+		948848742743ADF600D8B40C /* TryOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848652743ADF600D8B40C /* TryOnViewController.swift */; };
 		B065FFCC28C103F0006FC87E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065FFCB28C103F0006FC87E /* Constants.swift */; };
 		B0B14CF028801C66003C4842 /* WannaSDK_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CEF28801C66003C4842 /* WannaSDK_ExampleUITests.swift */; };
 		B0B14CFB28801CDC003C4842 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CFA28801CDC003C4842 /* Logger.swift */; };
@@ -65,6 +70,11 @@
 
 /* Begin PBXFileReference section */
 		607FACD01AFB9204008FA782 /* WannaSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		920FDFE62BEE12F800B5916C /* UIAlertAction+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Helper.swift"; sourceTree = "<group>"; };
+		920FDFE72BEE12F800B5916C /* UIAlertController+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helper.swift"; sourceTree = "<group>"; };
+		920FDFE82BEE12F800B5916C /* UIApplication+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helper.swift"; sourceTree = "<group>"; };
+		920FDFE92BEE12F800B5916C /* UIView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helper.swift"; sourceTree = "<group>"; };
+		920FDFEA2BEE12F800B5916C /* UIViewController+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderModelSelectionViewController.swift; sourceTree = "<group>"; };
 		9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsneakersSDKViewController.swift; sourceTree = "<group>"; };
 		9488485B2743ADF600D8B40C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +85,7 @@
 		948848622743ADF600D8B40C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCheckingViewController.swift; sourceTree = "<group>"; };
 		948848642743ADF600D8B40C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		948848652743ADF600D8B40C /* WsneakersGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsneakersGeneralViewController.swift; sourceTree = "<group>"; };
+		948848652743ADF600D8B40C /* TryOnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryOnViewController.swift; sourceTree = "<group>"; };
 		B065FFCB28C103F0006FC87E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0B14CED28801C66003C4842 /* WannaSDK_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WannaSDK_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B14CEF28801C66003C4842 /* WannaSDK_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WannaSDK_ExampleUITests.swift; sourceTree = "<group>"; };
@@ -148,9 +158,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		920FDFEB2BEE12F800B5916C /* library */ = {
+			isa = PBXGroup;
+			children = (
+				920FDFE62BEE12F800B5916C /* UIAlertAction+Helper.swift */,
+				920FDFE72BEE12F800B5916C /* UIAlertController+Helper.swift */,
+				920FDFE82BEE12F800B5916C /* UIApplication+Helper.swift */,
+				920FDFE92BEE12F800B5916C /* UIView+Helper.swift */,
+				920FDFEA2BEE12F800B5916C /* UIViewController+Helper.swift */,
+			);
+			path = library;
+			sourceTree = "<group>";
+		};
 		948848532743ADF600D8B40C /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				920FDFEB2BEE12F800B5916C /* library */,
 				948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */,
 				9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */,
 				9488485B2743ADF600D8B40C /* Assets.xcassets */,
@@ -161,7 +184,7 @@
 				948848622743ADF600D8B40C /* AppDelegate.swift */,
 				948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */,
 				948848642743ADF600D8B40C /* Info.plist */,
-				948848652743ADF600D8B40C /* WsneakersGeneralViewController.swift */,
+				948848652743ADF600D8B40C /* TryOnViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -399,12 +422,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920FDFED2BEE12F800B5916C /* UIAlertController+Helper.swift in Sources */,
 				948848722743ADF600D8B40C /* DeviceCheckingViewController.swift in Sources */,
 				948848702743ADF600D8B40C /* NavigationViewController.swift in Sources */,
 				9488486F2743ADF600D8B40C /* WannaSDKDefaults.swift in Sources */,
+				920FDFF02BEE12F800B5916C /* UIViewController+Helper.swift in Sources */,
+				920FDFEE2BEE12F800B5916C /* UIApplication+Helper.swift in Sources */,
+				920FDFEF2BEE12F800B5916C /* UIView+Helper.swift in Sources */,
 				948848712743ADF600D8B40C /* AppDelegate.swift in Sources */,
+				920FDFEC2BEE12F800B5916C /* UIAlertAction+Helper.swift in Sources */,
 				9488486B2743ADF600D8B40C /* WsneakersSDKViewController.swift in Sources */,
-				948848742743ADF600D8B40C /* WsneakersGeneralViewController.swift in Sources */,
+				948848742743ADF600D8B40C /* TryOnViewController.swift in Sources */,
 				948848662743ADF600D8B40C /* RenderModelSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
