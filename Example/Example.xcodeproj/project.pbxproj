@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		920FDFEE2BEE12F800B5916C /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFE82BEE12F800B5916C /* UIApplication+Helper.swift */; };
 		920FDFEF2BEE12F800B5916C /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFE92BEE12F800B5916C /* UIView+Helper.swift */; };
 		920FDFF02BEE12F800B5916C /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFEA2BEE12F800B5916C /* UIViewController+Helper.swift */; };
+		9267212B2BF23C5800AF67CB /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 9267212A2BF23C5800AF67CB /* WannaTryOn */; };
 		92AE72562BF1F94900011A13 /* UIAlertController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FDFE72BEE12F800B5916C /* UIAlertController+Helper.swift */; };
 		92AE72572BF1F94900011A13 /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
 		92AE72582BF1F94900011A13 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848612743ADF600D8B40C /* NavigationViewController.swift */; };
@@ -50,6 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		926721272BF2223F00AF67CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92AE72512BF1F94900011A13;
+			remoteInfo = "WannaSDKExample CocoaPods";
+		};
 		B0B14CF328801C66003C4842 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
@@ -146,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63302433B6E75CF4E8250BE6 /* Pods_WannaSDKExample_SPM.framework in Frameworks */,
+				9267212B2BF23C5800AF67CB /* WannaTryOn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +333,7 @@
 			);
 			name = "WannaSDKExample SPM";
 			packageProductDependencies = (
+				9267212A2BF23C5800AF67CB /* WannaTryOn */,
 			);
 			productName = WannaSDK;
 			productReference = 607FACD01AFB9204008FA782 /* WannaSDKExample SPM.app */;
@@ -365,6 +375,7 @@
 			);
 			dependencies = (
 				B0B14CF428801C66003C4842 /* PBXTargetDependency */,
+				926721282BF2223F00AF67CB /* PBXTargetDependency */,
 			);
 			name = WannaSDKExampleUITests;
 			productName = WannaSDK_ExampleUITests;
@@ -405,6 +416,7 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
+				926721292BF23C5800AF67CB /* XCLocalSwiftPackageReference "../WannaTryOn" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -595,6 +607,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		926721282BF2223F00AF67CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92AE72512BF1F94900011A13 /* WannaSDKExample CocoaPods */;
+			targetProxy = 926721272BF2223F00AF67CB /* PBXContainerItemProxy */;
+		};
 		B0B14CF428801C66003C4842 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* WannaSDKExample SPM */;
@@ -865,7 +882,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WannaSDK_Example;
+				TEST_TARGET_NAME = "WannaSDKExample SPM";
 			};
 			name = Debug;
 		};
@@ -893,7 +910,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WannaSDK_Example;
+				TEST_TARGET_NAME = "WannaSDKExample SPM";
 			};
 			name = Release;
 		};
@@ -937,6 +954,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		926721292BF23C5800AF67CB /* XCLocalSwiftPackageReference "../WannaTryOn" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../WannaTryOn;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9267212A2BF23C5800AF67CB /* WannaTryOn */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WannaTryOn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }
