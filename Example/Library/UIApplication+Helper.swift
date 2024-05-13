@@ -3,7 +3,7 @@
 
 import UIKit
 
-extension UIApplication {
+public extension UIApplication {
     var interfaceOrientation: UIInterfaceOrientation? {
         if #available(iOS 13.0, *) {
             return windowScene?.interfaceOrientation
@@ -27,8 +27,4 @@ extension UIApplication {
             return windows.first?.windowScene
         }
     }
-}
-
-private extension UIApplication {
-
 }

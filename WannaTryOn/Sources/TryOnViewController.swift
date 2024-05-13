@@ -101,9 +101,9 @@ private extension TryOnViewController {
         loadModel(with: nextIndex)
     }
 
-    @IBAction func onPrevRenderModel(_ sender: Any) {
+    @IBAction func onPreviousRenderModel(_ sender: Any) {
         var nextIndex = currentIndex - 1
-        if (nextIndex == 0) {
+        if (nextIndex < 0) {
             nextIndex = renderModels.count - 1
         }
 

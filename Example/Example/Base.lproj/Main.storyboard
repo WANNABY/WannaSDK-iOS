@@ -11,7 +11,7 @@
         <!--Device Checking View Controller-->
         <scene sceneID="qmp-gN-od5">
             <objects>
-                <viewController id="GTQ-tF-9Q2" customClass="DeviceCheckingViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GTQ-tF-9Q2" customClass="DeviceCheckingViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DbO-Le-s5L">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
         <!--Models-->
         <scene sceneID="Fr6-AH-Lxi">
             <objects>
-                <viewController storyboardIdentifier="render_models_list" title="Models" id="94S-cp-0Bp" customClass="RenderModelSelectionViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="render_models_list" title="Models" id="94S-cp-0Bp" customClass="RenderModelSelectionViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6e-DB-a39">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +105,7 @@
         <!--WsneakersSDK View Controller-->
         <scene sceneID="iQS-Eg-IbY">
             <objects>
-                <viewController storyboardIdentifier="RemoteTryOn" id="dvb-42-KFt" customClass="WsneakersSDKViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RemoteTryOn" id="dvb-42-KFt" customClass="WsneakersSDKViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uzo-GV-woH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,6 +196,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activity" destination="jfM-To-83m" id="UMZ-W4-SiJ"/>
+                        <outlet property="modelId" destination="cCj-yV-gre" id="2U8-HX-5kN"/>
                         <outlet property="progress" destination="0Bk-JG-3nY" id="si2-Tc-iUh"/>
                         <outlet property="sneakersView" destination="Bz2-ND-1Ho" id="lkf-gM-Dro"/>
                         <outlet property="videoRecordButton" destination="zgH-5n-YoZ" id="zFf-gq-tph"/>
@@ -208,7 +209,7 @@
         <!--Try On View Controller-->
         <scene sceneID="fph-Jh-Yhx">
             <objects>
-                <viewController storyboardIdentifier="RemoteManualTryOn" id="Cfc-rn-3Im" customClass="TryOnViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RemoteManualTryOn" id="Cfc-rn-3Im" customClass="TryOnViewController" customModule="WannaTryOn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iEC-3f-Fsv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,7 +295,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="2ia-VR-OxB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pdc-O2-RR3" customClass="NavigationViewController" customModule="WannaSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pdc-O2-RR3" customClass="NavigationViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cwD-dt-4ee">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
