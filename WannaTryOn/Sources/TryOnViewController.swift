@@ -3,12 +3,14 @@
 
 import Foundation
 import UIKit
-import WsneakersUISDK
+
+@_exported import WsneakersUISDK
+@_exported import WannaSDKToolkit
 
 // Use this to create the view and manage its properties in code
 @available(iOS 13.0, *)
-class TryOnViewController: UIViewController {
-    private(set) lazy var tryOnView: WsneakersUISDKView = {
+open class TryOnViewController: UIViewController {
+    open private(set) lazy var tryOnView: WsneakersUISDKView = {
         let view = WsneakersUISDKView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.supportedOrientationMask = .all
@@ -37,7 +39,7 @@ class TryOnViewController: UIViewController {
 
     // MARK: - Override
 
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTryOnView()
@@ -46,7 +48,7 @@ class TryOnViewController: UIViewController {
         loadModel(with: currentIndex)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         // Start showing the virtual try-on
@@ -55,7 +57,7 @@ class TryOnViewController: UIViewController {
         }
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
+    open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
         // Stop rendering the virtual try-on
@@ -66,7 +68,7 @@ class TryOnViewController: UIViewController {
 // MARK: - Dependency injection
 
 @available(iOS 13.0, *)
-extension TryOnViewController {
+public extension TryOnViewController {
     // Set the view to use the previously created session and storage objects,
     // and work with the list of 3D models with one already selecteds
     func set(
@@ -94,6 +96,15 @@ private extension TryOnViewController {
         var nextIndex = currentIndex + 1
         if (nextIndex == renderModels.count) {
             nextIndex = 0
+        }
+
+        loadModel(with: nextIndex)
+    }
+
+    @IBAction func onPrevRenderModel(_ sender: Any) {
+        var nextIndex = currentIndex - 1
+        if (nextIndex == 0) {
+            nextIndex = renderModels.count - 1
         }
 
         loadModel(with: nextIndex)

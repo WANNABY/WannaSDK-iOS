@@ -7,6 +7,7 @@
 //
 
 import WsneakersUISDK
+import WannaTryOn
 
 @available(iOS 13.0, *)
 class WsneakersSDKViewController: TryOnViewController {

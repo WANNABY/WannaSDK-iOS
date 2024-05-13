@@ -3,7 +3,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     func presentAlert(title: String, message: String, actions: [UIAlertAction]? = nil, animated: Bool = true) {
         let alert = UIAlertController(
             title: title,
@@ -19,6 +19,6 @@ extension UIViewController {
     }
 
     func presentAlert(title: String, error: Error?) {
-        presentAlert(title: title, message: error?.localizedDescription ?? "Unexpected: no error")
+        presentAlert(title: title, message: error?.localizedDescription ?? "Unexpected: error is nil")
     }
 }

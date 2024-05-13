@@ -8,6 +8,7 @@
 
 import UIKit
 import WsneakersUISDK
+import WannaTryOn
 
 enum RenderableType: String {
     case watch
@@ -288,8 +289,9 @@ private extension RenderModelSelectionViewController {
 
         viewType = type
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: type.rawValue) as! TryOnViewController
-        
+        let controller = storyboard.instantiateViewController(withIdentifier: type.rawValue) as!
+        TryOnViewController
+
         // Passing the session, storage, model list, and the index of the model the user has already selected
         // to the other view that will actually render the try-on
         controller.set(

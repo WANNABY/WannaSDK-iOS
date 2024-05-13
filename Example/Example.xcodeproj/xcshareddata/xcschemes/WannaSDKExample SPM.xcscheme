@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1540"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "WannaSDK_Example.app"
-               BlueprintName = "WannaSDK_Example"
+               BuildableName = "WannaSDKExample SPM.app"
+               BlueprintName = "WannaSDKExample SPM"
                ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,19 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0B14CEC28801C66003C4842"
-               BuildableName = "WannaSDK_ExampleUITests.xctest"
-               BlueprintName = "WannaSDK_ExampleUITests"
+               BuildableName = "WannaSDKExampleUITests.xctest"
+               BlueprintName = "WannaSDKExampleUITests"
+               ReferencedContainer = "container:Example.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "924EB63C2BF08D2400F437C0"
+               BuildableName = "WannaTryOnTests.xctest"
+               BlueprintName = "WannaTryOnTests"
                ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,8 +67,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "WannaSDK_Example.app"
-            BlueprintName = "WannaSDK_Example"
+            BuildableName = "WannaSDKExample SPM.app"
+            BlueprintName = "WannaSDKExample SPM"
             ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -73,8 +84,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "WannaSDK_Example.app"
-            BlueprintName = "WannaSDK_Example"
+            BuildableName = "WannaSDKExample SPM.app"
+            BlueprintName = "WannaSDKExample SPM"
             ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
