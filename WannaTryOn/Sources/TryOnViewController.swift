@@ -70,7 +70,7 @@ open class TryOnViewController: UIViewController {
 @available(iOS 13.0, *)
 public extension TryOnViewController {
     // Set the view to use the previously created session and storage objects,
-    // and work with the list of 3D models with one already selecteds
+    // and work with the list of 3D models with one already selected.
     func set(
         session: WannaSDKSession,
         storage: WsneakersUISDKRenderModelStorage,
