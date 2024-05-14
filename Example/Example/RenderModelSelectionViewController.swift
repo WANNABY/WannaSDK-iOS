@@ -287,7 +287,9 @@ private extension RenderModelSelectionViewController {
 
     func openTryon(with type: ViewType, session: WannaSDKSession, index: Int) {
         guard #available(iOS 13.0, *) else {
-            fatalError("not supported")
+            presentAlert(title: "Not supported", message: "Too old iOS version")
+
+            return
         }
 
         viewType = type
