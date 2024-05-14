@@ -252,7 +252,10 @@ private extension RenderModelSelectionViewController {
                     return
                 }
 
-                sSelf.renderModels = renderModels!.filter { $0.renderModelType == sSelf.renderableType.rawValue }.sorted { $0.renderModelID < $1.renderModelID }
+                sSelf.renderModels = renderModels!
+                    .filter { $0.renderModelType == sSelf.renderableType.rawValue }
+                    .sorted { $0.renderModelID < $1.renderModelID }
+
                 sSelf.tableView.reloadData()
             }
         }
@@ -289,8 +292,9 @@ private extension RenderModelSelectionViewController {
 
         viewType = type
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: type.rawValue) as!
-        TryOnViewController
+        let controller = storyboard.instantiateViewController(
+            withIdentifier: type.rawValue
+        ) as! TryOnViewController
 
         // Passing the session, storage, model list, and the index of the model the user has already selected
         // to the other view that will actually render the try-on
@@ -299,8 +303,8 @@ private extension RenderModelSelectionViewController {
             storage: storage!,
             renderModels: renderModels.map(\.renderModelID),
             selected: index
-
         )
+
         show(controller, sender: self)
     }
     
