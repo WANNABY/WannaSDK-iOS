@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name                    = 'WannaSDKSample'
+  s.name                    = 'WannaSample'
   s.version                 = '0.0.1'
   s.author                  = 'help@wanna.fashion'
   s.homepage                = "https://wanna.fashion"
