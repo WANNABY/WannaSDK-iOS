@@ -11,30 +11,21 @@ let package = Package(
     products: [
         .library(
             name: "WannaTryOn",
-            targets: [
-                "WannaTryOn"
-            ]
+            targets: ["WannaTryOn"]
         ),
     ],
     dependencies: [
-        .package(path: "./../WannaSDK/"),
-        .package(path: "./../WannaSDKToolkit/")
+        .package(name: "WannaTryOn_Toolkit", path: "./../Toolkit/"),
+        .package(path: "./../WannaSDK/")
     ],
     targets: [
         .target(
             name: "WannaTryOn",
             dependencies: [
                 "WannaSDK",
-                "WannaSDKToolkit"
+                "WannaTryOn_Toolkit"
             ],
             path: "Sources/"
-        ),
-        .testTarget(
-            name: "WannaTryOnTests",
-            dependencies: [
-                "WannaTryOn"
-            ],
-            path: "Tests/"
-        ),
+        )
     ]
 )

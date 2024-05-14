@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		924471AA2BF38BA70027AA94 /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 924471A92BF38BA70027AA94 /* WannaTryOn */; };
-		924471AD2BF395C60027AA94 /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 924471AC2BF395C60027AA94 /* WannaTryOn */; };
+		9226E00E2BF3C5050027AC55 /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 9226E00D2BF3C5050027AC55 /* WannaTryOn */; };
 		9262D72A00098AAA4DF06383 /* Pods_WannaSDKExample_CocoaPods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E706EC35FF02A5B95AF32D40 /* Pods_WannaSDKExample_CocoaPods.framework */; };
 		92AE72572BF1F94900011A13 /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
 		92AE72582BF1F94900011A13 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848612743ADF600D8B40C /* NavigationViewController.swift */; };
@@ -128,8 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924471AA2BF38BA70027AA94 /* WannaTryOn in Frameworks */,
-				924471AD2BF395C60027AA94 /* WannaTryOn in Frameworks */,
+				9226E00E2BF3C5050027AC55 /* WannaTryOn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +281,7 @@
 			);
 			name = "WannaSDKExample SPM";
 			packageProductDependencies = (
-				924471A92BF38BA70027AA94 /* WannaTryOn */,
-				924471AC2BF395C60027AA94 /* WannaTryOn */,
+				9226E00D2BF3C5050027AC55 /* WannaTryOn */,
 			);
 			productName = WannaSDK;
 			productReference = 607FACD01AFB9204008FA782 /* WannaSDKExample SPM.app */;
@@ -364,7 +361,7 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
-				924471AB2BF395C60027AA94 /* XCLocalSwiftPackageReference "../WannaTryOn" */,
+				9226E00C2BF3C5050027AC55 /* XCLocalSwiftPackageReference "../TryOn" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -415,14 +412,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WannaSDKExample CocoaPods/Pods-WannaSDKExample CocoaPods-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/WannaSDKToolkit/WannaSDKToolkit.framework",
 				"${BUILT_PRODUCTS_DIR}/WannaTryOn/WannaTryOn.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WsneakersUISDK.framework/WsneakersUISDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WannaCoreSDK.framework/WannaCoreSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaSDKToolkit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaTryOn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WsneakersUISDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaCoreSDK.framework",
@@ -661,7 +656,6 @@
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -687,7 +681,6 @@
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -714,7 +707,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 079F835A4D4F4A4777280ACF /* Pods-WannaSDKExample CocoaPods.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -741,7 +733,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66D2A9EC73DCCA6EA1AF83BC /* Pods-WannaSDKExample CocoaPods.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -865,18 +856,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		924471AB2BF395C60027AA94 /* XCLocalSwiftPackageReference "../WannaTryOn" */ = {
+		9226E00C2BF3C5050027AC55 /* XCLocalSwiftPackageReference "../TryOn" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../WannaTryOn;
+			relativePath = ../TryOn;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		924471A92BF38BA70027AA94 /* WannaTryOn */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = WannaTryOn;
-		};
-		924471AC2BF395C60027AA94 /* WannaTryOn */ = {
+		9226E00D2BF3C5050027AC55 /* WannaTryOn */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WannaTryOn;
 		};

@@ -3,38 +3,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "WannaSDK",
+    name: "WannaSDKSample",
     platforms: [
         .iOS(.v12),
         .macOS(.v12),
     ],
     products: [
         .library(
-            name: "WannaTryOn",
+            name: "WannaSDKSample",
             targets: [
-                "WannaTryOn"
+                "WannaSDKSample"
             ]
         )
     ],
     dependencies: [
-        .package(path: "./../WannaSDK"),
+        .package(path: "WannaTryOn/")
         .package(path: "WannaSDKToolkit/")
-    ],
-    targets: [
-        .target(
-            name: "WannaTryOn",
-            dependencies: [
-                "WannaSDKToolkit", 
-                "WannaSDK"
-            ],
-            path: "WannaTryOn/Sources/"
-        ),
-        .testTarget(
-            name: "WannaTryOnTests",
-            dependencies: [
-                "WannaTryOn"
-            ],
-            path: "Tests/"
-        ),
     ]
 )

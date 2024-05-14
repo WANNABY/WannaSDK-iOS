@@ -7,8 +7,8 @@ use_frameworks!
 
 target 'WannaSDKExample CocoaPods' do
   pod 'WannaSDK'
-  pod 'WannaSDKToolkit', :path => '../WannaSDKToolkit/WannaSDKToolkit.podspec'
-  pod 'WannaTryOn', :path => '../WannaTryOn/WannaTryOn.podspec'
+  pod 'WannaTryOn', :path => '../WannaTryOn.podspec'
+  pod 'WannaTryOn/Toolkit', :path =>  '../WannaTryOn.podspec'
 end
 
 post_install do |installer|

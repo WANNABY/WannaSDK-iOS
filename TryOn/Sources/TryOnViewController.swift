@@ -4,8 +4,12 @@
 import Foundation
 import UIKit
 
-@_exported import WannaSDKSample
 @_exported import WsneakersUISDK
+
+// SPM support
+#if canImport(WannaTryOn_Toolkit)
+@_exported import WannaTryOn_Toolkit
+#endif
 
 // Use this to create the view and manage its properties in code
 @available(iOS 13.0, *)
