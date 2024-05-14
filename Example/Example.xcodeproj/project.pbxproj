@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		924471AA2BF38BA70027AA94 /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 924471A92BF38BA70027AA94 /* WannaTryOn */; };
+		924471AD2BF395C60027AA94 /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 924471AC2BF395C60027AA94 /* WannaTryOn */; };
 		9262D72A00098AAA4DF06383 /* Pods_WannaSDKExample_CocoaPods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E706EC35FF02A5B95AF32D40 /* Pods_WannaSDKExample_CocoaPods.framework */; };
 		92AE72572BF1F94900011A13 /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
 		92AE72582BF1F94900011A13 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848612743ADF600D8B40C /* NavigationViewController.swift */; };
@@ -128,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				924471AA2BF38BA70027AA94 /* WannaTryOn in Frameworks */,
+				924471AD2BF395C60027AA94 /* WannaTryOn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +284,7 @@
 			name = "WannaSDKExample SPM";
 			packageProductDependencies = (
 				924471A92BF38BA70027AA94 /* WannaTryOn */,
+				924471AC2BF395C60027AA94 /* WannaTryOn */,
 			);
 			productName = WannaSDK;
 			productReference = 607FACD01AFB9204008FA782 /* WannaSDKExample SPM.app */;
@@ -361,6 +364,7 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
+				924471AB2BF395C60027AA94 /* XCLocalSwiftPackageReference "../WannaTryOn" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -860,8 +864,19 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		924471AB2BF395C60027AA94 /* XCLocalSwiftPackageReference "../WannaTryOn" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../WannaTryOn;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		924471A92BF38BA70027AA94 /* WannaTryOn */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WannaTryOn;
+		};
+		924471AC2BF395C60027AA94 /* WannaTryOn */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WannaTryOn;
 		};
