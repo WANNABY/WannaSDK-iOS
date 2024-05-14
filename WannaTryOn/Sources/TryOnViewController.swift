@@ -4,7 +4,7 @@
 import Foundation
 import UIKit
 
-@_exported import WannaSDKToolkit
+@_exported import WannaSDKSample
 @_exported import WsneakersUISDK
 
 // Use this to create the view and manage its properties in code
