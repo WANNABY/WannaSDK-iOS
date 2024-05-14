@@ -28,7 +28,3 @@ public extension UIApplication {
         }
     }
 }
-
-private extension UIApplication {
-
-}

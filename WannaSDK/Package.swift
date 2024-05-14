@@ -8,19 +8,27 @@ let package = Package(
         .macOS(.v12), .iOS(.v12)
     ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "WannaSDK",
-            targets: ["WannaCoreSDK", "WsneakersUISDK"]
+            targets: [
+                // "WannaCoreSDK", 
+                "WsneakersUISDK"
+            ]
         )
     ],
     dependencies: [
     ],
     targets: [
+        // TODO: implement SPM 
+        // https://wannaby.atlassian.net/browse/WK-3968
+        //
         // .binaryTarget(
-        //     name: "SomeRemoteBinaryPackage",
-        //     url: "https://url/to/some/remote/xcframework.zip",
-        //     checksum: "The checksum of the ZIP archive that contains the XCFramework."
+        //     name: "WannaCoreSDK",
+        //     url: "https://wreleases.s3.amazonaws.com/sdks/ios/20240419/WannaSDK_ios_7_1_0_548_cocoapods.zip"
+        // ),
+        // .binaryTarget(
+        //     name: "WsneakersUISDK",
+        //     url: "https://wreleases.s3.amazonaws.com/sdks/ios/20240419/WannaSDK_ios_7_1_0_548_cocoapods.zip"
         // ),
         .binaryTarget(
             name: "WannaCoreSDK",

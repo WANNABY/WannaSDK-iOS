@@ -11,10 +11,6 @@ target 'WannaSDKExample CocoaPods' do
   pod 'WannaTryOn', :path => '../WannaTryOn/WannaTryOn.podspec'
 end
 
-target 'WannaSDKExample SPM' do
-  # no cocoapods for SPM target
-end
-
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

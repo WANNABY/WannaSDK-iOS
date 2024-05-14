@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '12.0'
     
-    s.dependency 'WannaSDK'
-    s.dependency 'WannaSDKToolkit'
+    s.dependency            'WannaSDK' 
+    s.dependency            'WannaSDKToolkit'
 end

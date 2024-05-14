@@ -4,8 +4,8 @@
 import Foundation
 import UIKit
 
-@_exported import WsneakersUISDK
 @_exported import WannaSDKToolkit
+@_exported import WsneakersUISDK
 
 // Use this to create the view and manage its properties in code
 @available(iOS 13.0, *)

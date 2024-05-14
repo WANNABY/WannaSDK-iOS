@@ -9,8 +9,10 @@ public extension UIAlertController {
         style: UIAlertAction.Style = .default,
         handler: @escaping () -> ()
     ) {
-        addAction(UIAlertAction(title: title, style: style) { _ in
-            handler()
-        })
+        addAction(
+            UIAlertAction(title: title, style: style) { _ in
+                handler()
+            }
+        )
     }
 }
