@@ -11,7 +11,7 @@
         <!--Device Checking View Controller-->
         <scene sceneID="qmp-gN-od5">
             <objects>
-                <viewController id="GTQ-tF-9Q2" customClass="DeviceCheckingViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GTQ-tF-9Q2" customClass="DeviceCheckingViewController" customModule="Wanna_Sample_SPM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DbO-Le-s5L">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
         <!--Models-->
         <scene sceneID="Fr6-AH-Lxi">
             <objects>
-                <viewController storyboardIdentifier="render_models_list" title="Models" id="94S-cp-0Bp" customClass="RenderModelSelectionViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="render_models_list" title="Models" id="94S-cp-0Bp" customClass="RenderModelSelectionViewController" customModule="Wanna_Sample_SPM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6e-DB-a39">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
         <!--WsneakersSDK View Controller-->
         <scene sceneID="iQS-Eg-IbY">
             <objects>
-                <viewController storyboardIdentifier="RemoteTryOn" id="dvb-42-KFt" customClass="WsneakersSDKViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RemoteTryOn" id="dvb-42-KFt" customClass="WsneakersSDKViewController" customModule="Wanna_Sample_SPM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uzo-GV-woH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,21 +142,21 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-To-83m">
                                         <rect key="frame" x="186.66666666666666" y="307.33333333333331" width="20" height="20"/>
                                     </activityIndicatorView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Yu-V65">
-                                        <rect key="frame" x="250" y="659.66666666666663" width="135" height="35"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="switch camera"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Yu-V65">
+                                        <rect key="frame" x="284" y="664.66666666666663" width="101" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Switch camera"/>
                                         <connections>
-                                            <action selector="onSwitchCamera:" destination="dvb-42-KFt" eventType="touchUpInside" id="Grg-FR-ZYT"/>
+                                            <action selector="onSwitchCamera:" destination="dvb-42-KFt" eventType="touchUpInside" id="5no-Wk-lK8"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wyi-5J-zRS" secondAttribute="trailing" constant="8" id="1MI-ub-bJ6"/>
                                     <constraint firstItem="jfM-To-83m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="4" id="1Ni-Il-C5H"/>
+                                    <constraint firstAttribute="bottom" secondItem="RLE-Yu-V65" secondAttribute="bottom" constant="4" id="3H7-Hp-KQg"/>
                                     <constraint firstItem="Vxl-Eb-VNa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="4" id="47g-ub-zGJ"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="centerX" secondItem="Bz2-ND-1Ho" secondAttribute="centerX" id="A8f-5x-jxb"/>
-                                    <constraint firstAttribute="bottom" secondItem="RLE-Yu-V65" secondAttribute="bottom" constant="4" id="Ge2-9y-EUf"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="top" secondItem="jfM-To-83m" secondAttribute="bottom" constant="20" id="HDc-FQ-Xeb"/>
                                     <constraint firstItem="zgH-5n-YoZ" firstAttribute="top" secondItem="Vxl-Eb-VNa" secondAttribute="bottom" constant="44" id="JIr-Vb-clL"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="centerY" secondItem="Bz2-ND-1Ho" secondAttribute="centerY" id="RCM-hc-all"/>
@@ -259,12 +259,12 @@
                                     <action selector="onPreviousRenderModel:" destination="Cfc-rn-3Im" eventType="touchUpInside" id="w7d-uL-wGs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD6-YW-aNv">
-                                <rect key="frame" x="250.66666666666663" y="779" width="134.33333333333337" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="switch camera"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD6-YW-aNv">
+                                <rect key="frame" x="284" y="780" width="101" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Switch camera"/>
                                 <connections>
-                                    <action selector="onSwitchCamera:" destination="dvb-42-KFt" eventType="touchUpInside" id="VpI-W4-shJ"/>
+                                    <action selector="onSwitchCamera:" destination="Cfc-rn-3Im" eventType="touchUpInside" id="IdY-Gl-lkB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -282,7 +282,7 @@
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" secondItem="rNc-ot-427" secondAttribute="trailing" constant="8" id="Pxn-W3-JX2"/>
                             <constraint firstItem="tGC-Up-C2J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ssu-fD-zJ3" secondAttribute="leading" id="Ydf-1P-jAe"/>
                             <constraint firstItem="tGC-Up-C2J" firstAttribute="top" secondItem="WV2-7A-0Vx" secondAttribute="bottom" constant="44" id="ct1-Pg-tPO"/>
-                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="AD6-YW-aNv" secondAttribute="bottom" constant="4" id="lt9-bZ-gVT"/>
+                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="AD6-YW-aNv" secondAttribute="bottom" constant="8" id="lt9-bZ-gVT"/>
                             <constraint firstItem="GAq-sH-UMQ" firstAttribute="width" secondItem="iEC-3f-Fsv" secondAttribute="width" multiplier="0.7" id="nTZ-xb-ahC"/>
                             <constraint firstItem="GAq-sH-UMQ" firstAttribute="top" secondItem="yvJ-oQ-Lwr" secondAttribute="bottom" constant="20" id="o3l-vZ-adr"/>
                             <constraint firstItem="yvJ-oQ-Lwr" firstAttribute="centerY" secondItem="iEC-3f-Fsv" secondAttribute="centerY" id="pjn-7P-U8X"/>
@@ -315,7 +315,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="2ia-VR-OxB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pdc-O2-RR3" customClass="NavigationViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pdc-O2-RR3" customClass="NavigationViewController" customModule="Wanna_Sample_SPM" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cwD-dt-4ee">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

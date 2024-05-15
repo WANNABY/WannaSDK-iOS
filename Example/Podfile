@@ -1,11 +1,14 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
+
 platform :ios, '12.0'
 
 inhibit_all_warnings!
 use_frameworks!
 
-target 'WannaSDKExample CocoaPods' do
+project 'Example.xcodeproj'
+
+target 'Wanna Sample' do
   pod 'WannaSDK'
   pod 'WannaTryOn', :path => '../WannaTryOn.podspec'
   pod 'WannaTryOn/Toolkit', :path =>  '../WannaTryOn.podspec'

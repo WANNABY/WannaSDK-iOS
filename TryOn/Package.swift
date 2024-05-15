@@ -13,6 +13,10 @@ let package = Package(
             name: "WannaTryOn",
             targets: ["WannaTryOn"]
         ),
+        .library(
+            name: "WannaDebug",
+            targets: ["WannaDebug"]
+        )
     ],
     dependencies: [
         .package(name: "WannaTryOn_Toolkit", path: "./../Toolkit/"),
@@ -29,6 +33,11 @@ let package = Package(
                 "WannaTryOn_Toolkit"
             ],
             path: "Sources/"
+        ),
+        .target(
+            name: "WannaDebug",
+            dependencies: ["WannaSDK"],
+            path: "Debug/"
         )
     ]
 )

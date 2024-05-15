@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "92AE72512BF1F94900011A13"
-               BuildableName = "WannaSDKExample CocoaPods.app"
-               BlueprintName = "WannaSDKExample CocoaPods"
+               BuildableName = "Wanna Sample.app"
+               BlueprintName = "Wanna Sample"
                ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "92AE72512BF1F94900011A13"
-            BuildableName = "WannaSDKExample CocoaPods.app"
-            BlueprintName = "WannaSDKExample CocoaPods"
+            BuildableName = "Wanna Sample.app"
+            BlueprintName = "Wanna Sample"
             ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "92AE72512BF1F94900011A13"
-            BuildableName = "WannaSDKExample CocoaPods.app"
-            BlueprintName = "WannaSDKExample CocoaPods"
+            BuildableName = "Wanna Sample.app"
+            BlueprintName = "Wanna Sample"
             ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
