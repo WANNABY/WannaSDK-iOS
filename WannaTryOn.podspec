@@ -40,5 +40,3 @@ Pod::Spec.new do |s|
     ss.source_files = 'Toolkit/Sources/**/*.{swift}'
   end
 end
-
-

@@ -335,12 +335,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/WannaDebug/WannaDebug.framework",
 				"${BUILT_PRODUCTS_DIR}/WannaTryOn/WannaTryOn.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WsneakersUISDK.framework/WsneakersUISDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WannaCoreSDK.framework/WannaCoreSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaDebug.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaTryOn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WsneakersUISDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaCoreSDK.framework",

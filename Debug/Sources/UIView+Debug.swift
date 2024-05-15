@@ -5,24 +5,22 @@ import UIKit
 
 @_exported import WsneakersUISDK
 
- // Displaying the version of WANNA SDK used, mostly for testing purposes
+ /// Displaying the version of WANNA SDK used, mostly for testing purposes
  public extension UIView {
     func addWannaDebugLabel() {
-        let label = makeLabel()
         let background = makeBackground()
+        addSubview(background)
+        background.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 4.0).isActive = true
+        background.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0).isActive = true
 
-        label.text = makeText()
-
+        let label = makeLabel()
         background.addSubview(label)
-
         background.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
         background.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: -8).isActive = true
         background.topAnchor.constraint(equalTo: label.topAnchor, constant: -2).isActive = true
         background.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 2).isActive = true
 
-        addSubview(background)
-        background.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 4.0).isActive = true
-        background.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0).isActive = true
+        label.text = makeText()
     }
 }
 

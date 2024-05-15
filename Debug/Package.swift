@@ -3,31 +3,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "WannaTryOn",
+    name: "WannaDebug",
     platforms: [
         .iOS(.v12),
         .macOS(.v12),
     ],
     products: [
         .library(
-            name: "WannaTryOn",
-            targets: ["WannaTryOn"]
+            name: "WannaDebug",
+            targets: ["WannaDebug"]
         )
     ],
     dependencies: [
-        .package(name: "WannaTryOn_Toolkit", path: "./../Toolkit/"),
-
         // TODO: Use public SPM instead of local workaround based on cocoapods files
         // https://wannaby.atlassian.net/browse/WK-3968
         .package(path: "./../WannaSDK/") 
     ],
     targets: [
         .target(
-            name: "WannaTryOn",
-            dependencies: [
-                "WannaSDK",
-                "WannaTryOn_Toolkit"
-            ],
+            name: "WannaDebug",
+            dependencies: ["WannaSDK"],
             path: "Sources/"
         )
     ]

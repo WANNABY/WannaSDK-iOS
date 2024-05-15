@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WsneakersUISDK
+import WannaDebug
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

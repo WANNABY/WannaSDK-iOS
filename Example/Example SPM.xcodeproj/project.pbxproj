@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925EED5C2BF4B2AE00F0A51D /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 925EED5B2BF4B2AE00F0A51D /* WannaTryOn */; };
+		925EED5F2BF4B2C300F0A51D /* WannaDebug in Frameworks */ = {isa = PBXBuildFile; productRef = 925EED5E2BF4B2C300F0A51D /* WannaDebug */; };
 		92D70E222BF49C5A00BEAD0E /* WannaDebug in Frameworks */ = {isa = PBXBuildFile; productRef = 92D70E212BF49C5A00BEAD0E /* WannaDebug */; };
 		92D70E242BF49C5A00BEAD0E /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 92D70E232BF49C5A00BEAD0E /* WannaTryOn */; };
 		948848662743ADF600D8B40C /* RenderModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */; };
@@ -84,7 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925EED5C2BF4B2AE00F0A51D /* WannaTryOn in Frameworks */,
 				92D70E222BF49C5A00BEAD0E /* WannaDebug in Frameworks */,
+				925EED5F2BF4B2C300F0A51D /* WannaDebug in Frameworks */,
 				92D70E242BF49C5A00BEAD0E /* WannaTryOn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +217,8 @@
 			packageProductDependencies = (
 				92D70E212BF49C5A00BEAD0E /* WannaDebug */,
 				92D70E232BF49C5A00BEAD0E /* WannaTryOn */,
+				925EED5B2BF4B2AE00F0A51D /* WannaTryOn */,
+				925EED5E2BF4B2C300F0A51D /* WannaDebug */,
 			);
 			productName = WannaSDK;
 			productReference = 607FACD01AFB9204008FA782 /* Wanna Sample SPM.app */;
@@ -269,7 +275,8 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
-				92D70E202BF49C5A00BEAD0E /* XCLocalSwiftPackageReference "../TryOn" */,
+				925EED5A2BF4B2AE00F0A51D /* XCLocalSwiftPackageReference "../TryOn" */,
+				925EED5D2BF4B2C300F0A51D /* XCLocalSwiftPackageReference "../Debug" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -604,13 +611,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		92D70E202BF49C5A00BEAD0E /* XCLocalSwiftPackageReference "../TryOn" */ = {
+		925EED5A2BF4B2AE00F0A51D /* XCLocalSwiftPackageReference "../TryOn" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../TryOn;
+		};
+		925EED5D2BF4B2C300F0A51D /* XCLocalSwiftPackageReference "../Debug" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Debug;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		925EED5B2BF4B2AE00F0A51D /* WannaTryOn */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WannaTryOn;
+		};
+		925EED5E2BF4B2C300F0A51D /* WannaDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WannaDebug;
+		};
 		92D70E212BF49C5A00BEAD0E /* WannaDebug */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WannaDebug;

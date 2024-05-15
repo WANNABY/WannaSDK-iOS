@@ -9,8 +9,9 @@ platform :ios, '12.0'
 
 target 'Wanna Sample' do
   pod 'WannaSDK'
+  pod 'WannaDebug', :path => '../WannaDebug.podspec'
   pod 'WannaTryOn', :path => '../WannaTryOn.podspec'
-  pod 'WannaTryOn/Toolkit', :path =>  '../WannaTryOn.podspec'
+#  pod 'WannaTryOn/Toolkit', :path =>  '../WannaTryOn.podspec'
 end
 
 post_install do |installer|

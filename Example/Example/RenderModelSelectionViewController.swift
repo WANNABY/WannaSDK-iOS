@@ -6,6 +6,9 @@
 //  Copyright © 2019 WANNABY Inc. All rights reserved.
 //
 
+// TODO: Add models list to separate module
+// https://wannaby.atlassian.net/browse/WK-10476
+
 import UIKit
 import WsneakersUISDK
 import WannaTryOn
