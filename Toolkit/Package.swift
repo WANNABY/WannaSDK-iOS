@@ -20,14 +20,6 @@ let package = Package(
         .target(
             name: "WannaTryOn_Toolkit",
             path: "Sources/"
-        ),
-        // TODO:
-        // .testTarget(
-        //     name: "WannaSDKToolkitTests",
-        //     dependencies: [
-        //         "WannaSDKToolkit"
-        //     ],
-        //     path: "Tests/"
-        // )
+        )
     ]
 )

@@ -16,7 +16,10 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "WannaTryOn_Toolkit", path: "./../Toolkit/"),
-        .package(path: "./../WannaSDK/")
+
+        // TODO: Use public SPM instead of local workaround based on cocoapods files
+        // https://wannaby.atlassian.net/browse/WK-3968
+        .package(path: "./../WannaSDK/") 
     ],
     targets: [
         .target(

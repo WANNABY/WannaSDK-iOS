@@ -38,7 +38,7 @@ class NavigationViewController: UINavigationController {
 
         let background = UIView()
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.backgroundColor = .darkGray.withAlphaComponent(0.7)
+        background.backgroundColor = .darkGray.withAlphaComponent(0.85)
         background.layer.cornerRadius = 8
         background.layer.masksToBounds = true
 
@@ -48,7 +48,7 @@ class NavigationViewController: UINavigationController {
         background.topAnchor.constraint(equalTo: label.topAnchor, constant: -2).isActive = true
         background.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 2).isActive = true
 
-        UIApplication.shared.keyWindow?.addSubview(background)
+        view.addSubview(background)
         background.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 4.0).isActive = true
         background.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8.0).isActive = true
     }
