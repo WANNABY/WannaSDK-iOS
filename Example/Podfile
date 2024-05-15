@@ -1,12 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-
-platform :ios, '12.0'
-
 inhibit_all_warnings!
 use_frameworks!
 
 project 'Example.xcodeproj'
+
+platform :ios, '12.0'
 
 target 'Wanna Sample' do
   pod 'WannaSDK'
