@@ -67,7 +67,6 @@
 		4E5F8F6A1F8F510FFF46A731 /* Pods_Wanna_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wanna_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D2A9EC73DCCA6EA1AF83BC /* Pods-WannaSDKExample CocoaPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDKExample CocoaPods.release.xcconfig"; path = "Target Support Files/Pods-WannaSDKExample CocoaPods/Pods-WannaSDKExample CocoaPods.release.xcconfig"; sourceTree = "<group>"; };
 		92AE726E2BF1F94900011A13 /* Wanna Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wanna Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92AE726F2BF1F94900011A13 /* WannaSDK_Example copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WannaSDK_Example copy-Info.plist"; path = "/Users/denis/wanna/WannaSDK-iOS/Example/WannaSDK_Example copy-Info.plist"; sourceTree = "<absolute>"; };
 		948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderModelSelectionViewController.swift; sourceTree = "<group>"; };
 		9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsneakersSDKViewController.swift; sourceTree = "<group>"; };
 		9488485B2743ADF600D8B40C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,7 +118,6 @@
 				B0B14CEE28801C66003C4842 /* WannaSDK_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				90374BBB0CD3835287E79D6A /* Pods */,
-				92AE726F2BF1F94900011A13 /* WannaSDK_Example copy-Info.plist */,
 				E37FB7FAA7BAAFF56584A0AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -240,7 +238,7 @@
 				92AE72692BF1F94900011A13 /* Embed Frameworks */,
 				92AE726A2BF1F94900011A13 /* Copy WannaSDK dSYM */,
 				A38E1D2D96D7AC3F03FCABD0 /* [CP] Embed Pods Frameworks */,
-				D56224732EDD1100A7DFD215 /* [CP] Copy Pods Resources */,
+				7556D0F5CF70452A572AEBA4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -328,6 +326,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7556D0F5CF70452A572AEBA4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/WannaSDK/WannaCoreSDK.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/WannaSDK/WsneakersUISDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WannaCoreSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WsneakersUISDK.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A38E1D2D96D7AC3F03FCABD0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,26 +390,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D56224732EDD1100A7DFD215 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/WannaSDK/WannaCoreSDK.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/WannaSDK/WsneakersUISDK.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WannaCoreSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WsneakersUISDK.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -575,7 +573,7 @@
 				CURRENT_PROJECT_VERSION = 507;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "WannaSDK_Example copy-Info.plist";
+				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -601,7 +599,7 @@
 				CURRENT_PROJECT_VERSION = 507;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "WannaSDK_Example copy-Info.plist";
+				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

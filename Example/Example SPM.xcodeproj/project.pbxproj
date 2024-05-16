@@ -57,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		607FACD01AFB9204008FA782 /* Wanna Sample SPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wanna Sample SPM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92AE726F2BF1F94900011A13 /* WannaSDK_Example copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WannaSDK_Example copy-Info.plist"; path = "/Users/denis/wanna/WannaSDK-iOS/Example/WannaSDK_Example copy-Info.plist"; sourceTree = "<absolute>"; };
 		948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderModelSelectionViewController.swift; sourceTree = "<group>"; };
 		9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsneakersSDKViewController.swift; sourceTree = "<group>"; };
 		9488485B2743ADF600D8B40C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 				948848532743ADF600D8B40C /* Example */,
 				B0B14CEE28801C66003C4842 /* WannaSDK_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				92AE726F2BF1F94900011A13 /* WannaSDK_Example copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
