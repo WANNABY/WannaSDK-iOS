@@ -10,7 +10,6 @@
 // https://wannaby.atlassian.net/browse/WK-10476
 
 import UIKit
-import WsneakersUISDK
 import WannaTryOn
 
 enum RenderableType: String {

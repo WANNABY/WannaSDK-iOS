@@ -26,15 +26,20 @@ class DeviceCheckingViewController: UIViewController {
     }
 
     func runSdk(type: RenderableType) {
-        if WsneakersUISDKSession.isDeviceSupported() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "render_models_list") as! RenderModelSelectionViewController
-            controller.setRenderableType(type: type)
-            show(controller, sender: self)
-        } else {
-            let popup = UIAlertController(title: "Error", message: "Device is not supported", preferredStyle: .alert)
-            present(popup, animated: true)
+        guard WsneakersUISDKSession.isDeviceSupported()  else {
+            presentAlert(title: "Error", message:  "Device is not supported")
+
+            return
         }
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(
+            withIdentifier: "render_models_list"
+        ) as! RenderModelSelectionViewController
+
+        controller.setRenderableType(type: type)
+
+        present(controller, animated: true)
     }
 }
 

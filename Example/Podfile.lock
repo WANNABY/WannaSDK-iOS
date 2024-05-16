@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
     :path: "../WannaTryOn.podspec"
 
 SPEC CHECKSUMS:
-  WannaDebug: 17366c16890aff5eeacaa4673e2b3c5c080e18f5
+  WannaDebug: c7e042d2bf406063158eb84c0955ed9532e9ca6a
   WannaSDK: 94546d5395a423dd0c74e03fe23d7c8508036fd2
   WannaTryOn: 28371458abcdde4ec979bac6d9ca91519b87d521
 
