@@ -1,14 +1,16 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '12.0'
-
 inhibit_all_warnings!
 use_frameworks!
 
-target 'WannaSDKExample CocoaPods' do
+project 'Example.xcodeproj'
+
+platform :ios, '12.0'
+
+target 'Wanna Sample' do
   pod 'WannaSDK'
-  pod 'WannaSDKToolkit', :path => '../WannaSDKToolkit/WannaSDKToolkit.podspec'
-  pod 'WannaTryOn', :path => '../WannaTryOn/WannaTryOn.podspec'
+  pod 'WannaDebug', :path => '../WannaDebug.podspec'
+  pod 'WannaTryOn', :path => '../WannaTryOn.podspec'
 end
 
 post_install do |installer|

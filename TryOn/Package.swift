@@ -11,30 +11,24 @@ let package = Package(
     products: [
         .library(
             name: "WannaTryOn",
-            targets: [
-                "WannaTryOn"
-            ]
-        ),
+            targets: ["WannaTryOn"]
+        )
     ],
     dependencies: [
-        .package(path: "./../WannaSDK/"),
-        .package(path: "./../WannaSDKToolkit/")
+        .package(name: "WannaTryOn_Toolkit", path: "./../Toolkit/"),
+
+        // TODO: Use public SPM instead of local workaround based on cocoapods files
+        // https://wannaby.atlassian.net/browse/WK-3968
+        .package(path: "./../WannaSDK/") 
     ],
     targets: [
         .target(
             name: "WannaTryOn",
             dependencies: [
                 "WannaSDK",
-                "WannaSDKToolkit"
+                "WannaTryOn_Toolkit"
             ],
             path: "Sources/"
-        ),
-        .testTarget(
-            name: "WannaTryOnTests",
-            dependencies: [
-                "WannaTryOn"
-            ],
-            path: "Tests/"
-        ),
+        )
     ]
 )

@@ -11,7 +11,7 @@ let package = Package(
         .library(
             name: "WannaSDK",
             targets: [
-                // "WannaCoreSDK", 
+                "WannaCoreSDK", 
                 "WsneakersUISDK"
             ]
         )
@@ -19,7 +19,8 @@ let package = Package(
     dependencies: [
     ],
     targets: [
-        // TODO: implement SPM 
+        // TODO: 1) Move to root folder
+        // TODO: 2) implement SPM 
         // https://wannaby.atlassian.net/browse/WK-3968
         //
         // .binaryTarget(

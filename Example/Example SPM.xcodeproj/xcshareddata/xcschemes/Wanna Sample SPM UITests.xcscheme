@@ -19,9 +19,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0B14CEC28801C66003C4842"
-               BuildableName = "WannaSDKExampleUITests.xctest"
-               BlueprintName = "WannaSDKExampleUITests"
-               ReferencedContainer = "container:Example.xcodeproj">
+               BuildableName = "Wanna Sample SPM UITests.xctest"
+               BlueprintName = "Wanna Sample SPM UITests"
+               ReferencedContainer = "container:Example SPM.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

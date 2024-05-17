@@ -11,7 +11,7 @@
         <!--Device Checking View Controller-->
         <scene sceneID="qmp-gN-od5">
             <objects>
-                <viewController id="GTQ-tF-9Q2" customClass="DeviceCheckingViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GTQ-tF-9Q2" customClass="DeviceCheckingViewController" customModule="Wanna_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DbO-Le-s5L">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m7b-91-Upi"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="33S-Ah-Te3" firstAttribute="centerY" secondItem="DbO-Le-s5L" secondAttribute="centerY" id="1YZ-fV-Fok"/>
                             <constraint firstItem="33S-Ah-Te3" firstAttribute="centerX" secondItem="DbO-Le-s5L" secondAttribute="centerX" id="u1v-wM-gL4"/>
@@ -62,7 +62,7 @@
         <!--Models-->
         <scene sceneID="Fr6-AH-Lxi">
             <objects>
-                <viewController storyboardIdentifier="render_models_list" title="Models" id="94S-cp-0Bp" customClass="RenderModelSelectionViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="render_models_list" title="Models" id="94S-cp-0Bp" customClass="RenderModelSelectionViewController" customModule="Wanna_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6e-DB-a39">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,9 +75,8 @@
                                     <outlet property="delegate" destination="94S-cp-0Bp" id="IW6-Fh-oNA"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p0w-WJ-EOM">
-                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
-                                <color key="color" red="0.0" green="0.078252558853899146" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="p0w-WJ-EOM">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i3u-mj-Khx"/>
@@ -105,7 +104,7 @@
         <!--WsneakersSDK View Controller-->
         <scene sceneID="iQS-Eg-IbY">
             <objects>
-                <viewController storyboardIdentifier="RemoteTryOn" id="dvb-42-KFt" customClass="WsneakersSDKViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RemoteTryOn" id="dvb-42-KFt" customClass="WsneakersSDKViewController" customModule="Wanna_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uzo-GV-woH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,11 +142,19 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-To-83m">
                                         <rect key="frame" x="186.66666666666666" y="307.33333333333331" width="20" height="20"/>
                                     </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Yu-V65">
+                                        <rect key="frame" x="284" y="664.66666666666663" width="101" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Switch camera"/>
+                                        <connections>
+                                            <action selector="onSwitchCamera:" destination="dvb-42-KFt" eventType="touchUpInside" id="5no-Wk-lK8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wyi-5J-zRS" secondAttribute="trailing" constant="8" id="1MI-ub-bJ6"/>
                                     <constraint firstItem="jfM-To-83m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="4" id="1Ni-Il-C5H"/>
+                                    <constraint firstAttribute="bottom" secondItem="RLE-Yu-V65" secondAttribute="bottom" constant="4" id="3H7-Hp-KQg"/>
                                     <constraint firstItem="Vxl-Eb-VNa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="4" id="47g-ub-zGJ"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="centerX" secondItem="Bz2-ND-1Ho" secondAttribute="centerX" id="A8f-5x-jxb"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="top" secondItem="jfM-To-83m" secondAttribute="bottom" constant="20" id="HDc-FQ-Xeb"/>
@@ -155,6 +162,8 @@
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="centerY" secondItem="Bz2-ND-1Ho" secondAttribute="centerY" id="RCM-hc-all"/>
                                     <constraint firstItem="wyi-5J-zRS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="4" id="TxS-n5-eoJ"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="centerX" secondItem="jfM-To-83m" secondAttribute="centerX" id="Z2G-Mg-qrv"/>
+                                    <constraint firstAttribute="trailing" secondItem="RLE-Yu-V65" secondAttribute="trailing" constant="8" id="b3m-Jc-Jvy"/>
+                                    <constraint firstItem="RLE-Yu-V65" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" id="gWQ-xo-CCL"/>
                                     <constraint firstItem="wyi-5J-zRS" firstAttribute="top" secondItem="zgH-5n-YoZ" secondAttribute="bottom" constant="8" id="heJ-AY-3Eo"/>
                                     <constraint firstAttribute="trailing" secondItem="zgH-5n-YoZ" secondAttribute="trailing" constant="8" id="i4N-jm-7oZ"/>
                                     <constraint firstItem="Vxl-Eb-VNa" firstAttribute="top" secondItem="Bz2-ND-1Ho" secondAttribute="topMargin" id="oHy-aX-HaF"/>
@@ -250,6 +259,14 @@
                                     <action selector="onPreviousRenderModel:" destination="Cfc-rn-3Im" eventType="touchUpInside" id="w7d-uL-wGs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD6-YW-aNv">
+                                <rect key="frame" x="284" y="780" width="101" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Switch camera"/>
+                                <connections>
+                                    <action selector="onSwitchCamera:" destination="Cfc-rn-3Im" eventType="touchUpInside" id="IdY-Gl-lkB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ssu-fD-zJ3"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -259,10 +276,13 @@
                             <constraint firstItem="yvJ-oQ-Lwr" firstAttribute="centerX" secondItem="iEC-3f-Fsv" secondAttribute="centerX" id="Egi-95-wu7"/>
                             <constraint firstItem="PeY-29-W2o" firstAttribute="leading" secondItem="Ssu-fD-zJ3" secondAttribute="leading" constant="8" id="Gix-O1-Sjh"/>
                             <constraint firstItem="WV2-7A-0Vx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ssu-fD-zJ3" secondAttribute="leading" id="JlH-Pe-t6E"/>
+                            <constraint firstAttribute="trailing" secondItem="AD6-YW-aNv" secondAttribute="trailing" constant="8" id="LlI-eb-KeG"/>
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PeY-29-W2o" secondAttribute="trailing" constant="8" id="NGD-4P-Dog"/>
+                            <constraint firstItem="AD6-YW-aNv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ssu-fD-zJ3" secondAttribute="leading" id="P7g-YY-K6G"/>
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" secondItem="rNc-ot-427" secondAttribute="trailing" constant="8" id="Pxn-W3-JX2"/>
                             <constraint firstItem="tGC-Up-C2J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ssu-fD-zJ3" secondAttribute="leading" id="Ydf-1P-jAe"/>
                             <constraint firstItem="tGC-Up-C2J" firstAttribute="top" secondItem="WV2-7A-0Vx" secondAttribute="bottom" constant="44" id="ct1-Pg-tPO"/>
+                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="AD6-YW-aNv" secondAttribute="bottom" constant="8" id="lt9-bZ-gVT"/>
                             <constraint firstItem="GAq-sH-UMQ" firstAttribute="width" secondItem="iEC-3f-Fsv" secondAttribute="width" multiplier="0.7" id="nTZ-xb-ahC"/>
                             <constraint firstItem="GAq-sH-UMQ" firstAttribute="top" secondItem="yvJ-oQ-Lwr" secondAttribute="bottom" constant="20" id="o3l-vZ-adr"/>
                             <constraint firstItem="yvJ-oQ-Lwr" firstAttribute="centerY" secondItem="iEC-3f-Fsv" secondAttribute="centerY" id="pjn-7P-U8X"/>
@@ -295,7 +315,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="2ia-VR-OxB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pdc-O2-RR3" customClass="NavigationViewController" customModule="WannaSDKExample_CocoaPods" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pdc-O2-RR3" customClass="NavigationViewController" customModule="Wanna_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cwD-dt-4ee">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
