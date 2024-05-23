@@ -1,16 +1,35 @@
 PODS:
+  - WannaDebug (7.1.0):
+    - WannaSDK
   - WannaSDK (7.1.0)
+  - WannaTryOn (7.1.0):
+    - WannaTryOn/Toolkit (= 7.1.0)
+    - WannaTryOn/TryOn (= 7.1.0)
+  - WannaTryOn/Toolkit (7.1.0)
+  - WannaTryOn/TryOn (7.1.0):
+    - WannaSDK
+    - WannaTryOn/Toolkit
 
 DEPENDENCIES:
+  - WannaDebug (from `../WannaDebug.podspec`)
   - WannaSDK
+  - WannaTryOn (from `../WannaTryOn.podspec`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - WannaSDK
 
+EXTERNAL SOURCES:
+  WannaDebug:
+    :path: "../WannaDebug.podspec"
+  WannaTryOn:
+    :path: "../WannaTryOn.podspec"
+
 SPEC CHECKSUMS:
+  WannaDebug: c7e042d2bf406063158eb84c0955ed9532e9ca6a
   WannaSDK: 94546d5395a423dd0c74e03fe23d7c8508036fd2
+  WannaTryOn: 28371458abcdde4ec979bac6d9ca91519b87d521
 
-PODFILE CHECKSUM: 93dafe069bde12565c9c74628d78cfded936c27f
+PODFILE CHECKSUM: d936cdfe1145aaf52ba0b31cd45586b8846034c9
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WsneakersUISDK
+import WannaDebug
 
 class NavigationViewController: UINavigationController {
     // We don't support orientation change
@@ -18,22 +18,7 @@ class NavigationViewController: UINavigationController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        addInfoLabel()
-    }
-
-    // Displaying the version of WANNA SDK used, mostly for testing purposes
-    private func addInfoLabel() {
-        let info = "SDK Version: " + WsneakersUISDKInfo().coreSDKVersion
-
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 13)
-        label.text = info
-        label.textColor = .green
-        label.backgroundColor = .darkGray.withAlphaComponent(0.5)
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        UIApplication.shared.keyWindow?.addSubview(label)
-        label.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16.0).isActive = true
-        label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8.0).isActive = true
+        // Don't use in production: add debug label for internal test purposes
+        view.addWannaDebugLabel()
     }
 }

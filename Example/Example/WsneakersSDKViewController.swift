@@ -7,11 +7,13 @@
 //
 
 import WsneakersUISDK
+import WannaTryOn
 
-class WsneakersSDKViewController: WsneakersGeneralViewController {
-    @IBOutlet weak var sneakersView: WsneakersUISDKView!
+@available(iOS 13.0, *)
+class WsneakersSDKViewController: TryOnViewController {
+    @IBOutlet private weak var sneakersView: WsneakersUISDKView!
 
-    override func createView() -> WsneakersUISDKView {
-        return sneakersView;
+    override var tryOnView: WsneakersUISDKView {
+        sneakersView
     }
 }

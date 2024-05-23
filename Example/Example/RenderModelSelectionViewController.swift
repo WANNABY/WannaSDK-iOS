@@ -6,8 +6,11 @@
 //  Copyright © 2019 WANNABY Inc. All rights reserved.
 //
 
+// TODO: Add models list to separate module
+// https://wannaby.atlassian.net/browse/WK-10476
+
 import UIKit
-import WsneakersUISDK
+import WannaTryOn
 
 enum RenderableType: String {
     case watch
@@ -251,7 +254,10 @@ private extension RenderModelSelectionViewController {
                     return
                 }
 
-                sSelf.renderModels = renderModels!.filter { $0.renderModelType == sSelf.renderableType.rawValue }.sorted { $0.renderModelID < $1.renderModelID }
+                sSelf.renderModels = renderModels!
+                    .filter { $0.renderModelType == sSelf.renderableType.rawValue }
+                    .sorted { $0.renderModelID < $1.renderModelID }
+
                 sSelf.tableView.reloadData()
             }
         }
@@ -282,12 +288,27 @@ private extension RenderModelSelectionViewController {
     }
 
     func openTryon(with type: ViewType, session: WannaSDKSession, index: Int) {
+        guard #available(iOS 13.0, *) else {
+            presentAlert(title: "Not supported", message: "Too old iOS version")
+
+            return
+        }
+
         viewType = type
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: type.rawValue) as! WsneakersGeneralViewController
+        let controller = storyboard.instantiateViewController(
+            withIdentifier: type.rawValue
+        ) as! TryOnViewController
+
         // Passing the session, storage, model list, and the index of the model the user has already selected
         // to the other view that will actually render the try-on
-        controller.set(session: session, storage: storage!, renderModels: renderModels, selected: index)
+        controller.set(
+            session: session,
+            storage: storage!,
+            renderModels: renderModels.map(\.renderModelID),
+            selected: index
+        )
+
         show(controller, sender: self)
     }
     

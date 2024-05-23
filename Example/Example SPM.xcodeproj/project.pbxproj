@@ -3,19 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92AE72572BF1F94900011A13 /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
-		92AE72582BF1F94900011A13 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848612743ADF600D8B40C /* NavigationViewController.swift */; };
-		92AE72592BF1F94900011A13 /* WannaSDKDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848602743ADF600D8B40C /* WannaSDKDefaults.swift */; };
-		92AE725D2BF1F94900011A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848622743ADF600D8B40C /* AppDelegate.swift */; };
-		92AE725F2BF1F94900011A13 /* WsneakersSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */; };
-		92AE72602BF1F94900011A13 /* RenderModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */; };
-		92AE72662BF1F94900011A13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9488485E2743ADF600D8B40C /* Main.storyboard */; };
-		92AE72672BF1F94900011A13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9488485C2743ADF600D8B40C /* LaunchScreen.storyboard */; };
-		92AE72682BF1F94900011A13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9488485B2743ADF600D8B40C /* Assets.xcassets */; };
+		925EED5C2BF4B2AE00F0A51D /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 925EED5B2BF4B2AE00F0A51D /* WannaTryOn */; };
+		925EED5F2BF4B2C300F0A51D /* WannaDebug in Frameworks */ = {isa = PBXBuildFile; productRef = 925EED5E2BF4B2C300F0A51D /* WannaDebug */; };
+		92D70E222BF49C5A00BEAD0E /* WannaDebug in Frameworks */ = {isa = PBXBuildFile; productRef = 92D70E212BF49C5A00BEAD0E /* WannaDebug */; };
+		92D70E242BF49C5A00BEAD0E /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 92D70E232BF49C5A00BEAD0E /* WannaTryOn */; };
+		948848662743ADF600D8B40C /* RenderModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */; };
+		9488486B2743ADF600D8B40C /* WsneakersSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */; };
+		9488486C2743ADF600D8B40C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9488485B2743ADF600D8B40C /* Assets.xcassets */; };
+		9488486D2743ADF600D8B40C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9488485C2743ADF600D8B40C /* LaunchScreen.storyboard */; };
+		9488486E2743ADF600D8B40C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9488485E2743ADF600D8B40C /* Main.storyboard */; };
+		9488486F2743ADF600D8B40C /* WannaSDKDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848602743ADF600D8B40C /* WannaSDKDefaults.swift */; };
+		948848702743ADF600D8B40C /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848612743ADF600D8B40C /* NavigationViewController.swift */; };
+		948848712743ADF600D8B40C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848622743ADF600D8B40C /* AppDelegate.swift */; };
+		948848722743ADF600D8B40C /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
 		B065FFCC28C103F0006FC87E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065FFCB28C103F0006FC87E /* Constants.swift */; };
 		B0B14CF028801C66003C4842 /* WannaSDK_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CEF28801C66003C4842 /* WannaSDK_ExampleUITests.swift */; };
 		B0B14CFB28801CDC003C4842 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CFA28801CDC003C4842 /* Logger.swift */; };
@@ -26,31 +30,10 @@
 		B0B14D0728801DA7003C4842 /* ModelsListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0628801DA7003C4842 /* ModelsListScreen.swift */; };
 		B0B14D0928801DBC003C4842 /* RenderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D0828801DBC003C4842 /* RenderScreen.swift */; };
 		B0B14D1228815A4C003C4842 /* Applyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14D1128815A4C003C4842 /* Applyable.swift */; };
-		E7985B59CAE35B3DE9B96DEA /* Pods_Wanna_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5F8F6A1F8F510FFF46A731 /* Pods_Wanna_Sample.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		926721272BF2223F00AF67CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 92AE72512BF1F94900011A13;
-			remoteInfo = "WannaSDKExample CocoaPods";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		92AE72692BF1F94900011A13 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92AE726A2BF1F94900011A13 /* Copy WannaSDK dSYM */ = {
+		E4B17F0827B3C90F00EFE5EE /* Copy WannaSDK dSYM */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -60,13 +43,20 @@
 			name = "Copy WannaSDK dSYM";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E881000A277C6A05008B3189 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		079F835A4D4F4A4777280ACF /* Pods-WannaSDKExample CocoaPods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDKExample CocoaPods.debug.xcconfig"; path = "Target Support Files/Pods-WannaSDKExample CocoaPods/Pods-WannaSDKExample CocoaPods.debug.xcconfig"; sourceTree = "<group>"; };
-		4E5F8F6A1F8F510FFF46A731 /* Pods_Wanna_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wanna_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66D2A9EC73DCCA6EA1AF83BC /* Pods-WannaSDKExample CocoaPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDKExample CocoaPods.release.xcconfig"; path = "Target Support Files/Pods-WannaSDKExample CocoaPods/Pods-WannaSDKExample CocoaPods.release.xcconfig"; sourceTree = "<group>"; };
-		92AE726E2BF1F94900011A13 /* Wanna Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wanna Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* Wanna Sample SPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wanna Sample SPM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderModelSelectionViewController.swift; sourceTree = "<group>"; };
 		9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsneakersSDKViewController.swift; sourceTree = "<group>"; };
 		9488485B2743ADF600D8B40C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +68,7 @@
 		948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCheckingViewController.swift; sourceTree = "<group>"; };
 		948848642743ADF600D8B40C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B065FFCB28C103F0006FC87E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		B0B14CED28801C66003C4842 /* Wanna Sample UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wanna Sample UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B14CED28801C66003C4842 /* Wanna Sample SPM UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wanna Sample SPM UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B14CEF28801C66003C4842 /* WannaSDK_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WannaSDK_ExampleUITests.swift; sourceTree = "<group>"; };
 		B0B14CFA28801CDC003C4842 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B0B14CFC28801CFA003C4842 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
@@ -88,16 +78,17 @@
 		B0B14D0628801DA7003C4842 /* ModelsListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsListScreen.swift; sourceTree = "<group>"; };
 		B0B14D0828801DBC003C4842 /* RenderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderScreen.swift; sourceTree = "<group>"; };
 		B0B14D1128815A4C003C4842 /* Applyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Applyable.swift; sourceTree = "<group>"; };
-		E07819A5148B56F575B52807 /* Pods-Wanna Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wanna Sample.release.xcconfig"; path = "Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample.release.xcconfig"; sourceTree = "<group>"; };
-		EC763C6B124B39819E20AC11 /* Pods-Wanna Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wanna Sample.debug.xcconfig"; path = "Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		92AE72612BF1F94900011A13 /* Frameworks */ = {
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7985B59CAE35B3DE9B96DEA /* Pods_Wanna_Sample.framework in Frameworks */,
+				925EED5C2BF4B2AE00F0A51D /* WannaTryOn in Frameworks */,
+				92D70E222BF49C5A00BEAD0E /* WannaDebug in Frameworks */,
+				925EED5F2BF4B2C300F0A51D /* WannaDebug in Frameworks */,
+				92D70E242BF49C5A00BEAD0E /* WannaTryOn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,29 +108,16 @@
 				948848532743ADF600D8B40C /* Example */,
 				B0B14CEE28801C66003C4842 /* WannaSDK_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				90374BBB0CD3835287E79D6A /* Pods */,
-				E37FB7FAA7BAAFF56584A0AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0B14CED28801C66003C4842 /* Wanna Sample UITests.xctest */,
-				92AE726E2BF1F94900011A13 /* Wanna Sample.app */,
+				607FACD01AFB9204008FA782 /* Wanna Sample SPM.app */,
+				B0B14CED28801C66003C4842 /* Wanna Sample SPM UITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		90374BBB0CD3835287E79D6A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				079F835A4D4F4A4777280ACF /* Pods-WannaSDKExample CocoaPods.debug.xcconfig */,
-				66D2A9EC73DCCA6EA1AF83BC /* Pods-WannaSDKExample CocoaPods.release.xcconfig */,
-				EC763C6B124B39819E20AC11 /* Pods-Wanna Sample.debug.xcconfig */,
-				E07819A5148B56F575B52807 /* Pods-Wanna Sample.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		948848532743ADF600D8B40C /* Example */ = {
@@ -216,42 +194,37 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		E37FB7FAA7BAAFF56584A0AF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4E5F8F6A1F8F510FFF46A731 /* Pods_Wanna_Sample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		92AE72512BF1F94900011A13 /* Wanna Sample */ = {
+		607FACCF1AFB9204008FA782 /* Wanna Sample SPM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92AE726B2BF1F94900011A13 /* Build configuration list for PBXNativeTarget "Wanna Sample" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Wanna Sample SPM" */;
 			buildPhases = (
-				CF99928B020515928E19B976 /* [CP] Check Pods Manifest.lock */,
-				92AE72552BF1F94900011A13 /* Sources */,
-				92AE72612BF1F94900011A13 /* Frameworks */,
-				92AE72652BF1F94900011A13 /* Resources */,
-				92AE72692BF1F94900011A13 /* Embed Frameworks */,
-				92AE726A2BF1F94900011A13 /* Copy WannaSDK dSYM */,
-				A38E1D2D96D7AC3F03FCABD0 /* [CP] Embed Pods Frameworks */,
-				7556D0F5CF70452A572AEBA4 /* [CP] Copy Pods Resources */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				E881000A277C6A05008B3189 /* Embed Frameworks */,
+				E4B17F0827B3C90F00EFE5EE /* Copy WannaSDK dSYM */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Wanna Sample";
+			name = "Wanna Sample SPM";
+			packageProductDependencies = (
+				92D70E212BF49C5A00BEAD0E /* WannaDebug */,
+				92D70E232BF49C5A00BEAD0E /* WannaTryOn */,
+				925EED5B2BF4B2AE00F0A51D /* WannaTryOn */,
+				925EED5E2BF4B2C300F0A51D /* WannaDebug */,
+			);
 			productName = WannaSDK;
-			productReference = 92AE726E2BF1F94900011A13 /* Wanna Sample.app */;
+			productReference = 607FACD01AFB9204008FA782 /* Wanna Sample SPM.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B0B14CEC28801C66003C4842 /* Wanna Sample UITests */ = {
+		B0B14CEC28801C66003C4842 /* Wanna Sample SPM UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0B14CF728801C66003C4842 /* Build configuration list for PBXNativeTarget "Wanna Sample UITests" */;
+			buildConfigurationList = B0B14CF728801C66003C4842 /* Build configuration list for PBXNativeTarget "Wanna Sample SPM UITests" */;
 			buildPhases = (
 				B0B14CE928801C66003C4842 /* Sources */,
 				B0B14CEA28801C66003C4842 /* Frameworks */,
@@ -260,11 +233,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				926721282BF2223F00AF67CB /* PBXTargetDependency */,
 			);
-			name = "Wanna Sample UITests";
+			name = "Wanna Sample SPM UITests";
 			productName = WannaSDK_ExampleUITests;
-			productReference = B0B14CED28801C66003C4842 /* Wanna Sample UITests.xctest */;
+			productReference = B0B14CED28801C66003C4842 /* Wanna Sample SPM UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -278,6 +250,11 @@
 				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = "";
+						ProvisioningStyle = Automatic;
+					};
 					B0B14CEC28801C66003C4842 = {
 						CreatedOnToolsVersion = 13.4.1;
 						ProvisioningStyle = Automatic;
@@ -285,7 +262,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Example" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Example SPM" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -295,24 +272,28 @@
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
+			packageReferences = (
+				925EED5A2BF4B2AE00F0A51D /* XCLocalSwiftPackageReference "../TryOn" */,
+				925EED5D2BF4B2C300F0A51D /* XCLocalSwiftPackageReference "../Debug" */,
+			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				92AE72512BF1F94900011A13 /* Wanna Sample */,
-				B0B14CEC28801C66003C4842 /* Wanna Sample UITests */,
+				607FACCF1AFB9204008FA782 /* Wanna Sample SPM */,
+				B0B14CEC28801C66003C4842 /* Wanna Sample SPM UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		92AE72652BF1F94900011A13 /* Resources */ = {
+		607FACCE1AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92AE72662BF1F94900011A13 /* Main.storyboard in Resources */,
-				92AE72672BF1F94900011A13 /* LaunchScreen.storyboard in Resources */,
-				92AE72682BF1F94900011A13 /* Assets.xcassets in Resources */,
+				9488486E2743ADF600D8B40C /* Main.storyboard in Resources */,
+				9488486D2743ADF600D8B40C /* LaunchScreen.storyboard in Resources */,
+				9488486C2743ADF600D8B40C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,86 +306,17 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		7556D0F5CF70452A572AEBA4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/WannaSDK/WannaCoreSDK.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/WannaSDK/WsneakersUISDK.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WannaCoreSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WsneakersUISDK.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A38E1D2D96D7AC3F03FCABD0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/WannaDebug/WannaDebug.framework",
-				"${BUILT_PRODUCTS_DIR}/WannaTryOn/WannaTryOn.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WsneakersUISDK.framework/WsneakersUISDK",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WannaSDK/WannaCoreSDK.framework/WannaCoreSDK",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaDebug.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaTryOn.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WsneakersUISDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WannaCoreSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wanna Sample/Pods-Wanna Sample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF99928B020515928E19B976 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Wanna Sample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		92AE72552BF1F94900011A13 /* Sources */ = {
+		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92AE72572BF1F94900011A13 /* DeviceCheckingViewController.swift in Sources */,
-				92AE72582BF1F94900011A13 /* NavigationViewController.swift in Sources */,
-				92AE72592BF1F94900011A13 /* WannaSDKDefaults.swift in Sources */,
-				92AE725D2BF1F94900011A13 /* AppDelegate.swift in Sources */,
-				92AE725F2BF1F94900011A13 /* WsneakersSDKViewController.swift in Sources */,
-				92AE72602BF1F94900011A13 /* RenderModelSelectionViewController.swift in Sources */,
+				948848722743ADF600D8B40C /* DeviceCheckingViewController.swift in Sources */,
+				948848702743ADF600D8B40C /* NavigationViewController.swift in Sources */,
+				9488486F2743ADF600D8B40C /* WannaSDKDefaults.swift in Sources */,
+				948848712743ADF600D8B40C /* AppDelegate.swift in Sources */,
+				9488486B2743ADF600D8B40C /* WsneakersSDKViewController.swift in Sources */,
+				948848662743ADF600D8B40C /* RenderModelSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,14 +338,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		926721282BF2223F00AF67CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 92AE72512BF1F94900011A13 /* Wanna Sample */;
-			targetProxy = 926721272BF2223F00AF67CB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9488485C2743ADF600D8B40C /* LaunchScreen.storyboard */ = {
@@ -563,9 +467,8 @@
 			};
 			name = Release;
 		};
-		92AE726C2BF1F94900011A13 /* Debug */ = {
+		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC763C6B124B39819E20AC11 /* Pods-Wanna Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -589,9 +492,8 @@
 			};
 			name = Debug;
 		};
-		92AE726D2BF1F94900011A13 /* Release */ = {
+		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E07819A5148B56F575B52807 /* Pods-Wanna Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -677,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Example" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Example SPM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
@@ -686,16 +588,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92AE726B2BF1F94900011A13 /* Build configuration list for PBXNativeTarget "Wanna Sample" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Wanna Sample SPM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				92AE726C2BF1F94900011A13 /* Debug */,
-				92AE726D2BF1F94900011A13 /* Release */,
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0B14CF728801C66003C4842 /* Build configuration list for PBXNativeTarget "Wanna Sample UITests" */ = {
+		B0B14CF728801C66003C4842 /* Build configuration list for PBXNativeTarget "Wanna Sample SPM UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0B14CF528801C66003C4842 /* Debug */,
@@ -705,6 +607,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		925EED5A2BF4B2AE00F0A51D /* XCLocalSwiftPackageReference "../TryOn" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../TryOn;
+		};
+		925EED5D2BF4B2C300F0A51D /* XCLocalSwiftPackageReference "../Debug" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Debug;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		925EED5B2BF4B2AE00F0A51D /* WannaTryOn */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WannaTryOn;
+		};
+		925EED5E2BF4B2C300F0A51D /* WannaDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WannaDebug;
+		};
+		92D70E212BF49C5A00BEAD0E /* WannaDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WannaDebug;
+		};
+		92D70E232BF49C5A00BEAD0E /* WannaTryOn */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WannaTryOn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }
