@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
   s.source                  = { 
     :git => 'https://github.com/WANNABY/WannaSDK-iOS.git',
-    :branch => 'feature/update-sample-app-2' # TODO: Fix
+    :branch => 'master'
   }
 
   s.subspec 'TryOn' do |ss|
