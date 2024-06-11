@@ -15,9 +15,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        // TODO: Use public SPM instead of local workaround based on cocoapods files
-        // https://wannaby.atlassian.net/browse/WK-3968
-        .package(path: "./../WannaSDK/") 
+        .package(url: "https://github.com/WANNABY/WannaSDK-iOS.git", from: "7.1.1")
     ],
     targets: [
         .target(

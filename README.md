@@ -46,3 +46,34 @@ Open **Example.xcworkspace** file in Xcode.
 **NOTE:** when you open Example.**xcodeproj** instead of Example.**xcworkspace** it will result in compiller error **No such module ‘WsneakersUISDK’**
 
    
+### Swift Package Manager
+
+#### Installing from Xcode
+
+Add a package by selecting `File` → `Add Packages…` in Xcode’s menu bar.
+
+Search for the WannaSDK using the repo's URL:
+```console
+https://github.com/WANNABY/WannaSDK-iOS.git
+```
+
+Next, set the **Dependency Rule** to be `Up to Next Major Version`.
+
+Then, select **Add Package**.
+
+#### Alternatively, add WannaSDK to a `Package.swift` manifest
+
+To integrate via a `Package.swift` manifest instead of Xcode, you can add
+WannaSDK to the dependencies array of your package:
+
+```swift
+dependencies: [
+  .package(
+    name: "WannaSDK",
+    url: "https://github.com/WANNABY/WannaSDK-iOS.git",
+    .upToNextMajor(from: "7.1.1")
+  ),
+
+  // Any other dependencies you have...
+],
+```
