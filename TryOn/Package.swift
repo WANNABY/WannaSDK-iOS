@@ -22,7 +22,7 @@ let package = Package(
         .target(
             name: "WannaTryOn",
             dependencies: [
-                "WannaSDK",
+                .product(name: "WannaSDK", package: "WannaSDK-iOS"),
                 "WannaTryOn_Toolkit"
             ],
             path: "Sources/"
