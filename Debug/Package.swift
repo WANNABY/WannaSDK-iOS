@@ -20,7 +20,7 @@ let package = Package(
     targets: [
         .target(
             name: "WannaDebug",
-            dependencies: ["WannaSDK"],
+            dependencies: [.product(name: "WannaSDK", package: "WannaSDK-iOS")],
             path: "Sources/"
         )
     ]
