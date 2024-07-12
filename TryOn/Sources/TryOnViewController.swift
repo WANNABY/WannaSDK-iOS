@@ -149,7 +149,10 @@ private extension TryOnViewController {
         currentTask?.cancel()
 
         // Downloads the new model, showing a progress indicator
-        currentTask = storage?.getRenderModel(withID: renderModels[index]) { [weak self] task, progress in
+        currentTask = storage?.getRenderModel(
+            withID: renderModels[index],
+            options: wsneakersSession?.options ?? []
+        ) { [weak self] task, progress in
             guard task == self?.currentTask else {
                 // Ignore progress from previously cancelled tasks
                 return
