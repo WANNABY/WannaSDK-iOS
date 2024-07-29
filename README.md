@@ -71,7 +71,7 @@ dependencies: [
   .package(
     name: "WannaSDK",
     url: "https://github.com/WANNABY/WannaSDK-iOS.git",
-    .upToNextMajor(from: "7.1.1")
+    .upToNextMajor(from: "7.2.0")
   ),
 
   // Any other dependencies you have...
