@@ -28,6 +28,7 @@ open class TryOnViewController: UIViewController {
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var modelId: UILabel!
+    @IBOutlet weak var handSelection: UISegmentedControl?
 
     private final var storage: WsneakersUISDKRenderModelStorage?
     private final var renderModels: [String] = []
@@ -88,6 +89,8 @@ public extension TryOnViewController {
         self.renderModels = renderModels
 
         session.start()
+
+        handSelection?.isHidden = session.category != .watch
     }
 }
 
@@ -355,6 +358,21 @@ private extension TryOnViewController {
     func updateProgress(_ value: Float) {
         progress.isHidden = false
         progress.progress = value
+    }
+}
+
+// MARK: - Switch hands
+
+private extension TryOnViewController {
+
+    // Action from segmented control for hand selection.
+    @IBAction func onHandSelected(_ sender: UISegmentedControl) {
+        // Segmented control UI: [ left | both | right ]
+        let isLeftTracked = sender.selectedSegmentIndex < 2
+        let isRightTracked = sender.selectedSegmentIndex > 0
+
+        wsneakersSession?.configuration.tracking.watch.leftWristAnchor.isTracked = isLeftTracked
+        wsneakersSession?.configuration.tracking.watch.leftWristAnchor.isTracked = isRightTracked
     }
 }
 
