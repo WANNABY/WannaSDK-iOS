@@ -21,11 +21,15 @@ class DeviceCheckingViewController: UIViewController {
         runSdk(type: .watch)
     }
 
+    @IBAction func runWatchInMirror() {
+        runSdk(type: .watch, options: .magicMirror)
+    }
+
     @IBAction func runClothes() {
         runSdk(type: .clothes)
     }
 
-    func runSdk(type: RenderableType) {
+    func runSdk(type: RenderableType, options: WannaSessionOptions = []) {
         guard WsneakersUISDKSession.isDeviceSupported()  else {
             presentAlert(title: "Error", message:  "Device is not supported")
             
@@ -37,8 +41,9 @@ class DeviceCheckingViewController: UIViewController {
             withIdentifier: "render_models_list"
         ) as! RenderModelSelectionViewController
         
-        controller.setRenderableType(type: type)
-        
+        controller.setRenderableType(type)
+        controller.setSessionOptions(options)
+
         show(controller, sender: self)
     }
 }

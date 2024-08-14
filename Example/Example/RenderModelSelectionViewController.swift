@@ -31,6 +31,7 @@ class RenderModelSelectionViewController: UIViewController {
 
     private var storage: WsneakersUISDKRenderModelStorage?
     private var renderableType: RenderableType!
+    private var sessionOptions: WannaSessionOptions = []
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
@@ -63,10 +64,14 @@ class RenderModelSelectionViewController: UIViewController {
         }
     }
     
-    func setRenderableType(type: RenderableType) {
+    func setRenderableType(_ type: RenderableType) {
         renderableType = type
     }
-    
+
+    func setSessionOptions(_ options: WannaSessionOptions) {
+        sessionOptions = options
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -196,11 +201,20 @@ private extension RenderModelSelectionViewController {
             }
         }
     }
-    
+
     func createWatchSession() throws -> WannaSDKSession {
-        try WsneakersUISDKSession.createWatch(withConfig: WannaSDKDefaults.clientConfig, progress: { progress in
+        let session = try WsneakersUISDKSession.createWatch(
+            withConfig: WannaSDKDefaults.clientConfig,
+            options: sessionOptions
+        ) { progress in
             return true
-        })
+        }
+
+        if sessionOptions.contains(.magicMirror) {
+            session.configuration.tracking.watch.rightWristAnchor.isTracked = false
+        }
+
+        return session
     }
 
     func createSneakersSession() throws -> WannaSDKSession {

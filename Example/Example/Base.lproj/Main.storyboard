@@ -17,24 +17,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="33S-Ah-Te3">
-                                <rect key="frame" x="161" y="361" width="71" height="130"/>
+                                <rect key="frame" x="123.66666666666669" y="336" width="146" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qe2-iT-aSo">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="30"/>
                                         <state key="normal" title="SHOES"/>
                                         <connections>
                                             <action selector="runSneakers" destination="GTQ-tF-9Q2" eventType="touchUpInside" id="c4m-ma-G2K"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRt-kc-bYz">
-                                        <rect key="frame" x="0.0" y="50" width="71" height="30"/>
+                                        <rect key="frame" x="0.0" y="50" width="146" height="30"/>
                                         <state key="normal" title="WATCHES"/>
                                         <connections>
                                             <action selector="runWatch" destination="GTQ-tF-9Q2" eventType="touchUpInside" id="F6x-MD-s70"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuU-0R-6N8">
+                                        <rect key="frame" x="0.0" y="100" width="146" height="30"/>
+                                        <state key="normal" title="WATCHES (in-mirror)"/>
+                                        <connections>
+                                            <action selector="runWatchInMirror" destination="GTQ-tF-9Q2" eventType="touchUpInside" id="U6g-pd-7uk"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD7-Cs-LlW">
-                                        <rect key="frame" x="0.0" y="100" width="71" height="30"/>
+                                        <rect key="frame" x="0.0" y="150" width="146" height="30"/>
                                         <state key="normal" title="CLOTHES"/>
                                         <connections>
                                             <action selector="runClothes" destination="GTQ-tF-9Q2" eventType="touchUpInside" id="xFX-cj-gcI"/>
@@ -150,17 +157,31 @@
                                             <action selector="onSwitchCamera:" destination="dvb-42-KFt" eventType="touchUpInside" id="5no-Wk-lK8"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-6q-tou">
+                                        <rect key="frame" x="20" y="607.66666666666663" width="353" height="32"/>
+                                        <segments>
+                                            <segment title="left"/>
+                                            <segment title="both"/>
+                                            <segment title="right"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="onHandSelected:" destination="dvb-42-KFt" eventType="valueChanged" id="alX-l7-V7j"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wyi-5J-zRS" secondAttribute="trailing" constant="8" id="1MI-ub-bJ6"/>
                                     <constraint firstItem="jfM-To-83m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="4" id="1Ni-Il-C5H"/>
                                     <constraint firstAttribute="bottom" secondItem="RLE-Yu-V65" secondAttribute="bottom" constant="4" id="3H7-Hp-KQg"/>
                                     <constraint firstItem="Vxl-Eb-VNa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="4" id="47g-ub-zGJ"/>
+                                    <constraint firstItem="hdM-6q-tou" firstAttribute="leading" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="20" id="9UZ-En-oIU"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="centerX" secondItem="Bz2-ND-1Ho" secondAttribute="centerX" id="A8f-5x-jxb"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="top" secondItem="jfM-To-83m" secondAttribute="bottom" constant="20" id="HDc-FQ-Xeb"/>
                                     <constraint firstItem="zgH-5n-YoZ" firstAttribute="top" secondItem="Vxl-Eb-VNa" secondAttribute="bottom" constant="44" id="JIr-Vb-clL"/>
+                                    <constraint firstAttribute="trailing" secondItem="hdM-6q-tou" secondAttribute="trailing" constant="20" id="Nu6-QI-uEq"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="centerY" secondItem="Bz2-ND-1Ho" secondAttribute="centerY" id="RCM-hc-all"/>
                                     <constraint firstItem="wyi-5J-zRS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" constant="4" id="TxS-n5-eoJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="hdM-6q-tou" secondAttribute="bottom" constant="60" id="YCQ-Yd-lmG"/>
                                     <constraint firstItem="0Bk-JG-3nY" firstAttribute="centerX" secondItem="jfM-To-83m" secondAttribute="centerX" id="Z2G-Mg-qrv"/>
                                     <constraint firstAttribute="trailing" secondItem="RLE-Yu-V65" secondAttribute="trailing" constant="8" id="b3m-Jc-Jvy"/>
                                     <constraint firstItem="RLE-Yu-V65" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bz2-ND-1Ho" secondAttribute="leading" id="gWQ-xo-CCL"/>
@@ -205,6 +226,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activity" destination="jfM-To-83m" id="UMZ-W4-SiJ"/>
+                        <outlet property="handSelection" destination="hdM-6q-tou" id="XA5-7C-wRq"/>
                         <outlet property="modelId" destination="cCj-yV-gre" id="2U8-HX-5kN"/>
                         <outlet property="progress" destination="0Bk-JG-3nY" id="si2-Tc-iUh"/>
                         <outlet property="sneakersView" destination="Bz2-ND-1Ho" id="lkf-gM-Dro"/>
@@ -267,12 +289,25 @@
                                     <action selector="onSwitchCamera:" destination="Cfc-rn-3Im" eventType="touchUpInside" id="IdY-Gl-lkB"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WCC-zr-BZs">
+                                <rect key="frame" x="20" y="727" width="353" height="32"/>
+                                <segments>
+                                    <segment title="left"/>
+                                    <segment title="both"/>
+                                    <segment title="right"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onHandSelected:" destination="Cfc-rn-3Im" eventType="valueChanged" id="2BE-47-lVo"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ssu-fD-zJ3"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rNc-ot-427" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ssu-fD-zJ3" secondAttribute="leading" id="4Bg-gv-45X"/>
+                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="WCC-zr-BZs" secondAttribute="bottom" constant="60" id="4om-nM-vHo"/>
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="PeY-29-W2o" secondAttribute="bottom" constant="24" id="AJm-2h-rDH"/>
+                            <constraint firstItem="WCC-zr-BZs" firstAttribute="leading" secondItem="Ssu-fD-zJ3" secondAttribute="leading" constant="20" id="EKH-TU-pLy"/>
                             <constraint firstItem="yvJ-oQ-Lwr" firstAttribute="centerX" secondItem="iEC-3f-Fsv" secondAttribute="centerX" id="Egi-95-wu7"/>
                             <constraint firstItem="PeY-29-W2o" firstAttribute="leading" secondItem="Ssu-fD-zJ3" secondAttribute="leading" constant="8" id="Gix-O1-Sjh"/>
                             <constraint firstItem="WV2-7A-0Vx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ssu-fD-zJ3" secondAttribute="leading" id="JlH-Pe-t6E"/>
@@ -282,6 +317,7 @@
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" secondItem="rNc-ot-427" secondAttribute="trailing" constant="8" id="Pxn-W3-JX2"/>
                             <constraint firstItem="tGC-Up-C2J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ssu-fD-zJ3" secondAttribute="leading" id="Ydf-1P-jAe"/>
                             <constraint firstItem="tGC-Up-C2J" firstAttribute="top" secondItem="WV2-7A-0Vx" secondAttribute="bottom" constant="44" id="ct1-Pg-tPO"/>
+                            <constraint firstItem="Ssu-fD-zJ3" firstAttribute="trailing" secondItem="WCC-zr-BZs" secondAttribute="trailing" constant="20" id="kay-SP-47d"/>
                             <constraint firstItem="Ssu-fD-zJ3" firstAttribute="bottom" secondItem="AD6-YW-aNv" secondAttribute="bottom" constant="8" id="lt9-bZ-gVT"/>
                             <constraint firstItem="GAq-sH-UMQ" firstAttribute="width" secondItem="iEC-3f-Fsv" secondAttribute="width" multiplier="0.7" id="nTZ-xb-ahC"/>
                             <constraint firstItem="GAq-sH-UMQ" firstAttribute="top" secondItem="yvJ-oQ-Lwr" secondAttribute="bottom" constant="20" id="o3l-vZ-adr"/>
@@ -303,6 +339,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activity" destination="yvJ-oQ-Lwr" id="Uf2-E2-REp"/>
+                        <outlet property="handSelection" destination="WCC-zr-BZs" id="pgV-jf-GCI"/>
                         <outlet property="modelId" destination="PeY-29-W2o" id="yIC-1O-dXh"/>
                         <outlet property="progress" destination="GAq-sH-UMQ" id="GfD-g0-hpM"/>
                         <outlet property="videoRecordButton" destination="tGC-Up-C2J" id="dWe-Xq-K2t"/>

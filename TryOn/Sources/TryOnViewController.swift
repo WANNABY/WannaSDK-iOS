@@ -51,6 +51,7 @@ open class TryOnViewController: UIViewController {
         progress.isHidden = true
 
         loadModel(with: currentIndex)
+        setupHandSelection()
     }
 
     open override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +91,7 @@ public extension TryOnViewController {
 
         session.start()
 
-        handSelection?.isHidden = session.category != .watch
+        setupHandSelection()
     }
 }
 
@@ -362,8 +363,12 @@ private extension TryOnViewController {
 }
 
 // MARK: - Switch hands
-
+@available(iOS 13.0, *)
 private extension TryOnViewController {
+
+    func setupHandSelection() {
+        handSelection?.isHidden = wsneakersSession?.category != .watch
+    }
 
     // Action from segmented control for hand selection.
     @IBAction func onHandSelected(_ sender: UISegmentedControl) {
@@ -372,7 +377,7 @@ private extension TryOnViewController {
         let isRightTracked = sender.selectedSegmentIndex > 0
 
         wsneakersSession?.configuration.tracking.watch.leftWristAnchor.isTracked = isLeftTracked
-        wsneakersSession?.configuration.tracking.watch.leftWristAnchor.isTracked = isRightTracked
+        wsneakersSession?.configuration.tracking.watch.rightWristAnchor.isTracked = isRightTracked
     }
 }
 
