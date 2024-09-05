@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   }
 
   s.subspec 'TryOn' do |ss|
-    ss.source_files = 'TryOn/Sources/**/*.{swift}'
+    ss.source_files = 'TryOn/Sources/**/*.{swift,storyboard}'
     ss.dependency   'WannaSDK'
     ss.dependency   'WannaTryOn/Toolkit'
   end
