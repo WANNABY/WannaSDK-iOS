@@ -9,6 +9,5 @@
 import Foundation
 
 struct WannaSDKDefaults {
-    static let supported3dRenderableTypes = Set(["sneaker"])
     static let clientConfig = "" // <-- Change license here
 }
