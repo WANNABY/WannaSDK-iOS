@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92AE72572BF1F94900011A13 /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
 		92AE72582BF1F94900011A13 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848612743ADF600D8B40C /* NavigationViewController.swift */; };
 		92AE72592BF1F94900011A13 /* WannaSDKDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848602743ADF600D8B40C /* WannaSDKDefaults.swift */; };
 		92AE725D2BF1F94900011A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848622743ADF600D8B40C /* AppDelegate.swift */; };
-		92AE725F2BF1F94900011A13 /* WsneakersSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */; };
-		92AE72602BF1F94900011A13 /* RenderModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */; };
 		92AE72662BF1F94900011A13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9488485E2743ADF600D8B40C /* Main.storyboard */; };
 		92AE72672BF1F94900011A13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9488485C2743ADF600D8B40C /* LaunchScreen.storyboard */; };
 		92AE72682BF1F94900011A13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9488485B2743ADF600D8B40C /* Assets.xcassets */; };
@@ -67,15 +64,12 @@
 		4E5F8F6A1F8F510FFF46A731 /* Pods_Wanna_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wanna_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D2A9EC73DCCA6EA1AF83BC /* Pods-WannaSDKExample CocoaPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaSDKExample CocoaPods.release.xcconfig"; path = "Target Support Files/Pods-WannaSDKExample CocoaPods/Pods-WannaSDKExample CocoaPods.release.xcconfig"; sourceTree = "<group>"; };
 		92AE726E2BF1F94900011A13 /* Wanna Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wanna Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderModelSelectionViewController.swift; sourceTree = "<group>"; };
-		9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsneakersSDKViewController.swift; sourceTree = "<group>"; };
 		9488485B2743ADF600D8B40C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9488485D2743ADF600D8B40C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9488485F2743ADF600D8B40C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		948848602743ADF600D8B40C /* WannaSDKDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WannaSDKDefaults.swift; sourceTree = "<group>"; };
 		948848612743ADF600D8B40C /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		948848622743ADF600D8B40C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCheckingViewController.swift; sourceTree = "<group>"; };
 		948848642743ADF600D8B40C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B065FFCB28C103F0006FC87E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0B14CED28801C66003C4842 /* Wanna Sample UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wanna Sample UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,15 +139,12 @@
 		948848532743ADF600D8B40C /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */,
-				9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */,
 				9488485B2743ADF600D8B40C /* Assets.xcassets */,
 				9488485C2743ADF600D8B40C /* LaunchScreen.storyboard */,
 				9488485E2743ADF600D8B40C /* Main.storyboard */,
 				948848602743ADF600D8B40C /* WannaSDKDefaults.swift */,
 				948848612743ADF600D8B40C /* NavigationViewController.swift */,
 				948848622743ADF600D8B40C /* AppDelegate.swift */,
-				948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */,
 				948848642743ADF600D8B40C /* Info.plist */,
 			);
 			path = Example;
@@ -399,12 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92AE72572BF1F94900011A13 /* DeviceCheckingViewController.swift in Sources */,
 				92AE72582BF1F94900011A13 /* NavigationViewController.swift in Sources */,
 				92AE72592BF1F94900011A13 /* WannaSDKDefaults.swift in Sources */,
 				92AE725D2BF1F94900011A13 /* AppDelegate.swift in Sources */,
-				92AE725F2BF1F94900011A13 /* WsneakersSDKViewController.swift in Sources */,
-				92AE72602BF1F94900011A13 /* RenderModelSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

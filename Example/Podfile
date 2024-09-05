@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+source 'git@github.com:WANNABY/ios-specs-internal.git'
 
 inhibit_all_warnings!
 use_frameworks!

@@ -10,6 +10,5 @@ import Foundation
 
 struct WannaSDKDefaults {
     static let supported3dRenderableTypes = Set(["sneaker"])
-    static let cacheSize = 1024*1024*200
     static let clientConfig = "" // <-- Change license here
 }

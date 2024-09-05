@@ -18,24 +18,19 @@ enum RenderableType: String {
     case clothes
 }
 
+private struct Constants {
+    static let cacheSize = 1024 * 1024 * 200
+}
+
 class RenderModelSelectionViewController: UIViewController {
-    // In this example, we demonstrate both kinds of UI view creating:
-    // in code or via the storyboard
-    // Keep the one you prefer if you're writing your app based on this example
-    enum ViewType: String {
-        case manual = "RemoteManualTryOn"
-        case xib = "RemoteTryOn"
-    }
-
-    private var viewType: ViewType?
-
     private var storage: WsneakersUISDKRenderModelStorage?
     private var renderableType: RenderableType!
     private var sessionOptions: WannaSessionOptions = []
+    private var clientConfig: String = ""
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
-    
+
     // We'll try to preload the models and put them in cache
     // to improve waiting times during virtual try-on
     // In this example, we simply preload the first three models from the list
@@ -63,7 +58,7 @@ class RenderModelSelectionViewController: UIViewController {
 
         }
     }
-    
+
     func setRenderableType(_ type: RenderableType) {
         renderableType = type
     }
@@ -72,22 +67,26 @@ class RenderModelSelectionViewController: UIViewController {
         sessionOptions = options
     }
 
+    func setClientConfig(_ config: String) {
+        clientConfig = config
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         if renderModels.isEmpty {
             loadRenderModels()
         }
 
         wsneakersSession = nil
     }
- 
+
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             print("device did clear cache after shaking")
@@ -101,7 +100,7 @@ extension RenderModelSelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return renderModels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath);
         cell.textLabel?.text = renderModels[indexPath.row].renderModelID
@@ -137,9 +136,9 @@ private extension RenderModelSelectionViewController {
             self?.createSession(completion: completion)
         }
     }
-    
+
     func waitForPreviousSessionDestroy(completion: @escaping () -> Void) {
-        DispatchQueue.global(qos: .utility).async { [weak self] in
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             var isLocked: Bool
 
             repeat {
@@ -160,13 +159,13 @@ private extension RenderModelSelectionViewController {
             return try createClothesSession()
         }
     }
-    
+
     func createSession(completion: @escaping (WannaSDKSession?) -> ()) {
         if let session = wsneakersSession {
             completion(session)
             return
         }
-        DispatchQueue.global(qos: .utility).async { [weak self] in
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let sSelf = self else { return }
             do {
                 let session = try sSelf.createSession(type: sSelf.renderableType) // this is where we create the new session
@@ -204,11 +203,9 @@ private extension RenderModelSelectionViewController {
 
     func createWatchSession() throws -> WannaSDKSession {
         let session = try WsneakersUISDKSession.createWatch(
-            withConfig: WannaSDKDefaults.clientConfig,
+            withConfig: clientConfig,
             options: sessionOptions
-        ) { progress in
-            return true
-        }
+        )
 
         if sessionOptions.contains(.magicMirror) {
             session.configuration.tracking.watch.rightWristAnchor.isTracked = false
@@ -218,15 +215,11 @@ private extension RenderModelSelectionViewController {
     }
 
     func createSneakersSession() throws -> WannaSDKSession {
-        try WsneakersUISDKSession.createSession(withConfig: WannaSDKDefaults.clientConfig, progress: { progress in
-            return true
-        })
+        try WsneakersUISDKSession.createSession(withConfig: clientConfig)
     }
 
     func createClothesSession() throws -> WannaSDKSession {
-        try WsneakersUISDKSession.createClothesSession(withConfig: WannaSDKDefaults.clientConfig, progress: { progress in
-            return true
-        })
+        try WsneakersUISDKSession.createClothesSession(withConfig: clientConfig)
     }
 }
 
@@ -236,15 +229,15 @@ private extension RenderModelSelectionViewController {
         // This is where we create the model storage
         // that will load and set the models to virtual try-on
         do {
-            storage = try WsneakersUISDKRenderModelStorage.createStorage(withConfig: WannaSDKDefaults.clientConfig,
-                                                                         cacheSize: WannaSDKDefaults.cacheSize)
+            storage = try WsneakersUISDKRenderModelStorage.createStorage(withConfig: clientConfig,
+                                                                         cacheSize: Constants.cacheSize)
         } catch {
             activity.stopAnimating()
             var description = error.localizedDescription
 
             // Checking for the correct license info
             // Don't forget to enter your configuration string in WannaSDKDefaults.swift
-            if WannaSDKDefaults.clientConfig.isEmpty {
+            if clientConfig.isEmpty {
                 description = "Please change the config string in WannaSDKDefaults.swift"
             }
 
@@ -301,17 +294,17 @@ private extension RenderModelSelectionViewController {
         }
     }
 
-    func openTryon(with type: ViewType, session: WannaSDKSession, index: Int) {
+    func openTryon(session: WannaSDKSession, index: Int) {
         guard #available(iOS 13.0, *) else {
             presentAlert(title: "Not supported", message: "Too old iOS version")
 
             return
         }
 
-        viewType = type
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let bundle = Bundle(for: TryOnViewController.self)
+        let storyboard = UIStoryboard(name: "TryOn", bundle: bundle)
         let controller = storyboard.instantiateViewController(
-            withIdentifier: type.rawValue
+            withIdentifier: "RemoteManualTryOn"
         ) as! TryOnViewController
 
         // Passing the session, storage, model list, and the index of the model the user has already selected
@@ -324,23 +317,5 @@ private extension RenderModelSelectionViewController {
         )
 
         show(controller, sender: self)
-    }
-    
-    func openTryon(session: WannaSDKSession, index: Int) {
-        if let viewType = viewType {
-            openTryon(with: viewType, session: session, index: index)
-            return
-        }
-
-        let alert = UIAlertController(title: "Tryon",
-                                      message: "Choose view type",
-                                      preferredStyle: UIDevice.current.userInterfaceIdiom == .pad ? .alert : .actionSheet)
-        alert.addAction(UIAlertAction(title: "Manual", style: .default) { _ in
-            self.openTryon(with: ViewType.manual, session: session, index: index)
-        })
-        alert.addAction(UIAlertAction(title: "Xib", style: .default) { _ in
-            self.openTryon(with: ViewType.xib, session: session, index: index)
-        })
-        present(alert, animated: true)
     }
 }
