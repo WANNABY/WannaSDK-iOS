@@ -1,13 +1,13 @@
 {
-  "originHash" : "f3861133060c20a9c631c3b5e30726f05c6a7ca1882bb69610e32454460a549c",
+  "originHash" : "39f0c1a680a6e62c55d408f9c3b0f56f8b864d95a5893f784ff07674633ce991",
   "pins" : [
     {
       "identity" : "wannasdk-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/WANNABY/WannaSDK-iOS.git",
       "state" : {
-        "revision" : "679d6dd2ef7679e45b22de457e80665f35edcd35",
-        "version" : "7.1.1"
+        "revision" : "7093f3a10dcce7a0c1e1284f73360e2c605e6018",
+        "version" : "7.3.0"
       }
     }
   ],

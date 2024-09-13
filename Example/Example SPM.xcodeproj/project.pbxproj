@@ -11,15 +11,12 @@
 		925EED5F2BF4B2C300F0A51D /* WannaDebug in Frameworks */ = {isa = PBXBuildFile; productRef = 925EED5E2BF4B2C300F0A51D /* WannaDebug */; };
 		92D70E222BF49C5A00BEAD0E /* WannaDebug in Frameworks */ = {isa = PBXBuildFile; productRef = 92D70E212BF49C5A00BEAD0E /* WannaDebug */; };
 		92D70E242BF49C5A00BEAD0E /* WannaTryOn in Frameworks */ = {isa = PBXBuildFile; productRef = 92D70E232BF49C5A00BEAD0E /* WannaTryOn */; };
-		948848662743ADF600D8B40C /* RenderModelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */; };
-		9488486B2743ADF600D8B40C /* WsneakersSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */; };
 		9488486C2743ADF600D8B40C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9488485B2743ADF600D8B40C /* Assets.xcassets */; };
 		9488486D2743ADF600D8B40C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9488485C2743ADF600D8B40C /* LaunchScreen.storyboard */; };
 		9488486E2743ADF600D8B40C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9488485E2743ADF600D8B40C /* Main.storyboard */; };
 		9488486F2743ADF600D8B40C /* WannaSDKDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848602743ADF600D8B40C /* WannaSDKDefaults.swift */; };
 		948848702743ADF600D8B40C /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848612743ADF600D8B40C /* NavigationViewController.swift */; };
 		948848712743ADF600D8B40C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848622743ADF600D8B40C /* AppDelegate.swift */; };
-		948848722743ADF600D8B40C /* DeviceCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */; };
 		B065FFCC28C103F0006FC87E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065FFCB28C103F0006FC87E /* Constants.swift */; };
 		B0B14CF028801C66003C4842 /* WannaSDK_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CEF28801C66003C4842 /* WannaSDK_ExampleUITests.swift */; };
 		B0B14CFB28801CDC003C4842 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14CFA28801CDC003C4842 /* Logger.swift */; };
@@ -57,15 +54,12 @@
 
 /* Begin PBXFileReference section */
 		607FACD01AFB9204008FA782 /* Wanna Sample SPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wanna Sample SPM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderModelSelectionViewController.swift; sourceTree = "<group>"; };
-		9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsneakersSDKViewController.swift; sourceTree = "<group>"; };
 		9488485B2743ADF600D8B40C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9488485D2743ADF600D8B40C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9488485F2743ADF600D8B40C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		948848602743ADF600D8B40C /* WannaSDKDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WannaSDKDefaults.swift; sourceTree = "<group>"; };
 		948848612743ADF600D8B40C /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		948848622743ADF600D8B40C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCheckingViewController.swift; sourceTree = "<group>"; };
 		948848642743ADF600D8B40C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B065FFCB28C103F0006FC87E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0B14CED28801C66003C4842 /* Wanna Sample SPM UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wanna Sample SPM UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,15 +117,12 @@
 		948848532743ADF600D8B40C /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				948848542743ADF600D8B40C /* RenderModelSelectionViewController.swift */,
-				9488485A2743ADF600D8B40C /* WsneakersSDKViewController.swift */,
 				9488485B2743ADF600D8B40C /* Assets.xcassets */,
 				9488485C2743ADF600D8B40C /* LaunchScreen.storyboard */,
 				9488485E2743ADF600D8B40C /* Main.storyboard */,
 				948848602743ADF600D8B40C /* WannaSDKDefaults.swift */,
 				948848612743ADF600D8B40C /* NavigationViewController.swift */,
 				948848622743ADF600D8B40C /* AppDelegate.swift */,
-				948848632743ADF600D8B40C /* DeviceCheckingViewController.swift */,
 				948848642743ADF600D8B40C /* Info.plist */,
 			);
 			path = Example;
@@ -311,12 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				948848722743ADF600D8B40C /* DeviceCheckingViewController.swift in Sources */,
 				948848702743ADF600D8B40C /* NavigationViewController.swift in Sources */,
 				9488486F2743ADF600D8B40C /* WannaSDKDefaults.swift in Sources */,
 				948848712743ADF600D8B40C /* AppDelegate.swift in Sources */,
-				9488486B2743ADF600D8B40C /* WsneakersSDKViewController.swift in Sources */,
-				948848662743ADF600D8B40C /* RenderModelSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
