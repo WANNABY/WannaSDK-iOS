@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = 'WannaTryOn'
-  s.version                 = '7.1.0'
+  s.version                 = '7.3.0'
   s.author                  = 'help@wanna.fashion'
   s.homepage                = "https://wanna.fashion"
   s.readme                  = "https://github.com/WANNABY/WannaSDK-iOS/blob/master/README.md"
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   }
 
   s.subspec 'TryOn' do |ss|
-    ss.source_files = 'TryOn/Sources/**/*.{swift}'
+    ss.source_files = 'TryOn/Sources/**/*.{swift,storyboard}'
     ss.dependency   'WannaSDK'
     ss.dependency   'WannaTryOn/Toolkit'
   end

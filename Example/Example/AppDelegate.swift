@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Don't add to production code.
         // For WANNA internal use only.
-        if #available(iOS 13.0, *) {
+        if #available(iOS 14.0, *) {
             WannaDebug.deepLinkHandler.handleURL(url)
         }
 

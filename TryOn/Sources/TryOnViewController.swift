@@ -28,6 +28,7 @@ open class TryOnViewController: UIViewController {
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var modelId: UILabel!
+    @IBOutlet weak var handSelection: UISegmentedControl?
 
     private final var storage: WsneakersUISDKRenderModelStorage?
     private final var renderModels: [String] = []
@@ -50,6 +51,7 @@ open class TryOnViewController: UIViewController {
         progress.isHidden = true
 
         loadModel(with: currentIndex)
+        setupHandSelection()
     }
 
     open override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +90,8 @@ public extension TryOnViewController {
         self.renderModels = renderModels
 
         session.start()
+
+        setupHandSelection()
     }
 }
 
@@ -149,7 +153,10 @@ private extension TryOnViewController {
         currentTask?.cancel()
 
         // Downloads the new model, showing a progress indicator
-        currentTask = storage?.getRenderModel(withID: renderModels[index]) { [weak self] task, progress in
+        currentTask = storage?.getRenderModel(
+            withID: renderModels[index],
+            options: wsneakersSession?.options ?? []
+        ) { [weak self] task, progress in
             guard task == self?.currentTask else {
                 // Ignore progress from previously cancelled tasks
                 return
@@ -352,6 +359,25 @@ private extension TryOnViewController {
     func updateProgress(_ value: Float) {
         progress.isHidden = false
         progress.progress = value
+    }
+}
+
+// MARK: - Switch hands
+@available(iOS 13.0, *)
+private extension TryOnViewController {
+
+    func setupHandSelection() {
+        handSelection?.isHidden = wsneakersSession?.category != .watch
+    }
+
+    // Action from segmented control for hand selection.
+    @IBAction func onHandSelected(_ sender: UISegmentedControl) {
+        // Segmented control UI: [ left | both | right ]
+        let isLeftTracked = sender.selectedSegmentIndex < 2
+        let isRightTracked = sender.selectedSegmentIndex > 0
+
+        wsneakersSession?.configuration.tracking.watch.leftWristAnchor.isTracked = isLeftTracked
+        wsneakersSession?.configuration.tracking.watch.rightWristAnchor.isTracked = isRightTracked
     }
 }
 
