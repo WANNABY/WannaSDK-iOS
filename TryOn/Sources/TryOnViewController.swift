@@ -84,6 +84,7 @@ public extension TryOnViewController {
         selected: Int
     ) {
         wsneakersSession = session
+        wsneakersSession?.delegate = self
         currentIndex = selected
 
         self.storage = storage
@@ -132,6 +133,190 @@ private extension TryOnViewController {
                 self?.onModelLoadFailed(error: error)
             }
         }
+    }
+}
+
+extension TryOnViewController: WannaSDKSessionDelegate {
+    public func sessionDidCaptureFrame(_ sampleBuffer: CMSampleBuffer, completion callback: @escaping (CMSampleBuffer) -> Void) {
+        let image = createImage(from: sampleBuffer)
+
+        guard let sampleBuffer = image?.createCMSampleBuffer() else { return }
+
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            callback(sampleBuffer)
+        }
+    }
+
+    func createImage(from sampleBuffer: CMSampleBuffer) -> UIImage? {
+        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+            print("Failed to get image buffer from CMSampleBuffer.")
+            return nil
+        }
+
+        CVPixelBufferLockBaseAddress(imageBuffer, .readOnly)
+        defer { CVPixelBufferUnlockBaseAddress(imageBuffer, .readOnly) }
+
+        let ciImage = CIImage(cvPixelBuffer: imageBuffer)
+        let context = CIContext()
+
+        guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else {
+            print("Failed to create CGImage from CIImage.")
+            return nil
+        }
+
+        let image = UIImage(cgImage: cgImage)
+        return image
+    }
+}
+
+extension UIImage {
+    func createCMSampleBuffer() -> CMSampleBuffer? {
+        guard let cgImage = cgImage else {
+            print("Failed to get CGImage from UIImage.")
+            return nil
+        }
+
+        let width = cgImage.width
+        let height = cgImage.height
+        let pixelFormat = kCVPixelFormatType_32BGRA
+
+        var pixelBuffer: CVPixelBuffer?
+
+        let status = CVPixelBufferCreate(
+            kCFAllocatorDefault,
+            width,
+            height,
+            pixelFormat,
+            nil,
+            &pixelBuffer
+        )
+
+        guard status == kCVReturnSuccess, let buffer = pixelBuffer else {
+            print("Failed to create CVPixelBuffer.")
+            return nil
+        }
+
+        CVPixelBufferLockBaseAddress(buffer, .readOnly)
+        defer { CVPixelBufferUnlockBaseAddress(buffer, .readOnly) }
+
+        if let context = CGContext(
+            data: CVPixelBufferGetBaseAddress(buffer),
+            width: width,
+            height: height,
+            bitsPerComponent: 8,
+            bytesPerRow: CVPixelBufferGetBytesPerRow(buffer),
+            space: cgImage.colorSpace ?? CGColorSpaceCreateDeviceRGB(),
+            bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue
+        ) {
+            context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+        } else {
+            print("Failed to create CGContext.")
+            return nil
+        }
+
+        var formatDescription: CMVideoFormatDescription?
+        let result = CMVideoFormatDescriptionCreateForImageBuffer(
+            allocator: kCFAllocatorDefault,
+            imageBuffer: buffer,
+            formatDescriptionOut: &formatDescription
+        )
+
+        guard result == noErr, let validFormatDescription = formatDescription else {
+            print("Failed to create CMVideoFormatDescription.")
+            return nil
+        }
+
+        // Create a CMSampleBuffer from the CVPixelBuffer
+        var sampleBuffer: CMSampleBuffer?
+        var timingInfo = CMSampleTimingInfo(duration: .invalid, presentationTimeStamp: .zero, decodeTimeStamp: .invalid)
+        let sampleBufferResult = CMSampleBufferCreateForImageBuffer(
+            allocator: kCFAllocatorDefault,
+            imageBuffer: buffer,
+            dataReady: true,
+            makeDataReadyCallback: nil,
+            refcon: nil,
+            formatDescription: validFormatDescription,
+            sampleTiming: &timingInfo,
+            sampleBufferOut: &sampleBuffer
+        )
+
+        guard sampleBufferResult == noErr else {
+            print("Failed to create CMSampleBuffer: \(sampleBufferResult)")
+            return nil
+        }
+
+        return sampleBuffer
+    }
+
+    func sampleBuffer() -> CMSampleBuffer? {
+        guard let jpegData = self.jpegData(compressionQuality: 1) else {
+            return nil
+        }
+
+        let rawPixelSize = CGSize(width: size.width, height: size.height)
+
+        var format: CMFormatDescription?
+
+        _ = CMVideoFormatDescriptionCreate(allocator: kCFAllocatorDefault, codecType: kCMVideoCodecType_JPEG, width: Int32(rawPixelSize.width), height: Int32(rawPixelSize.height), extensions: nil, formatDescriptionOut: &format)
+
+        do {
+            let cmBlockBuffer = try createCMBlockBuffer(data: jpegData)
+            var size = jpegData.count
+            var sampleBuffer: CMSampleBuffer?
+            let preciseTime = CMTimeMakeWithSeconds(CACurrentMediaTime(), preferredTimescale: 600)
+            let rescaledTime = CMTimeConvertScale(preciseTime, timescale: 60, method: .default)
+//            let nowTime = CMTime(seconds: CACurrentMediaTime(), preferredTimescale: 60)
+            let preciseTime2 = CMTimeMakeWithSeconds(1, preferredTimescale: 600)
+            let rescaledTime2 = CMTimeConvertScale(preciseTime2, timescale: 60, method: .default)
+//            let _1_60_s = CMTime(value: 1, timescale: 60) // CMTime(seconds: 1.0, preferredTimescale: 30)
+            var timingInfo: CMSampleTimingInfo = CMSampleTimingInfo(duration: rescaledTime2, presentationTimeStamp: rescaledTime, decodeTimeStamp: .invalid)
+            _ = CMSampleBufferCreateReady(allocator: kCFAllocatorDefault, dataBuffer: cmBlockBuffer, formatDescription: format, sampleCount: 1, sampleTimingEntryCount: 1, sampleTimingArray: &timingInfo, sampleSizeEntryCount: 1, sampleSizeArray: &size, sampleBufferOut: &sampleBuffer)
+
+            if sampleBuffer != nil {
+                // print("sending buffer to displayBufferLayer")
+                // self.bufferDisplayLayer.enqueue(sampleBuffer!)
+                return sampleBuffer
+            } else {
+                return nil
+            }
+        } catch let error {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+
+    func createCMBlockBuffer(data: Data) throws -> CMBlockBuffer? {
+        guard !data.isEmpty else {
+            print("Data is empty. Cannot create CMBlockBuffer.")
+            return nil
+        }
+
+        var blockBuffer: CMBlockBuffer?
+
+        let status = data.withUnsafeBytes { rawBufferPointer -> OSStatus in
+            guard let baseAddress = rawBufferPointer.baseAddress else {
+                return 1  // Return an error code if baseAddress is nil
+            }
+            let mutablePointer = UnsafeMutableRawPointer(mutating: baseAddress)
+            return CMBlockBufferCreateWithMemoryBlock(
+                allocator: kCFAllocatorDefault,
+                memoryBlock: mutablePointer,
+                blockLength: data.count,
+                blockAllocator: kCFAllocatorNull,
+                customBlockSource: nil,
+                offsetToData: 0,
+                dataLength: data.count,
+                flags: 0,
+                blockBufferOut: &blockBuffer
+            )
+        }
+
+        if status != kCMBlockBufferNoErr {
+            print("Failed to create CMBlockBuffer: \(status)")
+            return nil
+        }
+
+        return blockBuffer
     }
 }
 
