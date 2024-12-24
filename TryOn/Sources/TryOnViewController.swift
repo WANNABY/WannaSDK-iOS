@@ -140,7 +140,7 @@ extension TryOnViewController: WannaSDKSessionDelegate {
     public func sessionDidCaptureFrame(_ sampleBuffer: CMSampleBuffer, completion callback: @escaping (CMSampleBuffer) -> Void) {
         let image = createImage(from: sampleBuffer)
 
-        guard let sampleBuffer = image?.createCMSampleBuffer() else { return }
+        guard let sampleBuffer = image?.sampleBuffer() else { return }
 
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             callback(sampleBuffer)
@@ -170,84 +170,6 @@ extension TryOnViewController: WannaSDKSessionDelegate {
 }
 
 extension UIImage {
-    func createCMSampleBuffer() -> CMSampleBuffer? {
-        guard let cgImage = cgImage else {
-            print("Failed to get CGImage from UIImage.")
-            return nil
-        }
-
-        let width = cgImage.width
-        let height = cgImage.height
-        let pixelFormat = kCVPixelFormatType_32BGRA
-
-        var pixelBuffer: CVPixelBuffer?
-
-        let status = CVPixelBufferCreate(
-            kCFAllocatorDefault,
-            width,
-            height,
-            pixelFormat,
-            nil,
-            &pixelBuffer
-        )
-
-        guard status == kCVReturnSuccess, let buffer = pixelBuffer else {
-            print("Failed to create CVPixelBuffer.")
-            return nil
-        }
-
-        CVPixelBufferLockBaseAddress(buffer, .readOnly)
-        defer { CVPixelBufferUnlockBaseAddress(buffer, .readOnly) }
-
-        if let context = CGContext(
-            data: CVPixelBufferGetBaseAddress(buffer),
-            width: width,
-            height: height,
-            bitsPerComponent: 8,
-            bytesPerRow: CVPixelBufferGetBytesPerRow(buffer),
-            space: cgImage.colorSpace ?? CGColorSpaceCreateDeviceRGB(),
-            bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue
-        ) {
-            context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
-        } else {
-            print("Failed to create CGContext.")
-            return nil
-        }
-
-        var formatDescription: CMVideoFormatDescription?
-        let result = CMVideoFormatDescriptionCreateForImageBuffer(
-            allocator: kCFAllocatorDefault,
-            imageBuffer: buffer,
-            formatDescriptionOut: &formatDescription
-        )
-
-        guard result == noErr, let validFormatDescription = formatDescription else {
-            print("Failed to create CMVideoFormatDescription.")
-            return nil
-        }
-
-        // Create a CMSampleBuffer from the CVPixelBuffer
-        var sampleBuffer: CMSampleBuffer?
-        var timingInfo = CMSampleTimingInfo(duration: .invalid, presentationTimeStamp: .zero, decodeTimeStamp: .invalid)
-        let sampleBufferResult = CMSampleBufferCreateForImageBuffer(
-            allocator: kCFAllocatorDefault,
-            imageBuffer: buffer,
-            dataReady: true,
-            makeDataReadyCallback: nil,
-            refcon: nil,
-            formatDescription: validFormatDescription,
-            sampleTiming: &timingInfo,
-            sampleBufferOut: &sampleBuffer
-        )
-
-        guard sampleBufferResult == noErr else {
-            print("Failed to create CMSampleBuffer: \(sampleBufferResult)")
-            return nil
-        }
-
-        return sampleBuffer
-    }
-
     func sampleBuffer() -> CMSampleBuffer? {
         guard let jpegData = self.jpegData(compressionQuality: 1) else {
             return nil
@@ -295,7 +217,7 @@ extension UIImage {
 
         let status = data.withUnsafeBytes { rawBufferPointer -> OSStatus in
             guard let baseAddress = rawBufferPointer.baseAddress else {
-                return 1  // Return an error code if baseAddress is nil
+                return 1 
             }
             let mutablePointer = UnsafeMutableRawPointer(mutating: baseAddress)
             return CMBlockBufferCreateWithMemoryBlock(
