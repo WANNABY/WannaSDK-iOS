@@ -182,7 +182,7 @@ extension UIImage {
         _ = CMVideoFormatDescriptionCreate(allocator: kCFAllocatorDefault, codecType: kCMVideoCodecType_JPEG, width: Int32(rawPixelSize.width), height: Int32(rawPixelSize.height), extensions: nil, formatDescriptionOut: &format)
 
         do {
-            let cmBlockBuffer = try createCMBlockBuffer(data: jpegData)
+            let cmBlockBuffer = try jpegData.toCMBlockBuffer()
             var size = jpegData.count
             var sampleBuffer: CMSampleBuffer?
             let preciseTime = CMTimeMakeWithSeconds(CACurrentMediaTime(), preferredTimescale: 600)
@@ -206,40 +206,50 @@ extension UIImage {
             return nil
         }
     }
+}
 
-    func createCMBlockBuffer(data: Data) throws -> CMBlockBuffer? {
-        guard !data.isEmpty else {
-            print("Data is empty. Cannot create CMBlockBuffer.")
-            return nil
-        }
-
+extension Data {
+    func toCMBlockBuffer() throws -> CMBlockBuffer {
         var blockBuffer: CMBlockBuffer?
+        let data: NSMutableData = .init(data: self)
+        var source: CMBlockBufferCustomBlockSource = .init()
 
-        let status = data.withUnsafeBytes { rawBufferPointer -> OSStatus in
-            guard let baseAddress = rawBufferPointer.baseAddress else {
-                return 1 
-            }
-            let mutablePointer = UnsafeMutableRawPointer(mutating: baseAddress)
-            return CMBlockBufferCreateWithMemoryBlock(
-                allocator: kCFAllocatorDefault,
-                memoryBlock: mutablePointer,
-                blockLength: data.count,
-                blockAllocator: kCFAllocatorNull,
-                customBlockSource: nil,
-                offsetToData: 0,
-                dataLength: data.count,
-                flags: 0,
-                blockBufferOut: &blockBuffer
-            )
+        source.refCon = Unmanaged.passRetained(data).toOpaque()
+        source.FreeBlock = freeBlock
+
+        let result = CMBlockBufferCreateWithMemoryBlock(
+            allocator: kCFAllocatorDefault,
+            memoryBlock: data.mutableBytes,
+            blockLength: data.length,
+            blockAllocator: kCFAllocatorNull,
+            customBlockSource: &source,
+            offsetToData: 0,
+            dataLength: data.length,
+            flags: 0,
+            blockBufferOut: &blockBuffer
+        )
+
+        if OSStatus(result) != kCMBlockBufferNoErr {
+            throw CMEncodingError.cmBlockCreationFailed
         }
 
-        if status != kCMBlockBufferNoErr {
-            print("Failed to create CMBlockBuffer: \(status)")
-            return nil
+        guard let buffer = blockBuffer else {
+            throw CMEncodingError.cmBlockCreationFailed
         }
 
-        return blockBuffer
+        assert(CMBlockBufferGetDataLength(buffer) == data.length)
+
+        return buffer
     }
+}
+
+private func freeBlock(_ refCon: UnsafeMutableRawPointer?, doomedMemoryBlock: UnsafeMutableRawPointer, sizeInBytes: Int) -> Void {
+    let unmanagedData = Unmanaged<NSData>.fromOpaque(refCon!)
+    unmanagedData.release()
+}
+
+enum CMEncodingError: Error {
+    case cmBlockCreationFailed
 }
 
 // MARK: - Model download
