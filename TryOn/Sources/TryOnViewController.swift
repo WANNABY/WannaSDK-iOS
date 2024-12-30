@@ -140,7 +140,9 @@ extension TryOnViewController: WannaSDKSessionDelegate {
     public func sessionDidCaptureFrame(_ sampleBuffer: CMSampleBuffer, completion callback: @escaping (CMSampleBuffer) -> Void) {
         let image = createImage(from: sampleBuffer)
 
-        guard let sampleBuffer = image?.sampleBuffer() else { return }
+        guard let sampleBuffer = image?.createCMSampleBuffer() else { return }
+
+        let im = createImage(from: sampleBuffer)
 
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             callback(sampleBuffer)
@@ -170,16 +172,104 @@ extension TryOnViewController: WannaSDKSessionDelegate {
 }
 
 extension UIImage {
+    func createCMSampleBuffer() -> CMSampleBuffer? {
+        guard let cgImage = cgImage else {
+            return nil
+        }
+
+        let width = cgImage.width
+        let height = cgImage.height
+        let pixelFormat = kCVPixelFormatType_32BGRA
+        let attributes: [String: Any] = [
+            kCVPixelBufferMetalCompatibilityKey as String: true,
+        ]
+
+        // Create a CVPixelBuffer
+        var pixelBuffer: CVPixelBuffer?
+        let pixelBufferStatus = CVPixelBufferCreate(
+            kCFAllocatorDefault,
+            width,
+            height,
+            pixelFormat,
+            attributes as CFDictionary,
+            &pixelBuffer
+        )
+
+        guard pixelBufferStatus == kCVReturnSuccess, let buffer = pixelBuffer else {
+            print("Failed to create CVPixelBuffer.")
+            return nil
+        }
+
+        // Lock the buffer for writing
+        CVPixelBufferLockBaseAddress(buffer, .readOnly)
+        defer { CVPixelBufferUnlockBaseAddress(buffer, .readOnly) }
+
+        let bitmapInfo = CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.premultipliedFirst.rawValue
+
+        // Create a CGContext and draw the CGImage into the pixel buffer
+        if let context = CGContext(
+            data: CVPixelBufferGetBaseAddress(buffer),
+            width: width,
+            height: height,
+            bitsPerComponent: 8,
+            bytesPerRow: CVPixelBufferGetBytesPerRow(buffer),
+            space: cgImage.colorSpace ?? CGColorSpaceCreateDeviceRGB(),
+            bitmapInfo: bitmapInfo
+        ) {
+            context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+        } else {
+            print("Failed to create CGContext.")
+            return nil
+        }
+
+        // Create a CMVideoFormatDescription
+        var formatDescription: CMVideoFormatDescription?
+        let formatStatus = CMVideoFormatDescriptionCreateForImageBuffer(
+            allocator: kCFAllocatorDefault,
+            imageBuffer: buffer,
+            formatDescriptionOut: &formatDescription
+        )
+
+        guard formatStatus == noErr, let validFormatDescription = formatDescription else {
+            print("Failed to create CMVideoFormatDescription.")
+            return nil
+        }
+
+        // Create a CMSampleBuffer
+        var sampleBuffer: CMSampleBuffer?
+        var timingInfo = CMSampleTimingInfo(duration: .invalid, presentationTimeStamp: .zero, decodeTimeStamp: .invalid)
+        let sampleBufferStatus = CMSampleBufferCreateForImageBuffer(
+            allocator: kCFAllocatorDefault,
+            imageBuffer: buffer,
+            dataReady: true,
+            makeDataReadyCallback: nil,
+            refcon: nil,
+            formatDescription: validFormatDescription,
+            sampleTiming: &timingInfo,
+            sampleBufferOut: &sampleBuffer
+        )
+
+        guard sampleBufferStatus == noErr else {
+            print("Failed to create CMSampleBuffer: \(sampleBufferStatus)")
+            return nil
+        }
+
+        return sampleBuffer
+    }
+
     func sampleBuffer() -> CMSampleBuffer? {
         guard let jpegData = self.jpegData(compressionQuality: 1) else {
             return nil
         }
 
-        let rawPixelSize = CGSize(width: size.width, height: size.height)
-
         var format: CMFormatDescription?
 
-        _ = CMVideoFormatDescriptionCreate(allocator: kCFAllocatorDefault, codecType: kCMVideoCodecType_JPEG, width: Int32(rawPixelSize.width), height: Int32(rawPixelSize.height), extensions: nil, formatDescriptionOut: &format)
+        _ = CMVideoFormatDescriptionCreate(allocator: kCFAllocatorDefault,
+                                           codecType: kCMVideoCodecType_JPEG,
+                                           width: Int32(size.width),
+                                           height: Int32(size.height),
+                                           extensions: nil,
+                                           formatDescriptionOut: &format)
 
         do {
             let cmBlockBuffer = try jpegData.toCMBlockBuffer()
