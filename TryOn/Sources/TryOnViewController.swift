@@ -32,6 +32,7 @@ open class TryOnViewController: UIViewController {
 
     private final var storage: WsneakersUISDKRenderModelStorage?
     private final var renderModels: [String] = []
+    private final var localModels: [String] = []
 
     private var currentTask: WsneakersUISDKDownloadTask?
     private var currentIndex = 0
@@ -81,6 +82,7 @@ public extension TryOnViewController {
         session: WannaSDKSession,
         storage: WsneakersUISDKRenderModelStorage,
         renderModels: [String],
+        localModels: [String],
         selected: Int
     ) {
         wsneakersSession = session
@@ -88,6 +90,7 @@ public extension TryOnViewController {
 
         self.storage = storage
         self.renderModels = renderModels
+        self.localModels = localModels
 
         session.start()
 
@@ -121,7 +124,7 @@ private extension TryOnViewController {
 
 @available(iOS 13.0, *)
 private extension TryOnViewController {
-    func setRenderModel(_ renderModel: WsneakersUISDKRenderModel, index: Int) {
+    func setRenderModel(_ renderModel: WsneakersUISDKRenderModel) {
         wsneakersSession?.change(renderModel) { [weak self] error in
             Task {
                 guard let error else {
@@ -152,9 +155,19 @@ private extension TryOnViewController {
         // If any other download task was active, drop it
         currentTask?.cancel()
 
+        let id = renderModels[index]
+
+        if localModels.contains(id) {
+            loadLocalModel(id)
+        } else {
+            loadRemoteModel(id)
+        }
+    }
+
+    func loadRemoteModel(_ id: String) {
         // Downloads the new model, showing a progress indicator
         currentTask = storage?.getRenderModel(
-            withID: renderModels[index],
+            withID: id,
             experience: .tryOn,
             options: wsneakersSession?.options ?? []
         ) { [weak self] task, progress in
@@ -175,7 +188,7 @@ private extension TryOnViewController {
                 return
             }
 
-            self?.setRenderModel(renderModel, index: index)
+            self?.setRenderModel(renderModel)
         }
     }
 
@@ -397,4 +410,54 @@ private extension TryOnViewController {
             ]
         )
     }
+}
+
+// MARK: - Local
+
+private extension TryOnViewController {
+    func loadLocalModel(_ id: String) {
+        let dataPackNames = (try? FileManager.default.contentsOfDirectory(
+            atPath: Bundle.main.resourcePath! + "/Local/DataPacks"
+        )) ?? []
+
+        let dataPacks =  dataPackNames.reduce(into: Dictionary<String, URL>()) { result, name in
+            let relativePath = "/Local/DataPacks/" + name
+            let url = URL(fileURLWithPath: Bundle.main.resourcePath! + relativePath)
+
+            result[name] = url
+        }
+
+        guard let rmdescURL = Bundle.main.url(
+            forResource: "render_model",
+            withExtension: "rmdesc",
+            subdirectory: "/Local/Models/" + id
+        ) else {
+            showError(message:  "Local model load failed: no rmdesc)") { [weak self] in
+                self?.loadLocalModel(id)
+            }
+
+            return
+        }
+
+        guard let model = WsneakersUISDKRenderModel.create(
+            withRenderModelID: id,
+            rmdescURL: rmdescURL,
+            dataPacks: dataPacks,
+            cancel: {
+                print("Did unload local model with id=\(id)")
+            })
+        else {
+            showError(message:  "Local model creation failed") { [weak self] in
+                self?.loadLocalModel(id)
+            }
+
+            return
+        }
+
+        setRenderModel(model)
+    }
+}
+
+extension WsneakersUISDKRenderModel {
+    func createLocalWith() { }
 }
