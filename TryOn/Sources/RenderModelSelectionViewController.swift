@@ -40,7 +40,9 @@ class RenderModelSelectionViewController: UIViewController {
             renderModels
                 .prefix(3)
                 .forEach { model in
-                    storage?.preloadRenderModel(withID: model.renderModelID, progress: nil) { res, error in
+                    storage?.preloadRenderModel(withID: model.renderModelID,
+                                                experience: .tryOn,
+                                                progress: nil) { res, error in
                         if res {
                             print("model preloaded: " + model.renderModelID)
                         } else {

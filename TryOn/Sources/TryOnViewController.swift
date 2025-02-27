@@ -155,6 +155,7 @@ private extension TryOnViewController {
         // Downloads the new model, showing a progress indicator
         currentTask = storage?.getRenderModel(
             withID: renderModels[index],
+            experience: .tryOn,
             options: wsneakersSession?.options ?? []
         ) { [weak self] task, progress in
             guard task == self?.currentTask else {
