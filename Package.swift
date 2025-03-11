@@ -21,13 +21,13 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "WannaCoreSDK",
-            url: "https://wreleases.s3.amazonaws.com/sdks/ios/20240910/WannaSDK_ios_7_3_0_653_core_spm.zip",
-            checksum: "c25e0de7081676e42ae500fade6c2b8daae546196e6a0b0271253b60b37da6f1"
+            url: "https://wreleases.s3.amazonaws.com/sdks/ios/20250227/WannaSDK_ios_7_4_0_674_core_spm.zip",
+            checksum: "32f123bca8f3a7ebd6106278104182b46dbbab28e2e410bc05221b755cd7349d"
         ),
         .binaryTarget(
             name: "WsneakersUISDK",
-            url: "https://wreleases.s3.amazonaws.com/sdks/ios/20240910/WannaSDK_ios_7_3_0_653_ui_spm.zip",
-            checksum: "c8680f148c4e4581c31d03d93940d8bcb09c848ef43639b802264b9f29437d57"
+            url: "https://wreleases.s3.amazonaws.com/sdks/ios/20250227/WannaSDK_ios_7_4_0_674_ui_spm.zip",
+            checksum: "6cc734ca3b7c20545ac6433a89a5707734019b875af14440ac3561a8df4ed488"
         )
     ]
 )
