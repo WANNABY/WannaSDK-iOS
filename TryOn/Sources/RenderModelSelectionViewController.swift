@@ -297,7 +297,7 @@ private extension RenderModelSelectionViewController {
     }
 
     func openTryon(session: WannaSDKSession, index: Int) {
-        guard #available(iOS 13.0, *) else {
+        guard #available(iOS 14.0, *) else {
             presentAlert(title: "Not supported", message: "Too old iOS version")
 
             return
@@ -315,6 +315,7 @@ private extension RenderModelSelectionViewController {
             session: session,
             storage: storage!,
             renderModels: renderModels.map(\.renderModelID),
+            localModels: [],
             selected: index
         )
 
