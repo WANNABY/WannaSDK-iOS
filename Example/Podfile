@@ -9,7 +9,7 @@ project 'Example.xcodeproj'
 platform :ios, '12.0'
 
 target 'Wanna Sample' do
-  pod 'WannaSDK', '7.4.0'
+  pod 'WannaSDK', '7.4.1'
   pod 'WannaDebug', :path => '../WannaDebug.podspec'
   pod 'WannaTryOn', :path => '../WannaTryOn.podspec'
 end
