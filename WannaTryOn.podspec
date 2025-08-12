@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = 'WannaTryOn'
-  s.version                 = '7.4.1'
+  s.version                 = '8.0.0'
   s.author                  = 'help@wanna.fashion'
   s.homepage                = "https://wanna.fashion"
   s.readme                  = "https://github.com/WANNABY/WannaSDK-iOS/blob/master/README.md"

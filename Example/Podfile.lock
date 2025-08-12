@@ -1,18 +1,18 @@
 PODS:
-  - WannaDebug (7.1.0):
+  - WannaDebug (8.0.0):
     - WannaSDK
-  - WannaSDK (7.4.1)
-  - WannaTryOn (7.4.0):
-    - WannaTryOn/Toolkit (= 7.4.0)
-    - WannaTryOn/TryOn (= 7.4.0)
-  - WannaTryOn/Toolkit (7.4.0)
-  - WannaTryOn/TryOn (7.4.0):
+  - WannaSDK (8.0.0)
+  - WannaTryOn (8.0.0):
+    - WannaTryOn/Toolkit (= 8.0.0)
+    - WannaTryOn/TryOn (= 8.0.0)
+  - WannaTryOn/Toolkit (8.0.0)
+  - WannaTryOn/TryOn (8.0.0):
     - WannaSDK
     - WannaTryOn/Toolkit
 
 DEPENDENCIES:
   - WannaDebug (from `../WannaDebug.podspec`)
-  - WannaSDK (= 7.4.1)
+  - WannaSDK (= 8.0.0)
   - WannaTryOn (from `../WannaTryOn.podspec`)
 
 SPEC REPOS:
@@ -26,10 +26,10 @@ EXTERNAL SOURCES:
     :path: "../WannaTryOn.podspec"
 
 SPEC CHECKSUMS:
-  WannaDebug: 052e46701586b4870cafaf7b3d8cc9e1c78365ec
-  WannaSDK: f9b0053ab05da1a76d56b811c0a4b74aa70cc850
-  WannaTryOn: 750ac4aee16c9bbeafa9903bcaf0382b32a86954
+  WannaDebug: 6ae5a344621e3d821f87db5b85f4cbae14206b64
+  WannaSDK: fc91a41e82f335a843670ac8d167f0ad089968b0
+  WannaTryOn: 74339b8a28e2138382d8fdacaba75d5fbc93569b
 
-PODFILE CHECKSUM: a8a2d6f24eb9266e35347336692b61a7c6ff0f73
+PODFILE CHECKSUM: 896c4caa158c4cd6d69e69914089086da57be9a5
 
 COCOAPODS: 1.15.2
