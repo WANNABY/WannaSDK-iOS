@@ -332,6 +332,25 @@ private extension TryOnViewController {
     }
 }
 
+@MainActor
+@available(iOS 14.0, *)
+private extension TryOnViewController {
+    func onPhotoTryOn(_ photo: UIImage, completion: @escaping (UIImage?, Error?) -> Void) {
+        wsneakersSession?.applyVTO(toPhoto: photo) { resultImage, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            if let resultImage = resultImage {
+                DispatchQueue.main.async {
+                    completion(resultImage, nil)
+                }
+            }
+        }
+    }
+}
+
 // MARK: - TryOn View
 
 @MainActor
